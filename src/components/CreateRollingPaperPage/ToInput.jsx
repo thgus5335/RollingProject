@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import styles from './ToInput.module.css';
 
-const ToInput = () => {
+const ToInput = ({ onNameChange }) => {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState(false);
 
   const handleInputChange = e => {
     setInputValue(e.target.value);
     setError(false);
+    onNameChange(e.target.value);
   };
 
   const handleInputBlur = () => {
@@ -17,6 +18,7 @@ const ToInput = () => {
   };
 
   const placeholder = error ? '값을 입력해 주세요.' : '받는 사람 이름을 입력해 주세요.';
+
   return (
     <div>
       <h1>To.</h1>
