@@ -1,0 +1,16 @@
+.errorInput {
+  border-color: var(--Error);
+}
+
+.errorInput::placeholder {
+  color: var(--Error);
+}
+
+input {
+  width: 720px;
+  height: 50px;
+  padding: 12px 16px;
+  border: 1px solid var(--Gray-300);
+  border-radius: 8px;
+  outline: none;
+}
