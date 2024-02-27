@@ -1,16 +1,16 @@
 import styles from './Card.module.css';
 
-function Card() {
+const Card = () => {
   return (
-    <div className={styles.cardArea}>
-      <div className={styles.infoArea}>
+    <div className={styles['card-area']}>
+      <div className={styles['info-area']}>
         <h3>To.</h3>
         <p>명이 작성했어요!</p>
       </div>
 
-      <div className={styles.imoArea}></div>
+      <div className={styles['imo-area']}></div>
     </div>
   );
-}
+};
 
 export default Card;
