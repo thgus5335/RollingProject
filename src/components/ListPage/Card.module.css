@@ -1,0 +1,63 @@
+.cardArea {
+  display: flex;
+  width: 275px;
+  height: 260px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px 30px;
+  border-radius: 16px;
+}
+
+/* color */
+.purple {
+  background-color: var(--purple-200);
+}
+
+.blue {
+  background-color: var(--blue-200);
+}
+
+.beige {
+  background-color: var(--orange-200);
+}
+
+.green {
+  background-color: var(--green-200);
+}
+
+/* emoji */
+.imoArea {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  padding-top: 20px;
+  border-top: 1px solid rgb(0 0 0 / 12%);
+  gap: 10px;
+}
+
+.emoji {
+  padding: 8px 12px;
+  border-radius: 99px;
+  background-color: var(--gray-400);
+  color: white;
+}
+
+.imageStyle {
+  display: flex;
+}
+
+.profileImage {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid white;
+  border-radius: 99px;
+}
+
+.plusProfile {
+  width: 33px;
+  height: 28px;
+  padding: 5px 6px;
+  border-radius: 99px;
+  background-color: white;
+}

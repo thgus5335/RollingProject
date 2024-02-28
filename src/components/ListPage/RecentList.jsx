@@ -1,13 +1,16 @@
-import Card from '../common/Card';
 import CommonSection from './CommonSection';
+import useFetchListData from '../../hooks/useFetchListData';
 
 const RecentList = () => {
+  const { recentData } = useFetchListData();
+  console.log(recentData);
   return (
     <>
-      <CommonSection title={'최근에 만든 롤링 페이퍼⭐️'} />
-      <Card />
+      <CommonSection title={'최근에 만든 롤링 페이퍼⭐️'} data={recentData} />
     </>
   );
 };
 
 export default RecentList;
+
+//results에서 createdAt순서대로 내림차순 정렬
