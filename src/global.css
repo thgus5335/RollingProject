@@ -1,1 +1,4 @@
 /* test */
+.purpleTest {
+  background-color: var(--purple-200);
+}
