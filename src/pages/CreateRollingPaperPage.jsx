@@ -24,6 +24,7 @@ const CreateRollingPaperPage = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedButton, setSelectedButton] = useState('color');
   const [name, setName] = useState('');
+  const [imgFile, setImgFile] = useState(null);
 
   const handleClickColorButton = () => {
     setSelectedButton('color');
@@ -36,6 +37,14 @@ const CreateRollingPaperPage = () => {
   const handleClickColor = color => {
     setSelectedColor(color);
   };
+
+  const handleFileChange = e => {
+    const uploadedFile = e.target.files[0];
+    setImgFile(uploadedFile);
+    setSelectedImage(URL.createObjectURL(uploadedFile));
+    console.log(selectedImage);
+  };
+
   const handleClickImage = img => {
     setSelectedImage(img);
   };
@@ -49,6 +58,7 @@ const CreateRollingPaperPage = () => {
     const postData = {
       name: name,
       backgroundColor: selectedColor,
+      backgroundImageURL: imgFile,
       // Add other properties as needed
     };
 
@@ -97,6 +107,8 @@ const CreateRollingPaperPage = () => {
           ))}
         </div>
       )}
+      <input type="file" accept="image/*" onChange={handleFileChange} />
+      <img src={selectedImage} alt="userImage" />
 
       <button onClick={handleCreateButtonClick} className={styles.createButton}>
         생성하기
