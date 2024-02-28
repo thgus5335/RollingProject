@@ -1,8 +1,13 @@
-import './global.css';
-import ListPage from './pages/ListPage';
+import './styles/global.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 function App() {
-  return <ListPage />;
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

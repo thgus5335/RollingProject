@@ -1,0 +1,9 @@
+.outfit {
+  padding-left: 150px;
+}
+
+@media (width <= 768px) {
+  .outfit {
+    padding: 0 24px;
+  }
+}

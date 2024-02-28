@@ -1,28 +1,28 @@
 header {
-  padding: 11px 0;
+  padding: 20px 150px;
+  padding-bottom: 11px;
   border-bottom: 1px solid rgb(237 237 237 / 100%);
 }
 
-.header-area {
+.headerArea {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 200px;
 }
 
 button {
   background-color: white;
 }
 
-.make-rolling-button {
+.makeRollingButton {
   padding: 8px 16px;
   border: 1px solid rgb(204 204 204 / 100%);
   border-radius: 6px;
   color: rgb(24 24 24 / 100%);
 }
 
-@media (width <= 1024px) {
+@media (width <= 768px) {
   header {
     padding: 11px 24px;
   }
