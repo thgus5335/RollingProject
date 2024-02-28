@@ -1,0 +1,19 @@
+.profileContainer {
+  margin-top: 3.125rem;
+}
+
+.profileImage {
+  display: flex;
+  gap: 2rem;
+}
+
+.imageSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customImg {
+  width: 5rem;
+  height: 5rem;
+}
