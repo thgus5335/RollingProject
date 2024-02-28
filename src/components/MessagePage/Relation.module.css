@@ -5,6 +5,7 @@
 
 .selectBox {
   position: relative;
+  z-index: 1;
   width: 20rem;
   height: 3.125rem;
   align-self: center;
