@@ -1,4 +1,4 @@
-import './global.module.css';
+import './global.css';
 import ListPage from './pages/ListPage';
 
 function App() {
