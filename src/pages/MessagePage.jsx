@@ -3,6 +3,7 @@ import InputMessage from '../components/MessagePage/InputMessage';
 import NameInsert from '../components/MessagePage/NameInsert';
 import Profile from '../components/MessagePage/Profile';
 import RelationShip from '../components/MessagePage/RelationShip';
+import ShareMessageBtn from '../components/MessagePage/ShareMessageBtn';
 import styles from './MessagePage.module.css';
 
 const MessagePage = () => {
@@ -14,6 +15,7 @@ const MessagePage = () => {
         <RelationShip />
         <InputMessage />
         <FontPicker />
+        <ShareMessageBtn />
       </div>
     </div>
   );

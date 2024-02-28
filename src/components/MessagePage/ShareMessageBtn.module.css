@@ -1,0 +1,15 @@
+.container {
+  width: 45rem;
+  height: 3.5rem;
+  margin-top: 4.375rem;
+}
+
+.button {
+  width: 45rem;
+  height: 100%;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  background-color: var(--gray-300);
+  color: var(--white);
+  font-size: 1.125rem;
+}
