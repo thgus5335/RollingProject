@@ -1,3 +1,4 @@
+import FontPicker from '../components/MessagePage/FontPicker';
 import InputMessage from '../components/MessagePage/InputMessage';
 import NameInsert from '../components/MessagePage/NameInsert';
 import Profile from '../components/MessagePage/Profile';
@@ -12,6 +13,7 @@ const MessagePage = () => {
         <Profile />
         <RelationShip />
         <InputMessage />
+        <FontPicker />
       </div>
     </div>
   );
