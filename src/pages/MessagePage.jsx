@@ -1,3 +1,4 @@
+import InputMessage from '../components/MessagePage/InputMessage';
 import NameInsert from '../components/MessagePage/NameInsert';
 import Profile from '../components/MessagePage/Profile';
 import RelationShip from '../components/MessagePage/RelationShip';
@@ -10,6 +11,7 @@ const MessagePage = () => {
         <NameInsert />
         <Profile />
         <RelationShip />
+        <InputMessage />
       </div>
     </div>
   );
