@@ -1,9 +1,9 @@
 import axios from 'axios';
+const API_URL = 'https://rolling-api.vercel.app/4-13/recipients/';
 
 const postRolling = async postData => {
-  const API_URL = 'https://rolling-api.vercel.app/4-13/recipients/';
-
   try {
+    console.log('Sending request with data:', postData);
     const response = await axios.post(API_URL, postData, {
       headers: {
         'Content-Type': 'application/json',

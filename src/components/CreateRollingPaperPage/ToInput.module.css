@@ -2,7 +2,7 @@
   border-color: var(--error);
 }
 
-.errorInput::placeholder {
+.errorText {
   color: var(--error);
 }
 
