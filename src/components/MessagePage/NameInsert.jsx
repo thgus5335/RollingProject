@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './NameInsert.module.css';
-const Name = () => {
-  const [name, setName] = useState('');
+const NameInsert = ({ name, onNameChange }) => {
   const [blur, setBlur] = useState(false);
   const handleChangeName = e => {
-    setName(e.target.value);
+    const newName = e.target.value;
+    onNameChange(newName); // 부모 컴포넌트로 이름 변경 알림
   };
   const handleBlurFromInput = () => {
     if (name.trim().length === 0) {
@@ -28,4 +28,4 @@ const Name = () => {
     </div>
   );
 };
-export default Name;
+export default NameInsert;
