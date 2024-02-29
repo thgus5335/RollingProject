@@ -10,7 +10,9 @@ import styles from './MessagePage.module.css';
 const MessagePage = () => {
   const [nameValue, setNameValue] = useState('');
   const [messageValue, setMessageValue] = useState('');
+  const [profileImgUrl, setProfileImgUrl] = useState('');
   const [isButtonValid, setIsButtonValid] = useState(false);
+  console.log(profileImgUrl);
 
   const handleNameChange = newName => {
     setNameValue(newName);
@@ -20,6 +22,10 @@ const MessagePage = () => {
     setMessageValue(text);
   };
 
+  const handleCustomImgUrlGet = url => {
+    setProfileImgUrl(url);
+  };
+
   useEffect(() => {
     if (nameValue && messageValue) {
       setIsButtonValid(true);
@@ -27,12 +33,15 @@ const MessagePage = () => {
       setIsButtonValid(false);
     }
   }, [nameValue, messageValue]);
+
+  useEffect(() => {}, [profileImgUrl]);
+
   return (
     <div className={styles.messagePage}>
       <div className={styles.pageContainer}>
-        <form onSubmit={e => e.preventDefault()}>
+        <form onSubmit={console.log}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
-          <Profile />
+          <Profile profileUrl={profileImgUrl} onProfileUrlChange={handleCustomImgUrlGet} />
           <RelationShip />
           <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker />
