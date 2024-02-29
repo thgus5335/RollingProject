@@ -1,0 +1,40 @@
+.button {
+  box-sizing: border-box;
+  background-color: var(--purple-600);
+  color: var(--white, #fff);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button:disabled {
+  background-color: var(--gray-300);
+}
+
+.button:hover:enabled {
+  background-color: var(--purple-700);
+}
+
+.button:active:enabled {
+  background-color: var(--purple-800);
+}
+
+.button:focus:enabled {
+  border: 2px solid var(--purple-900);
+  background-color: var(--purple-800);
+}
+
+.large {
+  height: 3.5rem;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.small {
+  height: 2.5rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+}
