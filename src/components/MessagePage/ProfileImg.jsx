@@ -1,29 +1,17 @@
-import { useState } from 'react';
-import profileImg1 from '../../assets/images/profile-img1.png';
-import profileImg2 from '../../assets/images/profile-img2.png';
-import profileImg3 from '../../assets/images/profile-img3.png';
+// import { useState } from 'react';
+
 import styles from './ProfileImg.module.css';
 
-const ProfileImg = ({ onProfileUrlChange }) => {
-  const [currentImgUrl, setCurrentImgUrl] = useState('');
-  const images = [
-    process.env.PUBLIC_URL + profileImg1,
-    process.env.PUBLIC_URL + profileImg2,
-    process.env.PUBLIC_URL + profileImg3,
-  ];
-  const handleGetUrl = e => {
-    const newImgUrl = e.target.src;
-    setCurrentImgUrl(newImgUrl);
-
-    if (newImgUrl !== currentImgUrl) {
-      onProfileUrlChange(newImgUrl);
-    }
-  };
-
+const ProfileImg = ({ profileUrl, handleGetUrl, imagesUrl }) => {
   return (
     <div className={styles.profileImgList}>
-      {images.map((image, index) => (
-        <img className={styles.image} onClick={handleGetUrl} key={index} src={image} />
+      {imagesUrl.map((imageUrl, index) => (
+        <img
+          className={`${styles.image} ${profileUrl === imageUrl ? styles.selected : ''}`}
+          onClick={e => handleGetUrl(e, imageUrl)}
+          key={index}
+          src={imageUrl}
+        />
       ))}
     </div>
   );
