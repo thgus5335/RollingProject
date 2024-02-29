@@ -14,9 +14,3 @@ input {
   border-radius: 8px;
   outline: none;
 }
-
-.toInputContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}

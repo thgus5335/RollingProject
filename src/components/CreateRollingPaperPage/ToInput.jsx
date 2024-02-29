@@ -20,7 +20,7 @@ const ToInput = ({ onNameChange }) => {
   const placeholder = '받는 사람 이름을 입력해 주세요.';
 
   return (
-    <div className={styles.toInputContainer}>
+    <div>
       <h1>To.</h1>
       <form>
         <label htmlFor="to-input"></label>
