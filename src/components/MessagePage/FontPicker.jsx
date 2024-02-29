@@ -4,7 +4,6 @@ import { useState } from 'react';
 const FontPicker = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [currentValue, setCurrentValue] = useState('Noto Sans');
-  console.log(currentValue);
   const handleOnChangeSelectValue = e => {
     const { innerText } = e.target;
     setCurrentValue(innerText);

@@ -4,7 +4,7 @@ const NameInsert = ({ name, onNameChange }) => {
   const [blur, setBlur] = useState(false);
   const handleChangeName = e => {
     const newName = e.target.value;
-    onNameChange(newName); // 부모 컴포넌트로 이름 변경 알림
+    onNameChange(newName);
   };
   const handleBlurFromInput = () => {
     if (name.trim().length === 0) {
