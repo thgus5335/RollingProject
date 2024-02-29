@@ -10,11 +10,16 @@ import styles from './MessagePage.module.css';
 // const [values, setValues] = useState({});
 const MessagePage = () => {
   const [nameValue, setNameValue] = useState('');
+  const [messageValue, setMessageValue] = useState('');
   console.log(nameValue);
+  console.log(messageValue);
   const handleNameChange = newName => {
     setNameValue(newName);
   };
 
+  const handleMessageChange = text => {
+    setMessageValue(text);
+  };
   return (
     <div className={styles.messagePage}>
       <div className={styles.pageContainer}>
@@ -22,7 +27,7 @@ const MessagePage = () => {
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
           <Profile />
           <RelationShip />
-          <InputMessage />
+          <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker />
           <ShareMessageBtn />
         </form>

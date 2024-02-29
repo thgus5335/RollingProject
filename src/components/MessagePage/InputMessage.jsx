@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import styles from './InputMessage.module.css';
 import ReactQuill from 'react-quill';
-const InputMessage = () => {
-  const [content, setContent] = useState('');
-  const pureText = content.replace(/(<([^>]+)>)/gi, '');
-  console.log(pureText);
+const InputMessage = ({ onMessageChange }) => {
   const handleChangeContent = text => {
-    setContent(text);
+    const pureText = text.replace(/(<([^>]+)>)/gi, '');
+    onMessageChange(pureText);
   };
   return (
     <div className={styles.container}>
