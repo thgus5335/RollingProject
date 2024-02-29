@@ -10,7 +10,7 @@ const RollingPage = () => {
       <header>{/* Header */}</header>
       <main>
         <div className={styles.rollingBackground}>
-          <div className={styles.rollingFeature}>
+          <div className={styles.buttonContainer}>
             <Button size={buttonSize} width={7.5}>
               편집하기
             </Button>

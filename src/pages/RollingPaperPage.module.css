@@ -3,6 +3,14 @@
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-  padding-top: 7rem;
+  align-items: center;
+  padding-top: 5rem;
   background-color: var(--orange-200);
+}
+
+.buttonContainer {
+  display: flex;
+  width: 75rem;
+  justify-content: right;
+  padding-bottom: 1rem;
 }

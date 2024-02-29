@@ -2,4 +2,6 @@
   display: flex;
   width: 75rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  row-gap: 1.75rem;
 }
