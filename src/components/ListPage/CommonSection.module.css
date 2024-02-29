@@ -6,3 +6,9 @@
   display: flex;
   gap: 20px;
 }
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}

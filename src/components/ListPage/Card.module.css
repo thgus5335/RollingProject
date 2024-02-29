@@ -4,8 +4,14 @@
   height: 260px;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 30px 30px;
+  padding: 20px 30px;
   border-radius: 16px;
+}
+
+.name {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* color */
@@ -27,10 +33,9 @@
 
 /* emoji */
 .imoArea {
-  position: relative;
   bottom: 0;
   display: flex;
-  padding-top: 20px;
+  padding-top: 15px;
   border-top: 1px solid rgb(0 0 0 / 12%);
   gap: 10px;
 }
@@ -44,6 +49,7 @@
 
 .imageStyle {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .profileImage {
