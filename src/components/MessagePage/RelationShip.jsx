@@ -1,13 +1,12 @@
 import styles from './Relation.module.css';
 import { useState } from 'react';
 
-const RelationShip = () => {
+const RelationShip = ({ onRelationChange, relation }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [currentValue, setCurrentValue] = useState('지인');
 
   const handleOnChangeSelectValue = e => {
     const { innerText } = e.target;
-    setCurrentValue(innerText);
+    onRelationChange(innerText);
   };
   const relationData = [
     { id: 1, value: '친구' },
@@ -22,7 +21,7 @@ const RelationShip = () => {
         <h1 className={styles.title}>상대와의 관계</h1>
       </div>
       <div className={styles.selectBox} onClick={() => setShowOptions(prev => !prev)}>
-        <label className={styles.label}>{currentValue}</label>
+        <label className={styles.label}>{relation}</label>
         <ul className={showOptions ? styles.selectShow : styles.selectNoShow}>
           {relationData.map(v => (
             <li key={v.id} className={styles.list} onClick={handleOnChangeSelectValue}>

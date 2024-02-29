@@ -1,12 +1,12 @@
 import styles from './FontPicker.module.css';
 import { useState } from 'react';
 
-const FontPicker = () => {
+const FontPicker = ({ onFontChange, font }) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [currentValue, setCurrentValue] = useState('Noto Sans');
+
   const handleOnChangeSelectValue = e => {
     const { innerText } = e.target;
-    setCurrentValue(innerText);
+    onFontChange(innerText);
   };
   const fontList = [
     { id: 1, value: 'Noto Sans' },
@@ -20,7 +20,7 @@ const FontPicker = () => {
         <h1 className={styles.title}>폰트 선택</h1>
       </div>
       <div className={styles.selectBox} onClick={() => setShowOptions(prev => !prev)}>
-        <label className={styles.label}>{currentValue}</label>
+        <label className={styles.label}>{font}</label>
         <ul className={showOptions ? styles.selectShow : styles.selectNoShow}>
           {fontList.map(v => (
             <li key={v.id} className={styles.list} onClick={handleOnChangeSelectValue}>

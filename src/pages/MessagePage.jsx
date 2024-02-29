@@ -12,8 +12,8 @@ const MessagePage = () => {
   const [messageValue, setMessageValue] = useState('');
   const [profileImgUrl, setProfileImgUrl] = useState('');
   const [isButtonValid, setIsButtonValid] = useState(false);
-  console.log(profileImgUrl);
-
+  const [relation, setRelation] = useState('지인');
+  const [font, setFont] = useState('Noto Sans');
   const handleNameChange = newName => {
     setNameValue(newName);
   };
@@ -24,6 +24,14 @@ const MessagePage = () => {
 
   const handleCustomImgUrlGet = url => {
     setProfileImgUrl(url);
+  };
+
+  const handleRelationChange = relation => {
+    setRelation(relation);
+  };
+
+  const handleFontChange = font => {
+    setFont(font);
   };
 
   useEffect(() => {
@@ -42,9 +50,9 @@ const MessagePage = () => {
         <form onSubmit={console.log}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
           <Profile profileUrl={profileImgUrl} onProfileUrlChange={handleCustomImgUrlGet} />
-          <RelationShip />
+          <RelationShip onRelationChange={handleRelationChange} relation={relation} />
           <InputMessage onMessageChange={handleMessageChange} />
-          <FontPicker />
+          <FontPicker onFontChange={handleFontChange} font={font} />
           <ShareMessageBtn isValid={isButtonValid} />
         </form>
       </div>
