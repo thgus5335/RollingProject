@@ -16,7 +16,7 @@ const Name = () => {
 
   return (
     <div className={styles.nameContainer}>
-      <h1>From.</h1>
+      <h1 className={styles.title}>From.</h1>
       <input
         value={name}
         className={styles.nameInput}

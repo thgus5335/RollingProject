@@ -11,5 +11,6 @@
   border-radius: 12px;
   background-color: var(--gray-300);
   color: var(--white);
+  font-family: Pretendard, sans-serif;
   font-size: 1.125rem;
 }

@@ -19,7 +19,7 @@ const RelationShip = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h1>상대와의 관계</h1>
+        <h1 className={styles.title}>상대와의 관계</h1>
       </div>
       <div className={styles.selectBox} onClick={() => setShowOptions(prev => !prev)}>
         <label className={styles.label}>{currentValue}</label>

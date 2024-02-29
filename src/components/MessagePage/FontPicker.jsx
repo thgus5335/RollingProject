@@ -18,7 +18,7 @@ const FontPicker = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h1>폰트 선택</h1>
+        <h1 className={styles.title}>폰트 선택</h1>
       </div>
       <div className={styles.selectBox} onClick={() => setShowOptions(prev => !prev)}>
         <label className={styles.label}>{currentValue}</label>

@@ -4,7 +4,7 @@ import ProfileImg from './ProfileImg';
 const Profile = () => {
   return (
     <div className={styles.profileContainer}>
-      <h1>프로필 이미지</h1>
+      <h1 className={styles.title}>프로필 이미지</h1>
       <div className={styles.profileImage}>
         <img className={styles.customImg} src={customImg} />
         <div className={styles.imageSelect}>
