@@ -1,22 +1,8 @@
-import { useState } from 'react';
 import styles from './ToInput.module.css';
+import useName from '../../hooks/useName';
 
-const ToInput = ({ onNameChange }) => {
-  const [inputValue, setInputValue] = useState('');
-  const [error, setError] = useState(false);
-
-  const handleInputChange = e => {
-    setInputValue(e.target.value);
-    setError(false);
-    onNameChange(e.target.value);
-  };
-
-  const handleInputBlur = () => {
-    if (inputValue.trim() === '') {
-      setError(true);
-    }
-  };
-
+const ToInput = () => {
+  const { error, inputValue, handleInputChange, handleInputBlur } = useName();
   const placeholder = '받는 사람 이름을 입력해 주세요.';
 
   return (
