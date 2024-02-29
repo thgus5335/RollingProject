@@ -1,29 +1,29 @@
 import styles from './CreateRollingPaperPage.module.css';
 import ToInput from '../components/CreateRollingPaperPage/ToInput';
 import checkIcon from '../assets/icons/check.svg';
-import car from '../assets/images/car.png';
-import arches from '../assets/images/arches.png';
+// import car from '../assets/images/car.png';
+// import arches from '../assets/images/arches.png';
 import { useState } from 'react';
 import { postRolling } from '../apis/createRollingAPI';
-// import { getUserId } from '../apis/createRollingAPI';
+import uploadImage from '../apis/uploadImage';
 
 const CreateRollingPaperPage = () => {
   const COLORS = ['beige', 'purple', 'blue', 'green'];
   const IMAGES = [
-    { alt: 'car', source: car },
-    { alt: 'arches', source: arches },
-    // {
-    //   alt: 'cat',
-    //   source: 'https://static.india.com/wp-content/uploads/2015/10/8-wallpaperhd1.jpg',
-    // },
-    // {
-    //   alt: 'dog',
-    //   source: 'https://i0.wp.com/regroove.ca/wp-content/uploads/2021/10/pexels-photo-2607544.jpeg?fit=1024%2C682&ssl=1',
-    // },
+    // { alt: 'car', source: car },
+    // { alt: 'arches', source: arches },
+    {
+      alt: 'cat',
+      source: 'https://static.india.com/wp-content/uploads/2015/10/8-wallpaperhd1.jpg',
+    },
+    {
+      alt: 'dog',
+      source: 'https://i0.wp.com/regroove.ca/wp-content/uploads/2021/10/pexels-photo-2607544.jpeg?fit=1024%2C682&ssl=1',
+    },
   ];
   const [selectedColor, setSelectedColor] = useState('beige');
   const [selectedImage, setSelectedImage] = useState('car');
-
+  const [selectedImageURL, setSelectedImageURL] = useState('');
   const [selectedButton, setSelectedButton] = useState('color');
   const [name, setName] = useState('');
   const [imgURL, setImgURL] = useState('');
@@ -40,63 +40,48 @@ const CreateRollingPaperPage = () => {
     setSelectedColor(color);
   };
 
-  const handleImageUpload = e => {
+  const handleImageUpload = async e => {
     const uploadedFile = e.target.files[0];
-    setImgURL(URL.createObjectURL(uploadedFile));
-    console.log(imgURL);
-    console.log(uploadedFile);
+
+    try {
+      // Call uploadImage to upload the image and get the URL
+      const uploadedImageURL = await uploadImage({ file: uploadedFile });
+      setImgURL(uploadedImageURL);
+      console.log(imgURL);
+    } catch (error) {
+      // Handle any errors during the upload
+      console.error('Error uploading image:', error);
+    }
   };
 
-  const handleClickImage = img => {
-    setSelectedImage(img);
+  const handleClickImage = images => {
+    setSelectedImage(images.alt);
+    setSelectedImageURL(images.source);
+  };
+
+  const handleClickUploadedImage = () => {
+    setSelectedImage(imgURL);
+    setSelectedImageURL(imgURL);
   };
 
   const handleNameChange = inputValue => {
     setName(inputValue);
   };
 
-  const handleCreateButtonClick = () => {
+  const handleCreateButtonClick = async () => {
     const postData = {
       name: name,
       backgroundColor: selectedColor,
-      // backgroundImageURL: 'https://static.india.com/wp-content/uploads/2015/10/8-wallpaperhd1.jpg',
-      // local host imgURL not working
-      backgroundImageURL: imgURL,
+      backgroundImageURL: selectedImageURL,
     };
 
     postRolling(postData);
     console.log(postData);
   };
 
-  // const handleCreateButtonClick = async () => {
-  //   try {
-  //     const existingUserId = await getUserId(name);
-  //     console.log(existingUserId);
-
-  //     const postData = {
-  //       name: name,
-  //       backgroundColor: selectedColor,
-
-  //     };
-
-  //     if (existingUserId) {
-  //       postData.userId = existingUserId;
-
-  //       await postRolling(postData);
-  //       console.log('User data updated successfully.');
-  //     } else {
-  //       await postRolling(postData);
-  //       console.log('New user data created successfully.');
-  //     }
-  //   } catch (error) {
-  //     console.error('Failed to create or update user data:', error);
-  //   }
-  // };
-
   return (
     <main>
       <ToInput onNameChange={handleNameChange} />
-
       <div>
         <h1>배경화면을 선택해 주세요.</h1>
         <p>컬러를 선택하거나, 이미지를 선택할 수 있습니다.</p>
@@ -123,7 +108,7 @@ const CreateRollingPaperPage = () => {
         <div>
           <div className={styles.pickerContainer}>
             {IMAGES.map(images => (
-              <div key={images.alt} className={`${styles.pickerBox} `} onClick={() => handleClickImage(images.alt)}>
+              <div key={images.alt} className={`${styles.pickerBox} `} onClick={() => handleClickImage(images)}>
                 <img
                   src={images.source}
                   alt={images.alt}
@@ -134,7 +119,7 @@ const CreateRollingPaperPage = () => {
               </div>
             ))}
             {imgURL.length > 0 && (
-              <div className={`${styles.pickerBox} `} onClick={() => handleClickImage(imgURL)}>
+              <div className={`${styles.pickerBox} `} onClick={() => handleClickUploadedImage()}>
                 <img src={imgURL} alt="userImage" className={selectedImage === imgURL && styles.imagesOpacity} />
                 {selectedImage === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
               </div>

@@ -19,30 +19,3 @@ export const postRolling = async postData => {
     throw error;
   }
 };
-
-export const getUserId = async userName => {
-  try {
-    const response = await axios.get(API_URL, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    console.log('Success:', response.data.results);
-
-    const user = response.data.results.find(user => user.name === userName);
-
-    if (user) {
-      // Return the corresponding user ID if found
-      return user.id;
-    } else {
-      // Handle the case where the user with the given name is not found
-      console.error('User not found for name:', userName);
-      return null;
-    }
-  } catch (error) {
-    console.error('Error:', error.response ? error.response.data : error.message);
-
-    throw error;
-  }
-};
