@@ -19,7 +19,6 @@ const uploadImage = async ({ file }) => {
 
     console.log('Success:', response.data);
 
-    // Extract the image URL from the response
     const imageUrl = response.data.data.link;
 
     return imageUrl;
