@@ -2,7 +2,7 @@
   border-color: var(--error);
 }
 
-.errorInput::placeholder {
+.errorText {
   color: var(--error);
 }
 
@@ -13,4 +13,10 @@ input {
   border: 1px solid var(--gray-300);
   border-radius: 8px;
   outline: none;
+}
+
+.toInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

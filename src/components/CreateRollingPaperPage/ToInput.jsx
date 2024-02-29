@@ -17,10 +17,10 @@ const ToInput = ({ onNameChange }) => {
     }
   };
 
-  const placeholder = error ? '값을 입력해 주세요.' : '받는 사람 이름을 입력해 주세요.';
+  const placeholder = '받는 사람 이름을 입력해 주세요.';
 
   return (
-    <div>
+    <div className={styles.toInputContainer}>
       <h1>To.</h1>
       <form>
         <label htmlFor="to-input"></label>
@@ -34,6 +34,7 @@ const ToInput = ({ onNameChange }) => {
           className={` ${error && styles.errorInput}`}
         />
       </form>
+      {error && <p className={` ${error && styles.errorText}`}>값을 입력해 주세요.</p>}
     </div>
   );
 };
