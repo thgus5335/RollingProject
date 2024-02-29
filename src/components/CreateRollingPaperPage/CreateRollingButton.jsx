@@ -1,5 +1,5 @@
 import postRolling from '../../apis/createRollingAPI';
-import styles from '../../pages/CreateRollingPaperPage.module.css';
+import styles from './CreateRollingButton.module.css';
 import { useCreateRollingContext } from '../../hooks/useCreateRollingContext';
 
 const CreateRollingButton = () => {

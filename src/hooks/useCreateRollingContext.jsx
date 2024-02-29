@@ -5,7 +5,7 @@ const CreateRollingContext = createContext();
 export const AppProvider = ({ children }) => {
   const [inputValue, setInputValue] = useState('');
   const [selectedColor, setSelectedColor] = useState('beige');
-  const [selectedImageURL, setSelectedImageURL] = useState('');
+  const [selectedImageURL, setSelectedImageURL] = useState(null);
 
   const setContextValues = (name, color, imageURL) => {
     setInputValue(name);

@@ -1,0 +1,14 @@
+.createButton {
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--purple-600);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.3;
+}
+
+.activateButton {
+  opacity: 1;
+}

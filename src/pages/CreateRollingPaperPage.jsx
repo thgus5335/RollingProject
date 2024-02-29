@@ -1,23 +1,18 @@
 import ToInput from '../components/CreateRollingPaperPage/ToInput';
 import CreateRollingButton from '../components/CreateRollingPaperPage/CreateRollingButton';
-// import { useState } from 'react';
-// import postRolling from '../apis/createRollingAPI';
 import PickBackground from '../components/CreateRollingPaperPage/PickBackground';
 import { AppProvider } from '../hooks/useCreateRollingContext';
+import styles from './CreateRollingPaperPage.module.css';
 
 const CreateRollingPaperPage = () => {
-  // const [name, setName] = useState('');
-
-  // const handleNameChange = inputValue => {
-  //   setName(inputValue);
-  // };
-
   return (
     <AppProvider>
       <main>
-        <ToInput />
-        <PickBackground />
-        <CreateRollingButton />
+        <div className={styles.container}>
+          <ToInput />
+          <PickBackground />
+          <CreateRollingButton />
+        </div>
       </main>
     </AppProvider>
   );

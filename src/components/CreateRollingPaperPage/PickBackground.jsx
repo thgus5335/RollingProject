@@ -1,7 +1,7 @@
-import styles from '../../pages/CreateRollingPaperPage.module.css';
 import { useState } from 'react';
 import ColorPicker from './ColorPicker';
 import ImagePicker from './ImagePicker';
+import styles from './PickBackground.module.css';
 
 const PickBackground = () => {
   const [selectedButton, setSelectedButton] = useState('color');

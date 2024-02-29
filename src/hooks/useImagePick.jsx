@@ -4,8 +4,6 @@ import { useCreateRollingContext } from './useCreateRollingContext';
 
 const useImagePick = () => {
   const { inputValue, selectedColor, selectedImageURL, setContextValues } = useCreateRollingContext();
-  // const [selectedImage, setSelectedImage] = useState('cat');
-  // const [selectedImageURL, setSelectedImageURL] = useState('');
   const [imgURL, setImgURL] = useState('');
   const handleImageUpload = async e => {
     const uploadedFile = e.target.files[0];
@@ -19,12 +17,10 @@ const useImagePick = () => {
     }
   };
   const handleClickImage = images => {
-    // setSelectedImage(images.source);
     setContextValues(inputValue, selectedColor, images.source);
   };
 
   const handleClickUploadedImage = () => {
-    // setSelectedImage(imgURL);
     setContextValues(inputValue, selectedColor, imgURL);
   };
 

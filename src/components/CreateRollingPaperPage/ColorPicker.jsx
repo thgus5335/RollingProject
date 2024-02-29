@@ -1,4 +1,4 @@
-import styles from '../../pages/CreateRollingPaperPage.module.css';
+import styles from './Picker.module.css';
 import checkIcon from '../../assets/icons/check.svg';
 import useColorPick from '../../hooks/useColorPick';
 
