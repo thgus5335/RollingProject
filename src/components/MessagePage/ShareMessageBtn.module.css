@@ -4,12 +4,23 @@
   margin-top: 4.375rem;
 }
 
-.button {
+.invalidButton {
   width: 45rem;
   height: 100%;
   padding: 0.875rem 1.5rem;
   border-radius: 12px;
   background-color: var(--gray-300);
+  color: var(--white);
+  font-family: Pretendard, sans-serif;
+  font-size: 1.125rem;
+}
+
+.validButton {
+  width: 45rem;
+  height: 100%;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  background-color: var(--purple-600);
   color: var(--white);
   font-family: Pretendard, sans-serif;
   font-size: 1.125rem;
