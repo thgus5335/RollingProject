@@ -1,26 +1,58 @@
 .button {
+  display: flex;
+  width: 100%;
   box-sizing: border-box;
-  background-color: var(--purple-600);
-  color: var(--white, #fff);
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
   white-space: nowrap;
+}
+
+.primary {
+  background-color: var(--purple-600);
+  color: var(--white);
+}
+
+.outline {
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  color: var(--gray-900);
 }
 
 .button:disabled {
   background-color: var(--gray-300);
 }
 
-.button:hover:enabled {
+.button:disabled > img {
+  filter: invert(100%) brightness(200%);
+}
+
+.primary:hover:enabled {
   background-color: var(--purple-700);
 }
 
-.button:active:enabled {
+.primary:active:enabled {
   background-color: var(--purple-800);
 }
 
-.button:focus:enabled {
+.primary:focus:enabled {
   border: 2px solid var(--purple-900);
   background-color: var(--purple-800);
+}
+
+.outline:hover:enabled {
+  border: 1px solid var(--gray-300);
+  background-color: var(--gray-100);
+}
+
+.outline:active:enabled {
+  border: 1px solid var(--gray-300);
+  background-color: var(--gray-100);
+}
+
+.outline:focus:enabled {
+  border: 1px solid var(--gray-500);
+  background-color: var(--white);
 }
 
 .large {
@@ -31,10 +63,26 @@
   font-weight: 700;
 }
 
-.small {
+.medium {
   height: 2.5rem;
   padding: 7px 16px;
   border-radius: 6px;
   font-size: 16px;
+  font-weight: 400;
+}
+
+.small {
+  height: 2rem;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.extraSmall {
+  height: 1.75rem;
+  padding: 2px 16px;
+  border-radius: 6px;
+  font-size: 14px;
   font-weight: 400;
 }

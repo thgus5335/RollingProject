@@ -17,7 +17,7 @@ const Card = ({ mode }) => {
         </div>
         {mode === 'edit' && (
           <div className={styles.deleteCard}>
-            <Button>
+            <Button size="medium" type="outline">
               <img src={iconDelete} alt="롤링 페이퍼 카드 삭제하기." />
             </Button>
           </div>

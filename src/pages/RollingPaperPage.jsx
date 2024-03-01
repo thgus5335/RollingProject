@@ -3,7 +3,7 @@ import CardList from '../components/RollingPaperPage/CardList';
 import Button from '../components/common/Button';
 
 const RollingPage = () => {
-  const buttonSize = 'small';
+  const buttonSize = 'medium';
 
   return (
     <>
@@ -11,9 +11,11 @@ const RollingPage = () => {
       <main>
         <div className={styles.rollingBackground}>
           <div className={styles.buttonContainer}>
-            <Button size={buttonSize} width={7.5}>
-              편집하기
-            </Button>
+            <div className={styles.buttonEdit}>
+              <Button size={buttonSize} type="outline">
+                편집하기
+              </Button>
+            </div>
           </div>
           <CardList />
         </div>
