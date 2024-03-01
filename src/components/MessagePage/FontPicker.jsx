@@ -19,7 +19,9 @@ const FontPicker = ({ onFontChange, font }) => {
       <div>
         <h1 className={styles.title}>폰트 선택</h1>
       </div>
-      <div className={styles.selectBox} onClick={() => setShowOptions(prev => !prev)}>
+      <div
+        className={showOptions ? styles.selectBox : styles.noSelectBox}
+        onClick={() => setShowOptions(prev => !prev)}>
         <label className={styles.label}>{font}</label>
         <ul className={showOptions ? styles.selectShow : styles.selectNoShow}>
           {fontList.map(v => (
