@@ -1,7 +1,8 @@
 .profileImgList {
   display: flex;
-  width: 3.5rem;
   height: 3.5rem;
+  flex: 1;
+  flex-wrap: wrap;
   gap: 5px;
 }
 

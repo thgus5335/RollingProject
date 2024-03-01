@@ -11,6 +11,9 @@ const Profile = ({ onProfileUrlChange, profileUrl }) => {
     process.env.PUBLIC_URL + profileImg1,
     process.env.PUBLIC_URL + profileImg2,
     process.env.PUBLIC_URL + profileImg3,
+    process.env.PUBLIC_URL + profileImg1,
+    process.env.PUBLIC_URL + profileImg2,
+    process.env.PUBLIC_URL + profileImg3,
   ];
   const [isImageClicked, setIsImageClicked] = useState({ custom: true });
 
