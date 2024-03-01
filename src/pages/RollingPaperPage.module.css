@@ -10,11 +10,18 @@
 
 .buttonContainer {
   display: flex;
-  width: 75rem;
+  width: 100%;
+  max-width: 75rem;
   justify-content: right;
   padding-bottom: 1rem;
 }
 
 .buttonEdit {
   width: 7.5rem;
+}
+
+@media (width <= 1248px) {
+  .rollingBackground {
+    padding: 5rem 1.5rem 0;
+  }
 }

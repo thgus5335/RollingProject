@@ -3,7 +3,7 @@ import imageProfile from '../../assets/images/none-profile.svg';
 import Button from '../common/Button';
 import iconDelete from '../../assets/icons/delete.svg';
 
-const Card = ({ mode }) => {
+const Card = ({ mode = 'normal' }) => {
   const relationship = { freind: '친구', acquaintance: '지인', colleague: '동료', family: '가족' };
   return (
     <div className={`${styles.card}`}>

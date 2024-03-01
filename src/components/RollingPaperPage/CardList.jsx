@@ -5,9 +5,11 @@ import Card from './Card';
 const RollingPage = () => {
   return (
     <div className={styles.cardList}>
-      <AddCard />
-      <Card mode={'normal'} />
-      <Card mode={'edit'} />
+      <div className={styles.cardContainer}>
+        <AddCard />
+        <Card mode={'normal'} />
+        <Card mode={'edit'} />
+      </div>
     </div>
   );
 };
