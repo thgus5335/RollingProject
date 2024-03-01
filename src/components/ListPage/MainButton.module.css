@@ -4,7 +4,6 @@
   padding: 12px 0;
   border-radius: 10px;
   margin: 40px auto;
-  background-color: rgb(153 53 255 / 100%);
+  background-color: var(--purple-700);
   color: white;
-  text-align: center;
 }

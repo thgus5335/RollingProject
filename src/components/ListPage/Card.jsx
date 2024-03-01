@@ -2,7 +2,6 @@ import styles from './Card.module.css';
 
 const Card = ({ name, messageCount, background, recentMessages = [], emoticon = [] }) => {
   console.log(recentMessages);
-  console.log('emoticon = ', emoticon);
   return (
     <div
       style={{
@@ -10,6 +9,7 @@ const Card = ({ name, messageCount, background, recentMessages = [], emoticon = 
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundAttachment: 'cover',
+        color: 'white',
       }}
       className={`${styles[background]} ${styles.cardArea}`}>
       <div className={styles.infoArea}>

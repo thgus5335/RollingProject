@@ -1,5 +1,5 @@
 .outfit {
-  padding-left: 150px;
+  padding: 0 150px;
 }
 
 @media (width <= 768px) {

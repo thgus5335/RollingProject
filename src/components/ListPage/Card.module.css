@@ -17,18 +17,22 @@
 /* color */
 .purple {
   background-color: var(--purple-200);
+  color: black !important;
 }
 
 .blue {
   background-color: var(--blue-200);
+  color: black !important;
 }
 
 .beige {
   background-color: var(--orange-200);
+  color: black !important;
 }
 
 .green {
   background-color: var(--green-200);
+  color: black !important;
 }
 
 /* emoji */
