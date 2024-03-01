@@ -1,0 +1,17 @@
+.logoStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoText {
+  color: #4A494F;
+  font-family: bold;  
+  font-size: 1.3rem;
+  font-weight: 1000;
+}
+
+.logoImage {
+  width: 2.8rem;
+  height: 1.8rem;
+}
