@@ -8,3 +8,23 @@
 .pageContainer {
   width: 45rem;
 }
+
+.form {
+  height: 100vh;
+  padding: 24px 0;
+}
+
+@media (width <= 768px) {
+  .messagePage {
+    height: 100vh;
+  }
+
+  .pageContainer {
+    padding: 0 24px;
+  }
+
+  .form {
+    height: 100vh;
+    padding: 24px;
+  }
+}
