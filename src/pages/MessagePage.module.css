@@ -14,7 +14,7 @@
   padding: 24px 0;
 }
 
-@media (width <= 768px) {
+@media (width > 360px) and (width <= 768px) {
   .messagePage {
     height: 100vh;
   }
@@ -25,6 +25,12 @@
 
   .form {
     height: 100vh;
+    padding: 24px;
+  }
+}
+
+@media (width<=360px) {
+  .form {
     padding: 24px;
   }
 }
