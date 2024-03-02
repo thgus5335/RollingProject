@@ -1,10 +1,9 @@
 import axios from 'axios';
-
-const BASE_URL = 'https://rolling-api.vercel.app/1-7/';
+import { BASE_URL } from '../constants/constants';
 
 export const getRecentApi = async offset => {
   try {
-    const response = await axios.get(`${BASE_URL}recipients/?limit=4&offset=${offset}`);
+    const response = await axios.get(`${BASE_URL}?limit=4&offset=${offset}`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -13,7 +12,7 @@ export const getRecentApi = async offset => {
 
 export const getHotApi = async offset => {
   try {
-    const response = await axios.get(`${BASE_URL}recipients/?limit=4&sort=like&offset=${offset}`);
+    const response = await axios.get(`${BASE_URL}?limit=4&sort=like&offset=${offset}`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -22,7 +21,7 @@ export const getHotApi = async offset => {
 
 export const getDataLength = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}recipients/`);
+    const response = await axios.get(`${BASE_URL}`);
     console.log(response.data);
     return response.data;
   } catch (error) {
