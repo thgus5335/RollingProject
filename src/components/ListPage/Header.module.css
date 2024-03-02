@@ -2,6 +2,10 @@
   padding: 2rem 15rem;
   padding-bottom: 1.1rem;
   border-bottom: 0.1rem solid rgb(237 237 237 / 100%);
+
+  @media (width <= 768px) {
+    padding: 1.1rem 2.4rem;
+  }
 }
 
 .headerArea {
@@ -20,10 +24,4 @@
   border: 0.1rem solid rgb(204 204 204 / 100%);
   border-radius: 6px;
   color: rgb(24 24 24 / 100%);
-}
-
-@media (width <= 768px) {
-  .header {
-    padding: 1.1rem 2.4rem;
-  }
 }
