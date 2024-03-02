@@ -14,29 +14,36 @@
   font-weight: 700;
 }
 
+.backgroundImage {
+  background-attachment: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+
 /* color */
 .purple {
   background-color: var(--purple-200);
-  color: black !important;
+  color: var(--black);
 }
 
 .blue {
   background-color: var(--blue-200);
-  color: black !important;
+  color: var(--black);
 }
 
 .beige {
   background-color: var(--orange-200);
-  color: black !important;
+  color: var(--black);
 }
 
 .green {
   background-color: var(--green-200);
-  color: black !important;
+  color: var(--black);
 }
 
 /* emoji */
-.imoArea {
+.emojiArea {
   bottom: 0;
   display: flex;
   padding-top: 15px;
@@ -48,7 +55,7 @@
   padding: 8px 12px;
   border-radius: 99px;
   background-color: var(--gray-400);
-  color: white;
+  color: var(--white);
 }
 
 .imageStyle {
@@ -60,7 +67,7 @@
   position: relative;
   width: 28px;
   height: 28px;
-  border: 1.5px solid white;
+  border: 1.5px solid var(--white);
   border-radius: 99px;
 }
 
@@ -69,5 +76,5 @@
   height: 28px;
   padding: 5px 6px;
   border-radius: 99px;
-  background-color: white;
+  background-color: var(--white);
 }
