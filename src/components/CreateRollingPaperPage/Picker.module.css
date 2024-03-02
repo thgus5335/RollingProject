@@ -1,15 +1,15 @@
 .pickerContainer {
   display: flex;
-  width: 720px;
-  height: 168px;
-  gap: 16px;
+  width: 72rem;
+  height: 16.8rem;
+  gap: 1.6rem;
 }
 
 .pickerBox {
   position: relative;
   display: flex;
-  width: 168px;
-  height: 168px;
+  width: 16.8rem;
+  height: 16.8rem;
   align-items: center;
   justify-content: center;
   border-radius: 8%;
@@ -33,8 +33,8 @@
 }
 
 .pickerImage {
-  width: 168px;
-  height: 168px;
+  width: 16.8rem;
+  height: 16.8rem;
   border-radius: 8%;
   object-fit: cover;
 }
@@ -42,8 +42,8 @@
 .check {
   position: absolute;
   left: 50%;
-  width: 44px;
-  height: 44px;
+  width: 4.4rem;
+  height: 4.4rem;
   transform: translateX(-50%);
 }
 
