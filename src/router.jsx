@@ -1,6 +1,6 @@
+
 import { createBrowserRouter } from 'react-router-dom';
-import ListPage from './pages/ListPage';
-// import CreateRollingPaperPage from './pages/CreateRollingPaperPage';
+import CreateRollingPaperPage from './pages/CreateRollingPaperPage';
 
 const router = createBrowserRouter([
   {
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'list',
-        element: <ListPage />,
+        // element: <List />,
       },
       {
         path: 'post',
-        // element: <CreateRollingPaperPage />,
+        element: <CreateRollingPaperPage />,
       },
       {
         path: 'post/:id',
@@ -33,3 +33,4 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
