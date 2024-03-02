@@ -1,5 +1,7 @@
+
+
 import { createBrowserRouter } from 'react-router-dom';
-import SendMessage from './pages/MessagePage';
+import CreateRollingPaperPage from './pages/CreateRollingPaperPage';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'post',
-        // element: <CreateRollingPaperPage />,
+        element: <CreateRollingPaperPage />,
       },
       {
         path: 'post/:id',
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'post/:id/message',
-        element: <SendMessage />,
+        // element: <SendMessage />,
       },
       // { path: '*', element: <NotFound /> },
     ],
@@ -32,3 +34,5 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
+

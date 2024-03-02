@@ -1,0 +1,52 @@
+.pickerContainer {
+  display: flex;
+  width: 720px;
+  height: 168px;
+  gap: 16px;
+}
+
+.pickerBox {
+  position: relative;
+  display: flex;
+  width: 168px;
+  height: 168px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8%;
+  cursor: pointer;
+}
+
+.beige {
+  background-color: var(--orange-200);
+}
+
+.purple {
+  background-color: var(--purple-200);
+}
+
+.blue {
+  background-color: var(--blue-200);
+}
+
+.green {
+  background-color: var(--green-200);
+}
+
+img {
+  width: 168px;
+  height: 168px;
+  border-radius: 8%;
+  object-fit: cover;
+}
+
+.check {
+  position: absolute;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translateX(-50%);
+}
+
+.imagesOpacity {
+  opacity: 0.3;
+}
