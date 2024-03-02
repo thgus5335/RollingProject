@@ -1,6 +1,6 @@
 .cardArea {
   display: flex;
-  width: 27.5rem;
+  min-width: 27.5rem;
   height: 26rem;
   flex-direction: column;
   justify-content: space-between;
@@ -20,6 +20,7 @@
   background-size: 27.5rem 26rem;
   background-size: 26rem;
   color: var(--white);
+  object-fit: cover;
 }
 
 /* color */
