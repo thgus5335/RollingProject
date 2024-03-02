@@ -20,6 +20,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 /* prettier-ignore */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -27,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  font-size: 1.6rem;
   line-height: 1;
 }
 

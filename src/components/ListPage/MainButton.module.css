@@ -1,9 +1,9 @@
 .mainButton {
   display: block;
-  width: 280px;
-  padding: 12px 0;
+  width: 28rem;
+  padding: 1.2rem 0;
   border-radius: 10px;
-  margin: 40px auto;
+  margin: 4rem auto;
   background-color: var(--purple-700);
   color: white;
 }

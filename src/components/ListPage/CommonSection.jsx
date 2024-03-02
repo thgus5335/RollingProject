@@ -26,7 +26,8 @@ const CommonSection = ({ title, data, handleForward, handleBackward, offset }) =
               key={card.id}
               name={card.name}
               messageCount={card.messageCount}
-              background={card.backgroundImageURL || card.backgroundColor}
+              backgroundImage={card.backgroundImageURL}
+              backgroundColor={card.backgroundColor}
               emoticon={card.topReactions}
               recentMessages={card.recentMessages}
             />
