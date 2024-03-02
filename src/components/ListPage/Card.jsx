@@ -1,17 +1,10 @@
 import styles from './Card.module.css';
 
-const Card = ({ name, messageCount, background, recentMessages = [], emoticon = [] }) => {
+const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMessages = [], emoticon = [] }) => {
   console.log(recentMessages);
+  const background = backgroundImage ? 'backgroundImage' : backgroundColor;
   return (
-    <div
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'cover',
-        color: 'white',
-      }}
-      className={`${styles[background]} ${styles.cardArea}`}>
+    <div style={{ backgroundImage: `url(${backgroundImage})` }} className={`${styles[background]} ${styles.cardArea}`}>
       <div className={styles.infoArea}>
         <h3 className={styles.name}>To. {name}</h3>
 
@@ -35,7 +28,7 @@ const Card = ({ name, messageCount, background, recentMessages = [], emoticon = 
       </div>
 
       {emoticon && (
-        <div className={styles.imoArea}>
+        <div className={styles.emojiArea}>
           {emoticon.map(emoji => (
             <div key={emoji.id} className={styles.emoji}>
               {emoji.emoji} {emoji.count}
