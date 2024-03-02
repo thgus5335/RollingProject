@@ -85,6 +85,8 @@
 }
 
 .plusProfile {
+  position: relative;
+  left: -3rem;
   display: flex;
   width: 3.3rem;
   height: 2.8rem;

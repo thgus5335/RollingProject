@@ -12,8 +12,13 @@ const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMess
 
         {recentMessages && (
           <div className={styles.imageStyle}>
-            {recentMessages.slice(0, 3).map(recentMessage => (
-              <img key={recentMessage.id} src={recentMessage.profileImageURL} className={styles.profileImage} />
+            {recentMessages.map((recentMessage, index) => (
+              <img
+                key={recentMessage.id}
+                src={recentMessage.profileImageURL}
+                className={styles.profileImage}
+                style={{ left: `${index * -1}rem` }}
+              />
             ))}
             {messageCount > 3 && <div className={styles.plusProfile}>+{messageCount - 3}</div>}
           </div>
