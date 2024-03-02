@@ -16,8 +16,11 @@ time, mark, audio, video {
 	border: 0;
 	margin: 0;
 	font: inherit;
-	font-size: 100%;
 	vertical-align: baseline;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -36,6 +39,7 @@ section {
 }
 
 body {
+  font-size: 1.6rem;
   line-height: 1;
 }
 

@@ -1,7 +1,7 @@
 .header {
-  padding: 20px 150px;
-  padding-bottom: 11px;
-  border-bottom: 1px solid rgb(237 237 237 / 100%);
+  padding: 2rem 15rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 0.1rem solid rgb(237 237 237 / 100%);
 }
 
 .headerArea {
@@ -16,14 +16,14 @@
 }
 
 .makeRollingButton {
-  padding: 8px 16px;
-  border: 1px solid rgb(204 204 204 / 100%);
+  padding: 0.8rem 1.6rem;
+  border: 0.1rem solid rgb(204 204 204 / 100%);
   border-radius: 6px;
   color: rgb(24 24 24 / 100%);
 }
 
 @media (width <= 768px) {
   .header {
-    padding: 11px 24px;
+    padding: 1.1rem 2.4rem;
   }
 }
