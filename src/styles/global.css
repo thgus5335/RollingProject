@@ -7,12 +7,16 @@
 }
 
 body {
+
   font-family: Pretendard, sans-serif;
   font-style: normal;
   font-weight: normal;
 }
 
+
 button {
   border: none;
   cursor: pointer;
 }
+
+
