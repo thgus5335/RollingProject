@@ -1,8 +1,13 @@
-import RollingPage from './pages/RollingPaperPage';
 import './styles/global.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 function App() {
-  return <RollingPage />;
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;
