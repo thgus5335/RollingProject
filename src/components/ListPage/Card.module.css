@@ -56,7 +56,6 @@
 
 /* emoji */
 .emojiArea {
-  position: absolute;
   bottom: 1rem;
   display: flex;
   padding-top: 1.5rem;

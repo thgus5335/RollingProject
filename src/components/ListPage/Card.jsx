@@ -2,6 +2,7 @@ import styles from './Card.module.css';
 
 const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMessages = [], emoticon = [] }) => {
   console.log('recent msg:', recentMessages.length);
+  console.log('emoticon', emoticon);
   const background = backgroundImage ? 'backgroundImage' : backgroundColor;
   return (
     <div
@@ -29,7 +30,7 @@ const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMess
         </p>
       </div>
 
-      {emoticon && (
+      {emoticon.length !== 0 && (
         <div className={styles.emojiArea}>
           {emoticon.map(emoji => (
             <div key={emoji.id} className={styles.emoji}>
