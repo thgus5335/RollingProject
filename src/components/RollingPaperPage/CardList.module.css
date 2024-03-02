@@ -1,0 +1,20 @@
+.cardList {
+  display: flex;
+  width: 100%;
+  max-width: 75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  gap: 1.75rem 1.5rem;
+}
+
+@media (width <= 768px) {
+  .cardList {
+    max-width: 0;
+    flex-wrap: wrap;
+  }
+}
