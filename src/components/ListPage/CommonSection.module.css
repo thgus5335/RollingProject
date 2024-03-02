@@ -1,0 +1,27 @@
+.commonSection {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.cardFlex {
+  display: flex;
+  gap: 2rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.backward {
+  position: absolute;
+  top: 15rem;
+  left: -2.6rem;
+}
+
+.forward {
+  position: absolute;
+  top: 15rem;
+  right: -2.6rem;
+}

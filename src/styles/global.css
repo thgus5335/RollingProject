@@ -1,0 +1,19 @@
+@import url('./color.css');
+@import url('./font.css');
+@import url('./reset.css');
+
+* {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+body {
+  font-family: Pretendard, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}

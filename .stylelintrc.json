@@ -1,3 +1,4 @@
+
 {
   "extends": [
     "stylelint-config-idiomatic-order",
@@ -5,5 +6,8 @@
   ],
   "plugins": [
     "stylelint-order"
-  ]
+  ],
+  "rules": {
+    "selector-class-pattern": "^([a-z][a-zA-Z0-9]*)(-[a-z][a-zA-Z0-9]*)*$"
+  }
 }
