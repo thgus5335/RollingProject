@@ -1,6 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
+import CreateRollingPaperPage from './pages/CreateRollingPaperPage';
 import ListPage from './pages/ListPage';
-// import CreateRollingPaperPage from './pages/CreateRollingPaperPage';
+import MessagePage from './pages/MessagePage';
+import RollingPaperPage from './pages/RollingPaperPage';
 
 const router = createBrowserRouter([
   {
@@ -17,15 +19,15 @@ const router = createBrowserRouter([
       },
       {
         path: 'post',
-        // element: <CreateRollingPaperPage />,
+        element: <CreateRollingPaperPage />,
       },
       {
         path: 'post/:id',
-        // element: <Post />,
+        element: <RollingPaperPage />,
       },
       {
         path: 'post/:id/message',
-        // element: <SendMessage />,
+        element: <MessagePage />,
       },
       // { path: '*', element: <NotFound /> },
     ],

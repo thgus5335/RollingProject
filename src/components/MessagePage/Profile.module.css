@@ -1,0 +1,28 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.125rem;
+  gap: 0.9375rem;
+}
+
+.profileImage {
+  display: flex;
+  gap: 2rem;
+}
+
+.imageSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customImg {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
