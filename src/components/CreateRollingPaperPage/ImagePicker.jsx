@@ -24,14 +24,18 @@ const ImagePicker = () => {
             <img
               src={images.source}
               alt={images.alt}
-              className={selectedImageURL === images.source && styles.imagesOpacity}
+              className={`${selectedImageURL === images.source && styles.imagesOpacity} ${styles.pickerImage}`}
             />
             {selectedImageURL === images.source && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         ))}
         {imgURL.length > 0 && (
           <div className={`${styles.pickerBox} `} onClick={() => handleClickUploadedImage()}>
-            <img src={imgURL} alt="userImage" className={selectedImageURL === imgURL && styles.imagesOpacity} />
+            <img
+              src={imgURL}
+              alt="userImage"
+              className={`${selectedImageURL === imgURL && styles.imagesOpacity} ${styles.pickerImage}`}
+            />
             {selectedImageURL === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         )}
