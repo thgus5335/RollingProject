@@ -18,10 +18,18 @@
   position: absolute;
   top: 15rem;
   left: -2.6rem;
+
+  @media (width<=1200px) {
+    display: none;
+  }
 }
 
 .forward {
   position: absolute;
   top: 15rem;
-  right: -2.6rem;
+  left: 113rem;
+
+  @media (width<=1200px) {
+    visibility: hidden;
+  }
 }
