@@ -7,8 +7,11 @@
     "stylelint-order"
   ],
   "rules": {
+<<<<<<< HEAD
     "selector-class-pattern": "^([a-z][a-zA-Z0-9]*)(-[a-z][a-zA-Z0-9]*)*$",
     "custom-property-pattern": ".*"
+=======
+    "selector-class-pattern": "^([a-z][a-zA-Z0-9]*)(-[a-z][a-zA-Z0-9]*)*$"
+>>>>>>> c5c85b170a8fa835138f880431d63a034a0cd974
   }
-  
 }
