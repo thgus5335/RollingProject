@@ -47,7 +47,7 @@ const MessagePage = () => {
   return (
     <div className={styles.messagePage}>
       <div className={styles.pageContainer}>
-        <form onSubmit={console.log}>
+        <form className={styles.form} onSubmit={console.log}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
           <Profile profileUrl={profileImgUrl} onProfileUrlChange={handleCustomImgUrlGet} />
           <RelationShip onRelationChange={handleRelationChange} relation={relation} />
