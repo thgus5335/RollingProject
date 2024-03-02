@@ -7,7 +7,7 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: bold;
 }
 
@@ -34,26 +34,26 @@
 }
 
 .selectBox {
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
 }
 
 .label {
   margin-left: 0.25rem;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 .selectShow {
   position: absolute;
-  top: 3.125rem;
+  top: 3rem;
   left: 0;
   overflow: hidden;
   width: 100%;
-  height: 9rem;
+  height: 10rem;
   max-height: 'none';
-  padding: 0.9375rem 0;
+  padding: 1rem 0;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   background-color: var(--white);
   box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
   color: var(--black);
@@ -66,7 +66,7 @@
 
 .list {
   padding: 0.5rem 1.25rem;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   transition: background-color 0.2s ease-in;
 
   &:hover {
