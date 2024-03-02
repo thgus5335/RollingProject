@@ -7,7 +7,7 @@ const ToInput = () => {
 
   return (
     <div>
-      <h1>To.</h1>
+      <h1 className={styles.headerText}>To.</h1>
       <form>
         <label htmlFor="to-input"></label>
         <input
@@ -17,7 +17,7 @@ const ToInput = () => {
           value={inputValue}
           onChange={handleInputChange}
           onBlur={handleInputBlur}
-          className={` ${error && styles.errorInput}`}
+          className={` ${error && styles.errorInput} ${styles.toInput}`}
         />
       </form>
       {error && <p className={` ${error && styles.errorText}`}>값을 입력해 주세요.</p>}
