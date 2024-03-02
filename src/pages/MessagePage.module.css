@@ -1,0 +1,36 @@
+.messagePage {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageContainer {
+  width: 45rem;
+}
+
+.form {
+  height: 100vh;
+  padding: 24px 0;
+}
+
+@media (width > 360px) and (width <= 768px) {
+  .messagePage {
+    height: 100vh;
+  }
+
+  .pageContainer {
+    padding: 0 24px;
+  }
+
+  .form {
+    height: 100vh;
+    padding: 24px;
+  }
+}
+
+@media (width<=360px) {
+  .form {
+    padding: 24px;
+  }
+}
