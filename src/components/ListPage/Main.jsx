@@ -2,6 +2,7 @@ import HotList from './HotList';
 import Button from '../common/Button';
 import RecentList from './RecentList';
 import styles from './Main.module.css';
+import { Link } from 'react-router-dom';
 
 const Main = () => {
   return (
@@ -9,7 +10,9 @@ const Main = () => {
       <HotList />
       <RecentList />
       <div className={styles.buttonWidth}>
-        <Button size="medium">나도 만들어보기</Button>
+        <Link to="/post" style={{ textDecoration: 'none' }}>
+          <Button size="medium">나도 만들어보기</Button>
+        </Link>
       </div>
     </main>
   );
