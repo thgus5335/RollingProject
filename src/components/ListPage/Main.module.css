@@ -1,7 +1,16 @@
 .outfit {
-  padding: 0 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  @media (width <= 1024px) {
+  @media (width <=1200px) {
+    display: block;
     padding: 0 2.4rem;
   }
+}
+
+.buttonWidth {
+  display: block;
+  width: 28rem;
+  margin: 2rem auto;
 }
