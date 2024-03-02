@@ -4,7 +4,7 @@
   height: 108rem;
   flex-direction: column;
   align-items: center;
-  background: #fff;
+  background: var(--white);
   gap: 2.4rem;
 }
 

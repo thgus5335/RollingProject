@@ -7,7 +7,7 @@
   height: 6.4rem;
   align-items: center;
   justify-content: center;
-  border-bottom: 0.1rem solid var(--gray-200, #eee);
+  border-bottom: 0.1rem solid var(--gray-200);
   background-color: var(--white, #fff);
 }
 
@@ -55,9 +55,9 @@
   height: 2.8rem;
   align-items: center;
   padding: 0.8rem 1.6rem;
-  border: 0.1rem solid var(--gray-300, #ccc);
+  border: 0.1rem solid var(--gray-300);
   border-radius: 0.6rem;
-  background: var(--white, #fff);
+  background: var(--white);
   color: var(--gray-900, #181818);
   font-weight: 1000;
   gap: 1rem;

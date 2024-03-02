@@ -3,7 +3,7 @@
   width: 100%;
   align-items: center;
   border-radius: 1.6rem;
-  background: var(--Surface, #f6f8ff);
+  background: var(--surface);
 }
 
 @media (width <= 1248px) {
@@ -26,7 +26,7 @@
   justify-content: flex-end;
   padding: 6rem 0 6rem 6rem;
   border-radius: 1.6rem;
-  background: var(--Surface, #f6f8ff);
+  background: var(--surface);
   gap: 15.2rem;
 }
 
@@ -50,7 +50,7 @@
   align-items: center;
   padding: 6rem 19.2rem 6rem 0;
   border-radius: 1.6rem;
-  background: var(--Surface, #f6f8ff);
+  background: var(--surface);
 }
 
 @media (width <= 1248px) {
