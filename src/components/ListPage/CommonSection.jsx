@@ -39,7 +39,7 @@ const CommonSection = ({ title, data, handleForward, handleBackward, offset }) =
           <img src={backward} alt="이전 카드" className={styles.backward} />
         </button>
       )}
-      {offset < cardLength - 4 && (
+      {cardLength > 4 && offset < cardLength - 4 && (
         <button onClick={onClickForward}>
           <img src={forward} alt="다음 카드" className={styles.forward} />
         </button>

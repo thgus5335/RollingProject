@@ -1,5 +1,5 @@
 import HotList from './HotList';
-import MainButton from './MainButton';
+import Button from '../common/Button';
 import RecentList from './RecentList';
 import styles from './Main.module.css';
 
@@ -8,7 +8,9 @@ const Main = () => {
     <main className={styles.outfit}>
       <HotList />
       <RecentList />
-      <MainButton />
+      <div className={styles.buttonWidth}>
+        <Button size="medium">나도 만들어보기</Button>
+      </div>
     </main>
   );
 };
