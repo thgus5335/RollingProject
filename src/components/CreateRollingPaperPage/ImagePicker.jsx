@@ -39,7 +39,12 @@ const ImagePicker = () => {
             {selectedImageURL === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         )}
-        <input type="file" accept="image/*" onChange={handleImageUpload} className={styles.pickerBox} />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          className={`${styles.pickerBox} ${styles.input}`}
+        />
       </div>
     </div>
   );
