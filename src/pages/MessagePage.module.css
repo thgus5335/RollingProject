@@ -6,31 +6,31 @@
 }
 
 .pageContainer {
-  width: 45rem;
+  height: 100vh;
 }
 
 .form {
   height: 100vh;
-  padding: 24px 0;
+  padding: 2.4rem 0;
 }
 
-@media (width > 360px) and (width <= 768px) {
+@media (width > 36rem) and (width <= 76.8rem) {
   .messagePage {
     height: 100vh;
   }
 
   .pageContainer {
-    padding: 0 24px;
+    padding: 0 2.4rem;
   }
 
   .form {
     height: 100vh;
-    padding: 24px;
+    padding: 2.4rem;
   }
 }
 
-@media (width<=360px) {
+@media (width<=36rem) {
   .form {
-    padding: 24px;
+    padding: 2.4rem;
   }
 }

@@ -13,12 +13,13 @@
 .imageSelect {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  font-size: 1.1rem;
+  gap: 1.2rem;
 }
 
 .customImg {
-  width: 5rem;
-  height: 5rem;
+  width: 8rem;
+  height: 8rem;
   cursor: pointer;
 }
 
