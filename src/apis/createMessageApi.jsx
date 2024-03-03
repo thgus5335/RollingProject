@@ -19,7 +19,6 @@ export const createMessageApi = async (submitInfo, id) => {
 export const getRecipient = async () => {
   try {
     const response = await axios.get(`${BASE_URL}`);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
