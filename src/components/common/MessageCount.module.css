@@ -1,0 +1,19 @@
+.messageCount {
+    font-size: 1.6rem;
+  }
+  
+  @media (width <= 768px) {
+    .messageCount{
+        display: none;
+    }
+  }
+  
+  @media (width <= 360px) {
+    .messageCount {
+      font-size: 1.4rem;
+    }
+  }
+  
+  .count {
+    font-weight: 700;
+  }
