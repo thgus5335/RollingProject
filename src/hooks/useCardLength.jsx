@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getDataLength } from '../apis/getRecentApi';
 
-const useCardLength = async () => {
+const useCardLength = () => {
   const [cardLength, setCardLength] = useState(0);
 
   const fetchCardLength = async () => {

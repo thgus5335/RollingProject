@@ -1,10 +1,12 @@
 .cardArea {
+  position: relative;
   display: flex;
   min-width: 27.5rem;
+  max-width: 27.5rem;
   height: 26rem;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem 3rem;
+  padding: 2rem;
   border-radius: 16px;
 }
 
@@ -12,14 +14,25 @@
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
+  line-height: 3rem;
 }
 
 .backgroundImage {
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 27.5rem 26rem;
-  background-size: 26rem;
+  background-size: cover;
   color: var(--white);
+}
+
+.backgroundImage::before {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  background-color: var(--black);
+  content: '';
+  inset: 0;
+  opacity: 0.3;
 }
 
 /* color */
@@ -45,7 +58,7 @@
 
 /* emoji */
 .emojiArea {
-  bottom: 0;
+  bottom: 1rem;
   display: flex;
   padding-top: 1.5rem;
   border-top: 0.1rem solid rgb(0 0 0 / 12%);
@@ -73,9 +86,21 @@
 }
 
 .plusProfile {
+  position: relative;
+  left: -3rem;
+  display: flex;
   width: 3.3rem;
   height: 2.8rem;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem 0.6rem;
   border-radius: 99px;
   background-color: var(--white);
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.strongSpan {
+  font-weight: 800;
 }
