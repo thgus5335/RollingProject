@@ -10,7 +10,7 @@ const Main = () => {
       <HotList />
       <RecentList />
       <div className={styles.buttonWidth}>
-        <Link to="/post" style={{ textDecoration: 'none' }}>
+        <Link to="/post">
           <Button size="medium">나도 만들어보기</Button>
         </Link>
       </div>
