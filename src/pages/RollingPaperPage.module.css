@@ -4,7 +4,8 @@
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  padding-top: 8rem;
+  padding: 8rem 0;
+  background-attachment: fixed;
   background-color: var(--orange-200);
 }
 
@@ -22,6 +23,6 @@
 
 @media (width <= 1248px) {
   .rollingBackground {
-    padding: 8rem 2.4rem 0;
+    padding: 8rem 2.4rem;
   }
 }

@@ -1,38 +1,54 @@
-.card {
+.modalMask {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 40%);
+}
+
+.modalContainer {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
   display: flex;
-  height: 28rem;
+  width: 60rem;
+  height: 47.6rem;
   flex-direction: column;
-  padding: 2.8rem 2.4rem 2.4rem;
+  align-items: center;
+  padding: 4rem;
   border-radius: 16px;
   background-color: var(--white);
-  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 8%);
+  transform: translate(-50%, -50%);
 }
-
-.card:hover {
-  border: 3px solid var(--gray-300);
-}
-
-/* mode : edit */
-
-.deleteCard {
-  top: 0;
-  right: 0;
-  width: 4rem;
-  height: 4rem;
-}
-
-/* mode : normal */
 
 .profile {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--gray-200);
 }
 
 .profileInfo {
   display: flex;
-  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.profileLeft {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.date {
+  display: flex;
+  color: var(--gray-400);
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .profileImage {
@@ -46,7 +62,6 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.4rem;
-  white-space: nowrap;
 }
 
 .profileBadge {
@@ -57,7 +72,7 @@
   justify-content: center;
   padding: 0 0.8rem;
   border-radius: 4px;
-  margin-top: 0.4rem;
+  margin-top: 0.6rem;
   font-size: 1.4rem;
   white-space: nowrap;
 }
@@ -84,10 +99,11 @@
 
 .content {
   display: flex;
+  width: 100%;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1.6rem;
+  margin: 1.6rem 0;
 }
 
 .message {
@@ -103,8 +119,6 @@
   text-overflow: ellipsis;
 }
 
-.date {
-  color: var(--gray-400);
-  font-size: 1.2rem;
-  font-weight: 400;
+.buttonOk {
+  width: 12rem;
 }
