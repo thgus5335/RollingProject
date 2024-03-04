@@ -23,6 +23,6 @@
 
 @media (width <= 1248px) {
   .rollingBackground {
-    padding: 8rem 2.4rem 0;
+    padding: 8rem 2.4rem;
   }
 }
