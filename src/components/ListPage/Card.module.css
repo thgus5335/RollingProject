@@ -38,7 +38,7 @@
 
 /* color */
 .purple {
-  background-color: var(--purple-200);
+  background: var(--purple-200);
   color: var(--black);
 }
 
