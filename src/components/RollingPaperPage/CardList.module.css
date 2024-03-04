@@ -1,14 +1,19 @@
 .cardList {
-  display: flex;
+  display: grid;
+  width: 120rem;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 2.8rem 2.4rem;
-}
+  grid-template-columns: 1fr 1fr 1fr;
 
-.cardContainer {
-  display: flex;
-  width: 100%;
-  max-width: 120rem;
-  flex-wrap: wrap;
-  gap: 2.8rem 2.4rem;
+  @media (width <= 1248px) {
+    width: 100%;
+  }
+
+  @media (width <= 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+  }
 }

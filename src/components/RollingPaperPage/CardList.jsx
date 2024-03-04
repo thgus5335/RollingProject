@@ -16,14 +16,10 @@ const RollingPage = () => {
     fetchData(4138);
   }, []);
 
-  // console.log('Message:', message[0]);
-
   return (
     <div className={styles.cardList}>
-      <div className={styles.cardContainer}>
-        <AddCard />
-        {message && message.map(message => <Card key={message.id} mode={'normal'} messageInfo={message} />)}
-      </div>
+      <AddCard />
+      {message && message.map(message => <Card key={message.id} mode={'normal'} messageInfo={message} />)}
     </div>
   );
 };
