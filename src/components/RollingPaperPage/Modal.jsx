@@ -1,9 +1,9 @@
 import Button from '../common/Button';
 import styles from './Modal.module.css';
-import imageProfile from '../../assets/images/none-profile.svg';
 
-const Modal = ({ onClose }) => {
-  const relationship = { freind: '친구', acquaintance: '지인', colleague: '동료', family: '가족' };
+const Modal = ({ onClose, messageInfo, date }) => {
+  const badge = { 친구: 'freind', 지인: 'acquaintance', 동료: 'colleague', 가족: 'family' };
+  const { profileImageURL, sender, relationship, content } = messageInfo;
   return (
     <>
       <div className={styles.modalMask} onClick={onClose}></div>
@@ -11,18 +11,18 @@ const Modal = ({ onClose }) => {
         <div className={styles.profile}>
           <div className={styles.profileInfo}>
             <div className={styles.profileLeft}>
-              <img className={styles.profileImage} src={imageProfile} alt="보낸 사람의 프로필." />
+              <img className={styles.profileImage} src={profileImageURL} alt="보낸 사람의 프로필." />
               <div>
-                <p className={styles.profileTitle}>From. OOO</p>
-                <p className={`${styles.profileBadge} ${styles.friend}`}>{relationship.freind}</p>
+                <p className={styles.profileTitle}>From. {sender}</p>
+                <p className={`${styles.profileBadge} ${styles[badge[relationship]]}`}>{relationship}</p>
               </div>
             </div>
-            <p className={styles.date}>20XX.XX.XX</p>
+            <p className={styles.date}>{date}</p>
           </div>
         </div>
 
         <div className={styles.content}>
-          <p className={styles.message}>내용</p>
+          <p className={styles.message}>{content}</p>
         </div>
 
         <div className={styles.buttonOk} onClick={onClose}>

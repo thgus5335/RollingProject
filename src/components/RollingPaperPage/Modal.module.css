@@ -64,7 +64,7 @@
   line-height: 2.4rem;
 }
 
-.profileBadge.friend {
+.profileBadge {
   display: flex;
   width: 4rem;
   height: 2rem;
