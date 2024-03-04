@@ -1,17 +1,23 @@
 import styles from './Profile.module.css';
-// import customImg from '../../assets/images/custom.png';
 import ProfileImg from './ProfileImg';
-// import profileImg1 from '../../assets/images/profile-img1.png';
-// import profileImg2 from '../../assets/images/profile-img2.png';
-// import profileImg3 from '../../assets/images/profile-img3.png';
+
 import { useEffect, useState } from 'react';
 const Profile = ({ onProfileUrlChange, profileUrl }) => {
-  const customImgUrl = process.env.PUBLIC_URL + '/custom.png';
+  const customImgUrl = 'https://i.imgur.com/u4nrpjo.png';
+  console.log(customImgUrl);
   const profileImages = [
-    process.env.PUBLIC_URL + '/profile-img1.png',
-    process.env.PUBLIC_URL + '/profile-img2.png',
-    process.env.PUBLIC_URL + '/profile-img3.png',
+    'https://i.imgur.com/v9GSBUB.png',
+    'https://i.imgur.com/rr1x5VQ.png',
+    'https://i.imgur.com/wpGcjHh.png',
+    'https://i.imgur.com/IereXDn.png',
+    'https://i.imgur.com/fU2kI3U.png',
+    'https://i.imgur.com/TOZC5zi.png',
+    'https://i.imgur.com/aOjTFl6.png',
+    'https://i.imgur.com/ROUsh9Z.png',
+    'https://i.imgur.com/aIdZMSf.png',
+    'https://i.imgur.com/ztVqUdO.png',
   ];
+  console.log(profileImages);
   const [isImageClicked, setIsImageClicked] = useState({ custom: true });
 
   const handleGetUrl = e => {
@@ -31,15 +37,10 @@ const Profile = ({ onProfileUrlChange, profileUrl }) => {
     <div className={styles.profileContainer}>
       <h1 className={styles.title}>프로필 이미지</h1>
       <div className={styles.profileImage}>
-        <img className={styles.customImg} src="/custom.png" onClick={handleGetUrl} />
+        <img className={styles.customImg} src={customImgUrl} onClick={handleGetUrl} />
         <div className={styles.imageSelect}>
           <div>프로필 이미지를 선택해주세요!</div>
-          <ProfileImg
-            onProfileUrlChange={onProfileUrlChange}
-            profileUrl={profileUrl}
-            handleGetUrl={handleGetUrl}
-            imagesUrl={profileImages}
-          />
+          <ProfileImg profileUrl={profileUrl} handleGetUrl={handleGetUrl} imagesUrl={profileImages} />
         </div>
       </div>
     </div>
