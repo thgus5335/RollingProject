@@ -1,6 +1,6 @@
 .card {
   display: flex;
-  width: 100%;
+  width: 32%;
   max-width: 38.4rem;
   height: 28rem;
   flex-direction: column;
@@ -8,6 +8,14 @@
   border-radius: 16px;
   background-color: var(--white);
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 8%);
+
+  @media (width <= 1024px) {
+    width: 50%;
+  }
+
+  @media (width <= 768px) {
+    width: 100%;
+  }
 }
 
 .card:hover {
@@ -110,9 +118,3 @@
   font-size: 1.2rem;
   font-weight: 400;
 }
-
-/* @media (width <= 768px) {
-  .card {
-    flex-wrap: wrap;
-  }
-} */

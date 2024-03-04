@@ -8,7 +8,23 @@ const RollingPage = () => {
       <div className={styles.cardContainer}>
         <AddCard />
         <Card mode={'normal'} />
-        <Card mode={'edit'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
+        <Card mode={'normal'} />
       </div>
     </div>
   );
