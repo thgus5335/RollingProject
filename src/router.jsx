@@ -1,17 +1,19 @@
 import { createBrowserRouter } from 'react-router-dom';
 import CreateRollingPaperPage from './pages/CreateRollingPaperPage';
 import ListPage from './pages/ListPage';
+import Layout from './components/HomePage/Layout';
 import MessagePage from './pages/MessagePage';
 import RollingPaperPage from './pages/RollingPaperPage';
+import HomePage from './pages/HomePage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    // element: <Layout />,
+    element: <Layout />,
     children: [
       {
         path: '',
-        // element: <Home />,
+        element: <HomePage />,
       },
       {
         path: 'list',

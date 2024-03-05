@@ -4,9 +4,9 @@ import styles from './LinkButton.module.css';
 
 function LinkButton({ value, link }) {
   return (
-    <div className={styles.buttonArea}> 
+    <div className={styles.buttonArea}>
       <Link to={link}>
-        <button className={styles.button}>{value}</button> 
+        <button className={styles.button}>{value}</button>
       </Link>
     </div>
   );
