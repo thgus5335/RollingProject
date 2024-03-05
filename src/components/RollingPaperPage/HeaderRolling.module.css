@@ -1,0 +1,20 @@
+.headerContainer {
+  display: flex;
+  width: 102.4rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.contentContainer {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.emojiContainer {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+}
