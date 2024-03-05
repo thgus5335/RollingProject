@@ -7,9 +7,9 @@
 }
 
 .image {
-  cursor: pointer;
   width: 5.6rem;
   height: 5.6rem;
+  cursor: pointer;
 }
 
 .selected {
