@@ -41,6 +41,10 @@
   color: var(--black);
 }
 
+/* .purple::before {
+  background-image: url('../../assets/images/pattern-purple.png') !important;
+} */
+
 .blue {
   background-color: var(--blue-200);
   color: var(--black);

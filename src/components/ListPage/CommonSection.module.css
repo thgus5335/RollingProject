@@ -5,7 +5,21 @@
 
 .cardFlex {
   display: flex;
+  overflow: hidden;
+  width: 116rem;
   gap: 2rem;
+
+  @media (width<=1024px) {
+    overflow: auto;
+    width: 100vw;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+  }
+}
+
+.cardFlex::-webkit-scrollbar {
+  display: none;
 }
 
 .title {
