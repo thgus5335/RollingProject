@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.css'; // CSS 파일 import
 
 import Logo from './Logo';
+import Button from './Button';
 
 export default function Header() {
   const location = useLocation();
@@ -15,7 +16,9 @@ export default function Header() {
         </Link>
         {isButtonPage && (
           <Link to="/post">
-            <button className={styles.headerButton}>롤링 페이퍼 만들기</button>
+            <Button size="medium" type="outline">
+              롤링 페이퍼 만들기
+            </Button>
           </Link>
         )}
       </div>
