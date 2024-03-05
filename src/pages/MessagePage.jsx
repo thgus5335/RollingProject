@@ -67,7 +67,6 @@ const MessagePage = () => {
     }
   }, [nameValue, messageValue]);
 
-  useEffect(() => {}, [profileImgUrl]);
   useEffect(() => {
     asyncRecipient();
   }, []);
