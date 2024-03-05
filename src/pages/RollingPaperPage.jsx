@@ -8,6 +8,8 @@ import { getRollingPaper } from '../apis/rollingPaperAPI';
 const RollingPage = () => {
   const id = useParams();
   const [rollingInfo, setRollingInfo] = useState([]);
+  const [mode, setMode] = useState('normal');
+
   const { backgroundColor, backgroundImageURL } = rollingInfo;
   const background = backgroundImageURL ? 'imageBackground' : backgroundColor;
 
@@ -30,12 +32,18 @@ const RollingPage = () => {
       <div className={styles.rollingContainer}>
         <div className={styles.buttonContainer}>
           <div className={styles.buttonEdit}>
-            <Button size={'medium'} type="outline">
-              편집하기
-            </Button>
+            {mode === 'normal' ? (
+              <Button size={'medium'} type="outline" onClick={() => setMode('edit')}>
+                편집하기
+              </Button>
+            ) : (
+              <Button size={'medium'} type="primary" onClick={() => setMode('normal')}>
+                삭제하기
+              </Button>
+            )}
           </div>
         </div>
-        <CardList id={id.id} />
+        <CardList id={id.id} mode={mode} />
       </div>
     </main>
   );

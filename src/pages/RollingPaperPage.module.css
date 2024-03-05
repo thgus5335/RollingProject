@@ -33,14 +33,13 @@
 
 .imageBackground {
   position: absolute;
-  z-index: -2;
+  z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .imageBackground::before {
   position: absolute;
-  z-index: -1;
   background-color: var(--black);
   content: '';
   inset: 0;
