@@ -20,6 +20,16 @@ const ImagePicker = () => {
   return (
     <div>
       <div className={styles.pickerContainer}>
+        <label htmlFor="imageInput" className={`${styles.inputStyle} ${styles.pickerBox}`}>
+          <img src={plusIcon} alt="plus icon" />
+        </label>
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          onChange={handleImageUpload}
+          className={` ${styles.input} `}
+        />
         {IMAGES.map(images => (
           <div key={images.alt} className={`${styles.pickerBox} `} onClick={() => handleClickImage(images)}>
             <img
@@ -40,16 +50,6 @@ const ImagePicker = () => {
             {selectedImageURL === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         )}
-        <label htmlFor="imageInput" className={`${styles.inputStyle} ${styles.pickerBox}`}>
-          <img src={plusIcon} alt="plus icon" />
-        </label>
-        <input
-          type="file"
-          id="imageInput"
-          accept="image/*"
-          onChange={handleImageUpload}
-          className={` ${styles.input} `}
-        />
       </div>
     </div>
   );
