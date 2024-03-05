@@ -17,16 +17,11 @@ const MessagePage = () => {
   const [relation, setRelation] = useState('지인');
   const [font, setFont] = useState('Noto Sans');
   const [recipientId] = useState(useParams().id);
-  // const { results } = getRecipient();
-  // console.log(results);
 
   const asyncRecipient = async () => {
-    const response = await getRecipient();
-    console.log(response);
-    // setRecipientId(response.results[0]);
+    await getRecipient();
   };
 
-  console.log(recipientId);
   const submitInfo = {
     sender: nameValue,
     relationship: relation,
@@ -37,11 +32,9 @@ const MessagePage = () => {
 
   const handleDataSubmit = async e => {
     e.preventDefault();
-    console.log(submitInfo);
-
     try {
-      const result = await createMessageApi(submitInfo, recipientId);
-      console.log('Success:', result);
+      await createMessageApi(submitInfo, recipientId);
+      window.location.href = `/post/${recipientId}`;
     } catch (e) {
       console.error('ERROR:', e);
     }
@@ -87,7 +80,7 @@ const MessagePage = () => {
           <RelationShip onRelationChange={handleRelationChange} relation={relation} />
           <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker onFontChange={handleFontChange} font={font} />
-          <ShareMessageBtn isValid={isButtonValid} submitInfo={submitInfo} />
+          <ShareMessageBtn isValid={isButtonValid} />
         </form>
       </div>
     </div>
