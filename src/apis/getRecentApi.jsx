@@ -12,7 +12,7 @@ export const getRecentApi = async offset => {
 
 export const getHotApi = async offset => {
   try {
-    const response = await axios.get(`${BASE_URL}?limit=4&sort=like&offset=${offset}`);
+    const response = await axios.get(`${BASE_URL}?limit=4&offset=${offset}&sort=like`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -21,7 +21,7 @@ export const getHotApi = async offset => {
 
 export const getDataLength = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}`);
+    const response = await axios.get(`${BASE_URL}?limit=4`);
     console.log(response.data);
     return response.data;
   } catch (error) {

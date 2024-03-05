@@ -7,7 +7,6 @@ const HotList = () => {
   const [offset, setOffSet] = useState(0);
   const { hotData } = useFetchListData(offset);
   const navigate = useNavigate();
-  console.log('hotdata', hotData);
 
   const handleForward = offset => {
     setOffSet(prevOffSet => prevOffSet + 1);
