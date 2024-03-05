@@ -37,9 +37,13 @@
 
 /* color */
 .purple {
-  background-color: var(--purple-200);
+  background: var(--purple-200);
   color: var(--black);
 }
+
+/* .purple::before {
+  background-image: url('../../assets/images/pattern-purple.png') !important;
+} */
 
 .blue {
   background-color: var(--blue-200);

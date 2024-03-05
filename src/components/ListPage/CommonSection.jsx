@@ -22,7 +22,7 @@ const CommonSection = ({ title, data, handleForward, handleBackward, offset }) =
       {Array.isArray(data) && data.length && (
         <div className={styles.cardFlex}>
           {data.map(card => (
-            <Link to={`/post/:${card.id}`} key={card.id} style={{ textDecoration: 'none' }}>
+            <Link to={`/post/:${card.id}`} key={card.id}>
               <Card
                 name={card.name}
                 messageCount={card.messageCount}

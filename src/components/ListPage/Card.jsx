@@ -2,9 +2,14 @@ import styles from './Card.module.css';
 
 const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMessages = [], emoticon = [] }) => {
   const background = backgroundImage ? 'backgroundImage' : backgroundColor;
+  // const backgroundImageByColor = backgroundImage ? backgroundImage : `../../assets/images/pattern-${background}.png`;
+
   return (
     <div
-      style={{ backgroundImage: `url(${backgroundImage})`, zIndex: -2 }}
+      style={{
+        zIndex: -2,
+        backgroundImage: `url(${backgroundImage})`,
+      }}
       className={`${styles[background]} ${styles.cardArea}`}>
       <div className={styles.infoArea}>
         <h3 className={styles.name}>To. {name}</h3>
