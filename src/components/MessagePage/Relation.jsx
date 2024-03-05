@@ -8,6 +8,7 @@ const RelationShip = ({ onRelationChange, relation }) => {
     const { innerText } = e.target;
     onRelationChange(innerText);
   };
+
   const relationData = [
     { id: 1, value: '친구' },
     { id: 2, value: '지인' },

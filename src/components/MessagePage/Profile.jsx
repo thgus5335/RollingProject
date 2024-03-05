@@ -5,6 +5,7 @@ import { useState } from 'react';
 const Profile = ({ onProfileUrlChange, profileUrl }) => {
   // const customImgUrl = 'https://i.imgur.com/u4nrpjo.png';
   // console.log(customImgUrl);
+
   const profileImages = [
     'https://i.imgur.com/v9GSBUB.png',
     'https://i.imgur.com/rr1x5VQ.png',
@@ -17,6 +18,7 @@ const Profile = ({ onProfileUrlChange, profileUrl }) => {
     'https://i.imgur.com/aIdZMSf.png',
     'https://i.imgur.com/ztVqUdO.png',
   ];
+
   console.log(profileImages);
   const [isImageClicked, setIsImageClicked] = useState('https://i.imgur.com/v9GSBUB.png');
 

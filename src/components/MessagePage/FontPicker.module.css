@@ -3,7 +3,7 @@
   width: 20rem;
   flex-direction: column;
   margin-top: 8rem;
-  gap: 0.625rem;
+  gap: 1rem;
 }
 
 .title {
@@ -24,7 +24,7 @@
 
   &::before {
     position: absolute;
-    top: 0.625rem;
+    top: 1rem;
     right: 0.5rem;
     color: var(--purple-400);
     content: '⌵';
@@ -37,7 +37,7 @@
 }
 
 .label {
-  margin-left: 0.25rem;
+  margin-left: 0.4rem;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -64,7 +64,7 @@
 }
 
 .list {
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 2rem;
   font-size: 1.2rem;
   transition: background-color 0.2s ease-in;
 

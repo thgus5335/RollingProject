@@ -3,7 +3,7 @@ import FontPicker from '../components/MessagePage/FontPicker';
 import InputMessage from '../components/MessagePage/InputMessage';
 import NameInsert from '../components/MessagePage/NameInsert';
 import Profile from '../components/MessagePage/Profile';
-import RelationShip from '../components/MessagePage/RelationShip';
+import Relation from '../components/MessagePage/Relation';
 import ShareMessageBtn from '../components/MessagePage/ShareMessageBtn';
 import styles from './MessagePage.module.css';
 import { useParams } from 'react-router-dom';
@@ -17,16 +17,11 @@ const MessagePage = () => {
   const [relation, setRelation] = useState('지인');
   const [font, setFont] = useState('Noto Sans');
   const [recipientId] = useState(useParams().id);
-  // const { results } = getRecipient();
-  // console.log(results);
 
   const asyncRecipient = async () => {
-    const response = await getRecipient();
-    console.log(response);
-    // setRecipientId(response.results[0]);
+    await getRecipient();
   };
 
-  console.log(recipientId);
   const submitInfo = {
     sender: nameValue,
     relationship: relation,
@@ -37,11 +32,9 @@ const MessagePage = () => {
 
   const handleDataSubmit = async e => {
     e.preventDefault();
-    console.log(submitInfo);
-
     try {
-      const result = await createMessageApi(submitInfo, recipientId);
-      console.log('Success:', result);
+      await createMessageApi(submitInfo, recipientId);
+      window.location.href = `/post/${recipientId}`;
     } catch (e) {
       console.error('ERROR:', e);
     }
@@ -75,7 +68,6 @@ const MessagePage = () => {
     }
   }, [nameValue, messageValue]);
 
-  useEffect(() => {}, [profileImgUrl]);
   useEffect(() => {
     asyncRecipient();
   }, []);
@@ -85,10 +77,10 @@ const MessagePage = () => {
         <form className={styles.form} onSubmit={handleDataSubmit}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
           <Profile profileUrl={profileImgUrl} onProfileUrlChange={handleCustomImgUrlGet} />
-          <RelationShip onRelationChange={handleRelationChange} relation={relation} />
+          <Relation onRelationChange={handleRelationChange} relation={relation} />
           <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker onFontChange={handleFontChange} font={font} />
-          <ShareMessageBtn isValid={isButtonValid} submitInfo={submitInfo} />
+          <ShareMessageBtn isValid={isButtonValid} />
         </form>
       </div>
     </div>
