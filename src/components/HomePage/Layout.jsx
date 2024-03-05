@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Header from './Header/Header';
+import Header from '../common/Header';
 import styles from './Layout.module.css'; // CSS 파일 import
 
 export default function Layout() {
