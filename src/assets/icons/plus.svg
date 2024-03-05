@@ -1,6 +1,5 @@
-<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Frame 2385">
-<path id="Vector 4" d="M9.45215 1.95312V18.0637" stroke="white" stroke-width="2.6851" stroke-linecap="round"/>
-<path id="Vector 5" d="M1.39697 10.0088L17.5076 10.0088" stroke="white" stroke-width="2.6851" stroke-linecap="round"/>
-</g>
+<svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="19.452" cy="19.0086" rx="18.7957" ry="18.7957" fill="#555555"/>
+<path d="M19.4521 10.9531V27.0637" stroke="white" stroke-width="2.6851" stroke-linecap="round"/>
+<path d="M11.397 19.0088L27.5076 19.0088" stroke="white" stroke-width="2.6851" stroke-linecap="round"/>
 </svg>
