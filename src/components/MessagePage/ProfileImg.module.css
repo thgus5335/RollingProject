@@ -7,10 +7,21 @@
 }
 
 .image {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 30px;
   cursor: pointer;
 }
 
 .selected {
   border: 3px solid var(--purple-300);
   border-radius: 30px;
+}
+
+.image:hover {
+  opacity: 0.5;
+}
+
+.input {
+  display: none;
 }
