@@ -9,6 +9,7 @@
 .image {
   width: 5.6rem;
   height: 5.6rem;
+  border-radius: 30px;
   cursor: pointer;
 }
 
@@ -19,4 +20,8 @@
 
 .image:hover {
   opacity: 0.5;
+}
+
+.input {
+  display: none;
 }

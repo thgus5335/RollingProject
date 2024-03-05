@@ -1,9 +1,10 @@
 import styles from './Profile.module.css';
 import ProfileImg from './ProfileImg';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 const Profile = ({ onProfileUrlChange, profileUrl }) => {
-  const customImgUrl = 'https://i.imgur.com/u4nrpjo.png';
+  // const customImgUrl = 'https://i.imgur.com/u4nrpjo.png';
+  // console.log(customImgUrl);
 
   const profileImages = [
     'https://i.imgur.com/v9GSBUB.png',
@@ -17,7 +18,9 @@ const Profile = ({ onProfileUrlChange, profileUrl }) => {
     'https://i.imgur.com/aIdZMSf.png',
     'https://i.imgur.com/ztVqUdO.png',
   ];
-  const [isImageClicked, setIsImageClicked] = useState({ custom: true });
+
+  console.log(profileImages);
+  const [isImageClicked, setIsImageClicked] = useState('https://i.imgur.com/v9GSBUB.png');
 
   const handleGetUrl = e => {
     const newImgUrl = e.target.src;
@@ -28,18 +31,23 @@ const Profile = ({ onProfileUrlChange, profileUrl }) => {
     setIsImageClicked(isImageClicked);
   };
 
-  useEffect(() => {
-    onProfileUrlChange(customImgUrl);
-  }, []);
+  // useEffect(() => {
+  //   onProfileUrlChange(customImgUrl);
+  // }, []);
 
   return (
     <div className={styles.profileContainer}>
       <h1 className={styles.title}>프로필 이미지</h1>
       <div className={styles.profileImage}>
-        <img className={styles.customImg} src={customImgUrl} onClick={handleGetUrl} />
+        <img className={styles.customImg} src={profileUrl} />
         <div className={styles.imageSelect}>
           <div>프로필 이미지를 선택해주세요!</div>
-          <ProfileImg profileUrl={profileUrl} handleGetUrl={handleGetUrl} imagesUrl={profileImages} />
+          <ProfileImg
+            profileUrl={profileUrl}
+            handleGetUrl={handleGetUrl}
+            imagesUrl={profileImages}
+            setIsImageClicked={setIsImageClicked}
+          />
         </div>
       </div>
     </div>

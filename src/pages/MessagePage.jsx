@@ -12,7 +12,7 @@ import { createMessageApi, getRecipient } from '../apis/createMessageApi';
 const MessagePage = () => {
   const [nameValue, setNameValue] = useState('');
   const [messageValue, setMessageValue] = useState('');
-  const [profileImgUrl, setProfileImgUrl] = useState('');
+  const [profileImgUrl, setProfileImgUrl] = useState('https://i.imgur.com/v9GSBUB.png');
   const [isButtonValid, setIsButtonValid] = useState(false);
   const [relation, setRelation] = useState('지인');
   const [font, setFont] = useState('Noto Sans');
@@ -49,6 +49,7 @@ const MessagePage = () => {
 
   const handleCustomImgUrlGet = url => {
     setProfileImgUrl(url);
+    console.log(url);
   };
 
   const handleRelationChange = relation => {
