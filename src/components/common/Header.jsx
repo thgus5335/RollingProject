@@ -1,13 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.css'; // CSS 파일 import
 
-
 import Logo from './Logo';
 
 export default function Header() {
   const location = useLocation();
-  const isButtonPage =
-    location.pathname === '/' || location.pathname === '/list';
+  const isButtonPage = location.pathname === '/' || location.pathname === '/list';
 
   return (
     <div className={styles.headerWrapper}>

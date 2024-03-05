@@ -8,7 +8,6 @@ export default function Logo() {
       <div className={styles.logoImage}>
         <img src={logoImage} alt="Logo" />
       </div>
-      <div className={styles.logoText}>Rolling</div>
     </div>
   );
 }
