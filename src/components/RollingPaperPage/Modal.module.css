@@ -1,0 +1,124 @@
+.modalMask {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 40%);
+}
+
+.modalContainer {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 60rem;
+  height: 47.6rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 16px;
+  background-color: var(--white);
+  transform: translate(-50%, -50%);
+}
+
+.profile {
+  display: flex;
+  width: 100%;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.profileInfo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.profileLeft {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.date {
+  display: flex;
+  color: var(--gray-400);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.profileImage {
+  display: flex;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+.profileTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+.profileBadge {
+  display: flex;
+  width: 4rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.8rem;
+  border-radius: 4px;
+  margin-top: 0.6rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.friend {
+  background-color: var(--blue-100);
+  color: var(--blue-500);
+}
+
+.acquaintance {
+  background-color: var(--orange-100);
+  color: var(--orange-500);
+}
+
+.colleague {
+  background-color: var(--purple-100);
+  color: var(--purple-500);
+}
+
+.family {
+  background-color: var(--green-100);
+  color: var(--green-500);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1.6rem 0;
+}
+
+.message {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  color: var(--gray-600);
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-line-clamp: 3;
+  line-height: 2.8rem;
+  text-overflow: ellipsis;
+}
+
+.buttonOk {
+  width: 12rem;
+}
