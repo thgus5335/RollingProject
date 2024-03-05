@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import styles from './NameInsert.module.css';
+
 const NameInsert = ({ name, onNameChange }) => {
   const [blur, setBlur] = useState(false);
   const handleChangeName = e => {
     const newName = e.target.value;
     onNameChange(newName);
   };
+
   const handleBlurFromInput = () => {
-    if (name.trim().length === 0) {
-      setBlur(true);
-    } else {
-      setBlur(false);
-    }
+    setBlur(name.trim().length === 0);
   };
 
   return (
