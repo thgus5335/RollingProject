@@ -6,17 +6,20 @@ import Profile from '../components/MessagePage/Profile';
 import Relation from '../components/MessagePage/Relation';
 import ShareMessageBtn from '../components/MessagePage/ShareMessageBtn';
 import styles from './MessagePage.module.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { createMessageApi, getRecipient } from '../apis/createMessageApi';
+
+const FIRST_PROFILE_URL = 'https://i.imgur.com/v9GSBUB.png';
 
 const MessagePage = () => {
   const [nameValue, setNameValue] = useState('');
   const [messageValue, setMessageValue] = useState('');
-  const [profileImgUrl, setProfileImgUrl] = useState('https://i.imgur.com/v9GSBUB.png');
+  const [profileUrl, setProfileUrl] = useState(FIRST_PROFILE_URL);
   const [isButtonValid, setIsButtonValid] = useState(false);
   const [relation, setRelation] = useState('지인');
   const [font, setFont] = useState('Noto Sans');
   const [recipientId] = useState(useParams().id);
+  const navigate = useNavigate();
 
   const asyncRecipient = async () => {
     await getRecipient();
@@ -27,20 +30,21 @@ const MessagePage = () => {
     relationship: relation,
     content: messageValue,
     font: font,
-    profileImageURL: profileImgUrl,
+    profileImageURL: profileUrl,
   };
 
   const handleDataSubmit = async e => {
     e.preventDefault();
     try {
       await createMessageApi(submitInfo, recipientId);
-      window.location.href = `/post/${recipientId}`;
+      navigate(`/post/${recipientId}`);
     } catch (e) {
       console.error('ERROR:', e);
     }
   };
-  const handleNameChange = newName => {
-    setNameValue(newName);
+
+  const handleNameChange = name => {
+    setNameValue(name);
   };
 
   const handleMessageChange = text => {
@@ -48,8 +52,7 @@ const MessagePage = () => {
   };
 
   const handleCustomImgUrlGet = url => {
-    setProfileImgUrl(url);
-    console.log(url);
+    setProfileUrl(url);
   };
 
   const handleRelationChange = relation => {
@@ -71,12 +74,13 @@ const MessagePage = () => {
   useEffect(() => {
     asyncRecipient();
   }, []);
+
   return (
     <div className={styles.messagePage}>
       <div className={styles.pageContainer}>
         <form className={styles.form} onSubmit={handleDataSubmit}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
-          <Profile profileUrl={profileImgUrl} onProfileUrlChange={handleCustomImgUrlGet} />
+          <Profile profileUrl={profileUrl} onProfileUrlChange={handleCustomImgUrlGet} />
           <Relation onRelationChange={handleRelationChange} relation={relation} />
           <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker onFontChange={handleFontChange} font={font} />
