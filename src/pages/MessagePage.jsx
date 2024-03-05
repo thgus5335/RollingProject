@@ -3,7 +3,7 @@ import FontPicker from '../components/MessagePage/FontPicker';
 import InputMessage from '../components/MessagePage/InputMessage';
 import NameInsert from '../components/MessagePage/NameInsert';
 import Profile from '../components/MessagePage/Profile';
-import RelationShip from '../components/MessagePage/RelationShip';
+import Relation from '../components/MessagePage/Relation';
 import ShareMessageBtn from '../components/MessagePage/ShareMessageBtn';
 import styles from './MessagePage.module.css';
 import { useParams } from 'react-router-dom';
@@ -77,7 +77,7 @@ const MessagePage = () => {
         <form className={styles.form} onSubmit={handleDataSubmit}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
           <Profile profileUrl={profileImgUrl} onProfileUrlChange={handleCustomImgUrlGet} />
-          <RelationShip onRelationChange={handleRelationChange} relation={relation} />
+          <Relation onRelationChange={handleRelationChange} relation={relation} />
           <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker onFontChange={handleFontChange} font={font} />
           <ShareMessageBtn isValid={isButtonValid} />
