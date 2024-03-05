@@ -10,9 +10,9 @@ const postRolling = async postData => {
       },
     });
 
-    console.log('Success:', response.data);
+    console.log('Success:', response.data.id);
 
-    return response.data;
+    return response.data.id;
   } catch (error) {
     console.error('Error:', error.response ? error.response.data : error.message);
 

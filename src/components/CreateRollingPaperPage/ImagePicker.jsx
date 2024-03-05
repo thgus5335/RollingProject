@@ -1,6 +1,7 @@
 import styles from './Picker.module.css';
 import checkIcon from '../../assets/icons/check.svg';
 import useImagePick from '../../hooks/useImagePick';
+import plusIcon from '../../assets/icons/plus.svg';
 
 const ImagePicker = () => {
   const IMAGES = [
@@ -39,11 +40,15 @@ const ImagePicker = () => {
             {selectedImageURL === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         )}
+        <label htmlFor="imageInput" className={`${styles.inputStyle} ${styles.pickerBox}`}>
+          <img src={plusIcon} alt="plus icon" />
+        </label>
         <input
           type="file"
+          id="imageInput"
           accept="image/*"
           onChange={handleImageUpload}
-          className={`${styles.pickerBox} ${styles.input}`}
+          className={` ${styles.input} `}
         />
       </div>
     </div>
