@@ -1,0 +1,49 @@
+.commonSection {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.cardFlex {
+  display: flex;
+  overflow: hidden;
+  width: 116rem;
+  gap: 2rem;
+
+  @media (width<=1024px) {
+    overflow: auto;
+    width: 100vw;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+  }
+}
+
+.cardFlex::-webkit-scrollbar {
+  display: none;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.backward {
+  position: absolute;
+  top: 15rem;
+  left: -2.6rem;
+
+  @media (width<=1200px) {
+    display: none;
+  }
+}
+
+.forward {
+  position: absolute;
+  top: 15rem;
+  left: 113rem;
+
+  @media (width<=1200px) {
+    visibility: hidden;
+  }
+}

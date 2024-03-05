@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: 72rem;
+  flex-direction: column;
+  margin: 12.2rem auto;
+  gap: 5rem;
+
+  @media (width <= 768px) {
+    width: 36rem;
+  }
+}

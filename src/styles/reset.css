@@ -12,19 +12,26 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
+/* prettier-ignore */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
 body {
+  font-size: 1.6rem;
   line-height: 1;
 }
 
