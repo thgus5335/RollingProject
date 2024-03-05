@@ -9,10 +9,15 @@
 .image {
   width: 5.6rem;
   height: 5.6rem;
+  border-radius: 30px;
   cursor: pointer;
 }
 
 .selected {
   border: 3px solid var(--purple-300);
   border-radius: 30px;
+}
+
+.input {
+  display: none;
 }
