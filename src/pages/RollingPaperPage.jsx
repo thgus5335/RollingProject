@@ -1,9 +1,11 @@
 import styles from './RollingPaperPage.module.css';
 import CardList from '../components/RollingPaperPage/CardList';
 import Button from '../components/common/Button';
+import { useParams } from 'react-router-dom';
 
 const RollingPage = () => {
-  const buttonSize = 'medium';
+  const id = useParams();
+  console.log(id);
 
   return (
     <>
@@ -11,12 +13,12 @@ const RollingPage = () => {
         <div className={styles.rollingBackground}>
           <div className={styles.buttonContainer}>
             <div className={styles.buttonEdit}>
-              <Button size={buttonSize} type="outline">
+              <Button size={'medium'} type="outline">
                 편집하기
               </Button>
             </div>
           </div>
-          <CardList />
+          <CardList id={id.id} />
         </div>
       </main>
     </>
