@@ -16,3 +16,7 @@
   border: 3px solid var(--purple-300);
   border-radius: 30px;
 }
+
+.image:hover {
+  opacity: 0.5;
+}
