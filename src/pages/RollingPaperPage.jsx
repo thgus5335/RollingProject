@@ -7,7 +7,6 @@ const RollingPage = () => {
 
   return (
     <>
-      <header>{/* Header */}</header>
       <main>
         <div className={styles.rollingBackground}>
           <div className={styles.buttonContainer}>

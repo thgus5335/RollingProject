@@ -1,8 +1,12 @@
 .pickerContainer {
   display: flex;
   width: 72rem;
-  height: 16.8rem;
+  flex-wrap: wrap;
   gap: 1.6rem;
+
+  @media (width <= 768px) {
+    width: 36rem;
+  }
 }
 
 .pickerBox {
@@ -49,4 +53,15 @@
 
 .imagesOpacity {
   opacity: 0.3;
+}
+
+.input {
+  display: none;
+}
+
+.inputStyle {
+  display: flex;
+  padding: 10px 15px;
+  border: 1px solid var(--gray-300);
+  cursor: pointer;
 }

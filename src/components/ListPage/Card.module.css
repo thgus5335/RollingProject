@@ -23,7 +23,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
-  object-fit: cover;
 }
 
 .backgroundImage::before {
