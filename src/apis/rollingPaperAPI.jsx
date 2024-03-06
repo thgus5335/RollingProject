@@ -11,6 +11,16 @@ const getRequest = async endPoint => {
   }
 };
 
+const postRequest = async endPoint => {
+  try {
+    const response = await axios.post(`${BASE_URL}${endPoint}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 const deleteRequest = async endPoint => {
   try {
     const response = await axios.delete(`${BASE_URL}${endPoint}`);
@@ -36,4 +46,12 @@ export const deleteRollingPaper = async recipientId => {
 
 export const deleteMessage = async messageId => {
   return deleteRequest(`${messageId}/`);
+};
+
+export const postReaction = async recipientId => {
+  return postRequest(`${recipientId}/reactions/`);
+};
+
+export const getReaction = async recipientId => {
+  return getRequest(`${recipientId}/reactions/`);
 };

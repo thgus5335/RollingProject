@@ -38,7 +38,7 @@ const RollingPage = () => {
 
   return (
     <main>
-      <HeaderRolling />
+      <HeaderRolling id={id.id} />
       <div
         className={`${styles.rollingBackground} ${styles[background]}`}
         style={{ backgroundImage: `url(${backgroundImageURL})` }}></div>
