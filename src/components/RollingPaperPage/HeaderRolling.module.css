@@ -4,8 +4,6 @@
   align-items: center;
   justify-content: space-between;
   margin: 1rem auto;
-  font-size: 4rem;
-  font-weight: bold;
 }
 
 .recipient {
@@ -15,13 +13,6 @@
   line-height: 4.2rem;
 }
 
-.writer {
-  color: var(--gray-900);
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 2.7rem;
-}
-
 .contentContainer {
   position: relative;
   display: flex;
@@ -29,12 +20,20 @@
   gap: 0.5rem;
 }
 
+.writer {
+  margin-right: 6rem;
+  margin-left: -3rem;
+  color: var(--gray-900);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+}
+
 .emojiContainer {
   position: absolute;
   top: 5rem;
   right: 1rem;
 }
-
 
 .emojiDropDown {
   position: absolute;
@@ -55,8 +54,8 @@
   width: 6.6rem;
   height: 3.6rem;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 1.2rem;
+  justify-content: center;
+  padding: 0.8rem;
   border-radius: 32px;
   background-color: var(--gray-400);
   color: var(--white);
@@ -65,14 +64,58 @@
 
 .topEmojis {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.emojiArea {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
 .dropDown {
   cursor: pointer;
 }
 
-.dropDownWrapper{
+.dropDownWrapper {
   position: relative;
+  margin-left: 2rem;
+}
+
+.imageStyle {
+  display: flex;
+}
+
+.profileImage {
+  position: relative;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0.15rem solid var(--white);
+  border-radius: 99px;
+}
+
+.plusProfile {
+  position: relative;
+  left: -4.1rem;
+  display: flex;
+  width: 3.3rem;
+  height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.6rem;
+  border: 0.1rem solid var(--gray-300);
+  border-radius: 99px;
+  background-color: var(--white);
+  color: var(--black);
   font-size: 1rem;
+  font-weight: 500;
+}
+
+.countDescription {
+  display: block;
+  width: 5rem;
+}
+
+.strongSpan {
+  font-weight: 800;
 }
