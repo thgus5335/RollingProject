@@ -7,10 +7,11 @@ import ModalPortal from './Portal';
 import { useState } from 'react';
 
 const Card = ({ mode = 'normal', messageInfo }) => {
-  const badge = { 친구: 'freind', 지인: 'acquaintance', 동료: 'colleague', 가족: 'family' };
-  const date = messageInfo.createdAt.substr(0, 10).replaceAll('-', '.');
   const { profileImageURL, sender, relationship, content } = messageInfo;
   const [openModal, setOpenModal] = useState(false);
+
+  const badge = { 친구: 'friend', 지인: 'acquaintance', 동료: 'colleague', 가족: 'family' };
+  const date = messageInfo.createdAt.substr(0, 10).replaceAll('-', '.');
 
   const handleOpenModal = () => {
     setOpenModal(true);
