@@ -11,11 +11,29 @@ const getRequest = async endPoint => {
   }
 };
 
-export const getRollingPaper = async id => {
-  return getRequest(`${id}/`);
+const deleteRequest = async endPoint => {
+  try {
+    const response = await axios.delete(`${BASE_URL}${endPoint}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
 
-export const getMessage = async id => {
-  const response = await getRequest(`${id}/messages/`);
+export const getRollingPaper = async recipientId => {
+  return getRequest(`${recipientId}/`);
+};
+
+export const getMessage = async recipientId => {
+  const response = await getRequest(`${recipientId}/messages/`);
   return response.results;
+};
+
+export const deleteRollingPaper = async recipientId => {
+  return deleteRequest(`${recipientId}/`);
+};
+
+export const deleteMessage = async messageId => {
+  return deleteRequest(`${messageId}/`);
 };

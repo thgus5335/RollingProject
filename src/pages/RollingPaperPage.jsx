@@ -2,11 +2,12 @@ import styles from './RollingPaperPage.module.css';
 import CardList from '../components/RollingPaperPage/CardList';
 import Button from '../components/common/Button';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getRollingPaper } from '../apis/rollingPaperAPI';
+import { useParams, useNavigate } from 'react-router-dom';
+import { deleteRollingPaper, getRollingPaper } from '../apis/rollingPaperAPI';
 
 const RollingPage = () => {
   const id = useParams();
+  const navigate = useNavigate();
   const [rollingInfo, setRollingInfo] = useState([]);
   const [mode, setMode] = useState('normal');
 
@@ -18,11 +19,21 @@ const RollingPage = () => {
     setRollingInfo(response);
   };
 
+  const handleDelete = async id => {
+    const error = await deleteRollingPaper(id);
+    if (error) {
+      alert('롤링페이퍼 삭제가 실패했습니다.');
+      return;
+    }
+    alert('롤링페이퍼를 삭제했습니다.');
+    navigate('/list/');
+  };
+
   useEffect(() => {
     fetchData(id.id);
   }, []);
 
-  console.log(rollingInfo);
+  console.log('ㅠㅠㅠㅠㅠㅠ', id);
 
   return (
     <main>
@@ -37,7 +48,13 @@ const RollingPage = () => {
                 편집하기
               </Button>
             ) : (
-              <Button size={'medium'} type="primary" onClick={() => setMode('normal')}>
+              <Button
+                size={'medium'}
+                type="primary"
+                onClick={() => {
+                  setMode('normal');
+                  handleDelete(id.id);
+                }}>
                 삭제하기
               </Button>
             )}
