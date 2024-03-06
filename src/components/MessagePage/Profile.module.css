@@ -23,10 +23,6 @@
   cursor: pointer;
 }
 
-.customImg:hover {
-  opacity: 0.5;
-}
-
 .title {
   font-size: 2.4rem;
   font-weight: bold;
@@ -40,6 +36,10 @@
   position: absolute;
   z-index: 5;
   width: 6rem;
+}
+
+.delete:hover {
+  opacity: 0.5;
 }
 
 .customImgContainer {
