@@ -1,11 +1,9 @@
 import styles from './Profile.module.css';
 import ProfileImg from './ProfileImg';
-import plusIcon from '../../assets/icons/plus.svg';
-import stylesImg from './ProfileImg.module.css';
 
-import { useState } from 'react';
+import MainProfile from './MainProfile';
 // import { useState } from 'react';
-// import uploadImage from '../../apis/uploadImage';
+
 const Profile = ({ onProfileUrlChange, profileUrl, customImgUrl }) => {
   const PROFILE_IMAGES = [
     'https://i.imgur.com/v9GSBUB.png',
@@ -16,17 +14,6 @@ const Profile = ({ onProfileUrlChange, profileUrl, customImgUrl }) => {
     'https://i.imgur.com/aIdZMSf.png',
     'https://i.imgur.com/ztVqUdO.png',
   ];
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const [imgURL, setImgURL] = useState('');
 
   const handleGetUrl = e => {
     const newImgUrl = e.target.src;
@@ -35,68 +22,20 @@ const Profile = ({ onProfileUrlChange, profileUrl, customImgUrl }) => {
       onProfileUrlChange(newImgUrl);
     }
   };
-  const getNoImageUrl = () => {
-    onProfileUrlChange(customImgUrl);
-  };
-  const handleImageUpload = async e => {
-    const uploadedFile = e.target.files[0];
-
-    try {
-      // const uploadedImageURL = await uploadImage({ file: uploadedFile });
-      const uploadedImageURL = URL.createObjectURL(uploadedFile);
-      setImgURL(uploadedImageURL);
-      console.log(imgURL);
-    } catch (error) {
-      console.error('Error uploading image:', error);
-    }
-  };
 
   return (
     <div className={styles.profileContainer}>
       <h1 className={styles.title}>프로필 이미지</h1>
       <div className={styles.profileImage}>
-        <label className={styles.label} htmlFor="imageInput">
-          {isHovered && profileUrl === customImgUrl ? (
-            <img
-              src={plusIcon}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              alt="plus icon"
-              className={`${styles.customImg} ${styles.plusIcon}`}
-            />
-          ) : (
-            <div className={styles.customImgContainer}>
-              <img
-                className={styles.customImg}
-                src={profileUrl}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={e => handleGetUrl(e)}
-              />
-            </div>
-          )}
-        </label>
-
-        {profileUrl === customImgUrl ? (
-          <input
-            type="file"
-            id="imageInput"
-            accept="image/*"
-            onChange={handleImageUpload}
-            className={` ${stylesImg.input} `}
-          />
-        ) : null}
+        <MainProfile customImgUrl={customImgUrl} onProfileUrlChange={onProfileUrlChange} profileUrl={profileUrl} />
 
         <div className={styles.imageSelect}>
           <div>프로필 이미지를 선택해주세요!</div>
           <ProfileImg
-            imgURL={imgURL}
             profileUrl={profileUrl}
             handleGetUrl={handleGetUrl}
             imagesUrl={PROFILE_IMAGES}
             // isClickedImage={isClickedImage}
-            customImgUrl={customImgUrl}
-            getNoImageUrl={getNoImageUrl}
           />
         </div>
       </div>

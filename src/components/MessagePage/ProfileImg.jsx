@@ -1,24 +1,23 @@
+import { useState } from 'react';
 import styles from './ProfileImg.module.css';
 
-const ProfileImg = ({ profileUrl, handleGetUrl, imagesUrl, imgURL }) => {
+const ProfileImg = ({ profileUrl, handleGetUrl, imagesUrl }) => {
+  const [isClickedImage, setIsClickedImage] = useState(false);
+
+  const handleClickImages = e => {
+    handleGetUrl(e);
+    setIsClickedImage(!isClickedImage);
+  };
   return (
     <div className={styles.profileImgList}>
       {imagesUrl.map((imageUrl, index) => (
         <img
-          className={`${styles.image} ${profileUrl === imageUrl ? styles.selected : ''}`}
-          onClick={e => handleGetUrl(e, imageUrl)}
+          className={`${styles.image} ${profileUrl === imageUrl && isClickedImage ? styles.selected : ''}`}
+          onClick={handleClickImages}
           key={index}
           src={imageUrl}
         />
       ))}
-      {imgURL.length > 0 && (
-        <img
-          src={imgURL}
-          alt="userImage"
-          className={`${styles.image} ${profileUrl === imgURL ? styles.selected : ''}`}
-          onClick={e => handleGetUrl(e, imgURL)}
-        />
-      )}
     </div>
   );
 };
