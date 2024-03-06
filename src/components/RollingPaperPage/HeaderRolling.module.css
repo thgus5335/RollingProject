@@ -35,6 +35,7 @@
   right: 1rem;
 }
 
+
 .emojiDropDown {
   position: absolute;
   top: 5rem;
@@ -69,4 +70,7 @@
 
 .dropDown {
   cursor: pointer;
+
+.dropDownWrapper{
+  position: relative;
 }

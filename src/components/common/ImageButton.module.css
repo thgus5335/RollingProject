@@ -1,0 +1,12 @@
+/* ImageButton.css */
+.wrapper:hover{
+    filter: brightness(95%);
+}
+
+.wrapper:active{
+    filter: brightness(90%);
+}
+
+
+
+  
