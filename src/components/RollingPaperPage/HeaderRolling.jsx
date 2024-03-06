@@ -1,6 +1,6 @@
 import styles from './HeaderRolling.module.css';
 import EmojiPicker from 'emoji-picker-react';
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Button from '../common/Button';
 import { getReaction, postReaction, getTopReaction } from '../../apis/rollingPaperAPI';
 import dropDown from '../../assets/icons/dropDown.svg';
@@ -19,23 +19,21 @@ const HeaderRolling = ({ rollingInfo }) => {
   const recentMessages = rollingInfo.recentMessages;
 
   const id = rollingInfo.id;
-  // const topEmojis = rollingInfo.topReactions;
 
-  const [emojiList, setEmojiList] = useState([]);
   const [topEmojis, setTopEmojis] = useState([]);
+  const [emojiList, setEmojiList] = useState([]);
 
   const fetchEmoji = async id => {
     const response = await getReaction(id);
     setEmojiList(response);
   };
 
-  const fetchTopEmoji = async id => {
+  const fetchTopEmojis = async id => {
     const response = await getTopReaction(id);
     setTopEmojis(response);
   };
 
   const [dropdown, setDropdown] = useState(false);
-
   const handleDropdown = () => {
     setDropdown(true);
   };
@@ -45,10 +43,7 @@ const HeaderRolling = ({ rollingInfo }) => {
     await navigator.clipboard.writeText(url);
     toast.addSuccess('URL이 복사되었습니다.');
   };
-
   const shareRef = useRef(null);
-
-  useClickOutside(shareRef, setDropdown);
   useClickOutside(shareRef, setDropdown);
 
   const handleButtonClick = () => {
@@ -63,12 +58,12 @@ const HeaderRolling = ({ rollingInfo }) => {
   const onEmojiClick = emoji => {
     postReaction(id, emoji.emoji);
     fetchEmoji(id);
-    fetchTopEmoji(id);
+    fetchTopEmojis(id);
   };
 
   useEffect(() => {
-    if (id) fetchTopEmoji(id);
-  }, []);
+    if (id) fetchTopEmojis(id);
+  }, [id]);
 
   return (
     <div className={styles.headerContainer}>
