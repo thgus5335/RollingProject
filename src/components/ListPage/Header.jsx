@@ -6,12 +6,12 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerArea}>
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/">
           <button className={styles.logoButton}>
             <img src={logo} alt="로고" />
           </button>
         </Link>
-        <Link to="/post" style={{ textDecoration: 'none' }}>
+        <Link to="/post">
           <button className={`${styles.makeRollingButton} ${styles.logoButton}`}>롤링 페이퍼 만들기</button>
         </Link>
       </div>

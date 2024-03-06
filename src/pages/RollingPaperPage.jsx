@@ -4,6 +4,7 @@ import Button from '../components/common/Button';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { deleteRollingPaper, getRollingPaper } from '../apis/rollingPaperAPI';
+import HeaderRolling from '../components/RollingPaperPage/HeaderRolling';
 
 const RollingPage = () => {
   const id = useParams();
@@ -37,6 +38,7 @@ const RollingPage = () => {
 
   return (
     <main>
+      <HeaderRolling />
       <div
         className={`${styles.rollingBackground} ${styles[background]}`}
         style={{ backgroundImage: `url(${backgroundImageURL})` }}></div>
