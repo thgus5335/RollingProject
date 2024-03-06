@@ -87,16 +87,19 @@ const HeaderRolling = ({ rollingInfo }) => {
             {writer > 3 && <div className={styles.plusProfile}>+{writer - 3}</div>}
           </div>
         )}
-        <div className={styles.writer}>profile img {writer}명이 작성했어요!</div>
-        <div className={styles.topEmojis}>
-          {topEmojis &&
-            topEmojis.map(emoji => (
-              <div key={emoji.id} className={styles.emojiBox}>
-                <p>
+        <div className={styles.writer}>
+          <span className={styles.strongSpan}>{writer}</span>명이 작성했어요!
+        </div>
+        <div className={styles.emojiArea}>
+          {topEmojis && (
+            <div className={styles.topEmojis}>
+              {topEmojis.map(emoji => (
+                <div key={emoji.id} className={styles.emojiBox}>
                   {emoji.emoji} {emoji.count}
-                </p>
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
+          )}
           <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
         </div>
         {emojiDropDown && (
@@ -122,10 +125,10 @@ const HeaderRolling = ({ rollingInfo }) => {
             )}
           </Button>
         </div>
-      </div>
-      <div ref={shareRef} className={styles.dropDownWrapper}>
-        <ImageButton imageURL={shareIcon} imageAlt="share-icon" handleClick={handleDropdown} />
-        {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+        <div ref={shareRef} className={styles.dropDownWrapper}>
+          <ImageButton imageURL={shareIcon} imageAlt="share-icon" handleClick={handleDropdown} />
+          {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+        </div>
       </div>
     </div>
   );

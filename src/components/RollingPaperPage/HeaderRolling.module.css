@@ -21,6 +21,8 @@
 }
 
 .writer {
+  margin-right: 6rem;
+  margin-left: -3rem;
   color: var(--gray-900);
   font-size: 1.8rem;
   font-weight: 400;
@@ -52,8 +54,8 @@
   width: 6.6rem;
   height: 3.6rem;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 1.2rem;
+  justify-content: center;
+  padding: 0.8rem;
   border-radius: 32px;
   background-color: var(--gray-400);
   color: var(--white);
@@ -62,7 +64,13 @@
 
 .topEmojis {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.emojiArea {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
 .dropDown {
@@ -71,12 +79,11 @@
 
 .dropDownWrapper {
   position: relative;
-  font-size: 1rem;
+  margin-left: 2rem;
 }
 
 .imageStyle {
   display: flex;
-  margin-bottom: 1rem;
 }
 
 .profileImage {
