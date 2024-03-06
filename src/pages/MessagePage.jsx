@@ -9,7 +9,7 @@ import styles from './MessagePage.module.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { createMessageApi, getRecipient } from '../apis/createMessageApi';
 
-const FIRST_PROFILE_URL = 'https://i.imgur.com/v9GSBUB.png';
+const FIRST_PROFILE_URL = 'https://i.imgur.com/u4nrpjo.png';
 
 const MessagePage = () => {
   const [nameValue, setNameValue] = useState('');
@@ -24,7 +24,7 @@ const MessagePage = () => {
   const asyncRecipient = async () => {
     await getRecipient();
   };
-
+  console.log(profileUrl);
   const submitInfo = {
     sender: nameValue,
     relationship: relation,
@@ -45,6 +45,7 @@ const MessagePage = () => {
 
   const handleNameChange = name => {
     setNameValue(name);
+    console.log(name);
   };
 
   const handleMessageChange = text => {
@@ -80,7 +81,11 @@ const MessagePage = () => {
       <div className={styles.pageContainer}>
         <form className={styles.form} onSubmit={handleDataSubmit}>
           <NameInsert name={nameValue} onNameChange={handleNameChange} />
-          <Profile profileUrl={profileUrl} onProfileUrlChange={handleCustomImgUrlGet} />
+          <Profile
+            profileUrl={profileUrl}
+            onProfileUrlChange={handleCustomImgUrlGet}
+            customImgUrl={FIRST_PROFILE_URL}
+          />
           <Relation onRelationChange={handleRelationChange} relation={relation} />
           <InputMessage onMessageChange={handleMessageChange} />
           <FontPicker onFontChange={handleFontChange} font={font} />
