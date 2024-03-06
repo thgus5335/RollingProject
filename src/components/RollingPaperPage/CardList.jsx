@@ -14,8 +14,6 @@ const RollingPage = ({ id, mode = 'normal' }) => {
     setMessage(response);
   };
 
-  console.log('#######', mode);
-
   useEffect(() => {
     fetchData(id);
   }, []);
