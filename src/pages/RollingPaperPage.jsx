@@ -34,37 +34,37 @@ const RollingPage = () => {
     fetchData(id.id);
   }, []);
 
-  console.log('ㅠㅠㅠㅠㅠㅠ', id);
-
   return (
-    <main>
-      <HeaderRolling />
-      <div
-        className={`${styles.rollingBackground} ${styles[background]}`}
-        style={{ backgroundImage: `url(${backgroundImageURL})` }}></div>
-      <div className={styles.rollingContainer}>
-        <div className={styles.buttonContainer}>
-          <div className={styles.buttonEdit}>
-            {mode === 'normal' ? (
-              <Button size={'medium'} type="outline" onClick={() => setMode('edit')}>
-                편집하기
-              </Button>
-            ) : (
-              <Button
-                size={'medium'}
-                type="primary"
-                onClick={() => {
-                  setMode('normal');
-                  handleDelete(id.id);
-                }}>
-                삭제하기
-              </Button>
-            )}
+    <>
+      <HeaderRolling rollingInfo={rollingInfo} />
+      <main>
+        <div
+          className={`${styles.rollingBackground} ${styles[background]}`}
+          style={{ backgroundImage: `url(${backgroundImageURL})` }}></div>
+        <div className={styles.rollingContainer}>
+          <div className={styles.buttonContainer}>
+            <div className={styles.buttonEdit}>
+              {mode === 'normal' ? (
+                <Button size={'medium'} type="outline" onClick={() => setMode('edit')}>
+                  편집하기
+                </Button>
+              ) : (
+                <Button
+                  size={'medium'}
+                  type="primary"
+                  onClick={() => {
+                    setMode('normal');
+                    handleDelete(id.id);
+                  }}>
+                  삭제하기
+                </Button>
+              )}
+            </div>
           </div>
+          <CardList id={id.id} mode={mode} />
         </div>
-        <CardList id={id.id} mode={mode} />
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 
