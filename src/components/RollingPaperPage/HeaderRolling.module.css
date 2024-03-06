@@ -34,3 +34,7 @@
   top: 2rem;
   right: 1rem;
 }
+
+.dropDownWrapper{
+  position: relative;
+}
