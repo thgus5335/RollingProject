@@ -1,9 +1,9 @@
 .headerContainer {
   display: flex;
-  width: 102.4rem;
+  max-width: 120rem;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 1rem auto;
   font-size: 4rem;
   font-weight: bold;
 }
@@ -31,9 +31,45 @@
 
 .emojiContainer {
   position: absolute;
-  top: 2rem;
+  top: 5rem;
   right: 1rem;
 }
+
+
+.emojiDropDown {
+  position: absolute;
+  top: 5rem;
+  right: 10rem;
+  display: flex;
+  width: 34rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  background-color: var(--white);
+  gap: 1rem;
+}
+
+.emojiBox {
+  display: flex;
+  width: 6.6rem;
+  height: 3.6rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.2rem;
+  border-radius: 32px;
+  background-color: var(--gray-400);
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.topEmojis {
+  display: flex;
+  gap: 1rem;
+}
+
+.dropDown {
+  cursor: pointer;
 
 .dropDownWrapper{
   position: relative;

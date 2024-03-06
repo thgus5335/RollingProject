@@ -1,19 +1,19 @@
 import postRolling from '../../apis/createRollingAPI';
 import styles from './CreateRollingButton.module.css';
 import { useCreateRollingContext } from '../../hooks/useCreateRollingContext';
-// import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CreateRollingButton = () => {
   const { inputValue, selectedColor, selectedImageURL } = useCreateRollingContext();
   const [id, setId] = useState('');
+  const navigate = useNavigate();
   useEffect(() => {
-    // Check if id is truthy before navigating
     if (id) {
-      window.location.href = `/post/${id}`;
+      navigate(`/post/${id}`);
     }
-  }, [id]);
+  }, [id, navigate]);
   const handleCreateButtonClick = async () => {
     console.log(inputValue, selectedColor, selectedImageURL);
     const postData = {
