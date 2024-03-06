@@ -64,7 +64,7 @@ const Card = ({ mode = 'normal', messageInfo }) => {
         </div>
 
         <div className={styles.content}>
-          <p className={styles.message}>{content}</p>
+          <p className={styles.message} dangerouslySetInnerHTML={{ __html: content }} />
           <p className={styles.date}>{date}</p>
         </div>
       </div>

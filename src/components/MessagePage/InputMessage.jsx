@@ -2,8 +2,9 @@ import styles from './InputMessage.module.css';
 import ReactQuill from 'react-quill';
 const InputMessage = ({ onMessageChange }) => {
   const handleChangeContent = text => {
-    const pureText = text.replace(/(<([^>]+)>)/gi, '');
-    onMessageChange(pureText);
+    // const pureText = text.replace(/(<([^>]+)>)/gi, '');
+    console.log(text);
+    onMessageChange(text);
   };
   return (
     <div className={styles.container}>
