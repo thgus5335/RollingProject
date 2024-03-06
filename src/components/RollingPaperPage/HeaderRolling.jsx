@@ -16,6 +16,8 @@ const HeaderRolling = ({ rollingInfo }) => {
   const [emojiDropDown, setEmojiDropDown] = useState(false);
   const recipient = rollingInfo.name;
   const writer = rollingInfo.messageCount;
+  const recentMessages = rollingInfo.recentMessages;
+
   const id = rollingInfo.id;
 
   const [topEmojis, setTopEmojis] = useState([]);
@@ -32,9 +34,17 @@ const HeaderRolling = ({ rollingInfo }) => {
   };
 
   const [dropdown, setDropdown] = useState(false);
+<<<<<<< HEAD
   const handleDropdown = () => {
     setDropdown(true);
   };
+=======
+
+  const handleDropdown = () => {
+    setDropdown(true);
+  };
+
+>>>>>>> dcf10d93e05d002e340f15628705a4ac97dc54c5
   const handleClickShareURL = async () => {
     const url = window.location.href;
     await navigator.clipboard.writeText(url);
@@ -42,6 +52,11 @@ const HeaderRolling = ({ rollingInfo }) => {
   };
   const shareRef = useRef(null);
   useClickOutside(shareRef, setDropdown);
+<<<<<<< HEAD
+=======
+  useClickOutside(shareRef, setDropdown);
+
+>>>>>>> dcf10d93e05d002e340f15628705a4ac97dc54c5
   const handleButtonClick = () => {
     setIsEmojiClicked(prev => !prev);
   };
@@ -65,16 +80,32 @@ const HeaderRolling = ({ rollingInfo }) => {
     <div className={styles.headerContainer}>
       <div className={styles.recipient}>To. {recipient}</div>
       <div className={styles.contentContainer}>
-        <div className={styles.writer}>profile img {writer}명이 작성했어요!</div>
-        <div className={styles.topEmojis}>
-          {topEmojis &&
-            topEmojis.map(emoji => (
-              <div key={emoji.id} className={styles.emojiBox}>
-                <p>
-                  {emoji.emoji} {emoji.count}
-                </p>
-              </div>
+        {recentMessages && (
+          <div className={styles.imageStyle}>
+            {recentMessages.map((recentMessage, index) => (
+              <img
+                key={recentMessage.id}
+                src={recentMessage.profileImageURL}
+                className={styles.profileImage}
+                style={{ left: `${index * -1.3}rem` }}
+              />
             ))}
+            {writer > 3 && <div className={styles.plusProfile}>+{writer - 3}</div>}
+          </div>
+        )}
+        <div className={styles.writer}>
+          <span className={styles.strongSpan}>{writer}</span>명이 작성했어요!
+        </div>
+        <div className={styles.emojiArea}>
+          {topEmojis && (
+            <div className={styles.topEmojis}>
+              {topEmojis.map(emoji => (
+                <div key={emoji.id} className={styles.emojiBox}>
+                  {emoji.emoji} {emoji.count}
+                </div>
+              ))}
+            </div>
+          )}
           <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
         </div>
         {emojiDropDown && (
