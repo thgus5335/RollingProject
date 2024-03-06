@@ -34,17 +34,10 @@ const HeaderRolling = ({ rollingInfo }) => {
   };
 
   const [dropdown, setDropdown] = useState(false);
-<<<<<<< HEAD
-  const handleDropdown = () => {
-    setDropdown(true);
-  };
-=======
-
   const handleDropdown = () => {
     setDropdown(true);
   };
 
->>>>>>> dcf10d93e05d002e340f15628705a4ac97dc54c5
   const handleClickShareURL = async () => {
     const url = window.location.href;
     await navigator.clipboard.writeText(url);
@@ -52,11 +45,7 @@ const HeaderRolling = ({ rollingInfo }) => {
   };
   const shareRef = useRef(null);
   useClickOutside(shareRef, setDropdown);
-<<<<<<< HEAD
-=======
-  useClickOutside(shareRef, setDropdown);
 
->>>>>>> dcf10d93e05d002e340f15628705a4ac97dc54c5
   const handleButtonClick = () => {
     setIsEmojiClicked(prev => !prev);
   };
