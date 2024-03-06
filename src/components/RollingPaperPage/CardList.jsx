@@ -4,6 +4,7 @@ import Card from './Card';
 import { useState, useEffect } from 'react';
 import { getMessage } from '../../apis/rollingPaperAPI';
 import { Link } from 'react-router-dom';
+// import useIntersection from '../../hooks/useIntersection';
 
 const RollingPage = ({ id, mode = 'normal' }) => {
   const [message, setMessage] = useState([]);
@@ -19,12 +20,15 @@ const RollingPage = ({ id, mode = 'normal' }) => {
   }, []);
 
   return (
-    <div className={styles.cardList}>
-      <Link className={styles[editMode]} to={`/post/${id}/message`}>
-        <AddCard mode={mode} />
-      </Link>
-      {message && message.map(message => <Card key={message.id} mode={mode} messageInfo={message} />)}
-    </div>
+    <>
+      <div className={styles.cardList}>
+        <Link className={styles[editMode]} to={`/post/${id}/message`}>
+          <AddCard mode={mode} />
+        </Link>
+        {message && message.map(message => <Card key={message.id} mode={mode} messageInfo={message} />)}
+      </div>
+      {/* <div ref={observer}></div> */}
+    </>
   );
 };
 
