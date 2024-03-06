@@ -1,12 +1,54 @@
 .rollingBackground {
-  display: flex;
+  position: relative;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
+  background-attachment: fixed;
+  background-color: var(--gray-200);
+}
+
+.rollingContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 8rem 0;
-  background-attachment: fixed;
+  padding: 8rem 2.4rem;
+}
+
+.purple {
+  position: absolute;
+  background-color: var(--purple-200);
+}
+
+.blue {
+  position: absolute;
+  background-color: var(--blue-200);
+}
+
+.beige {
+  position: absolute;
   background-color: var(--orange-200);
+}
+
+.green {
+  position: absolute;
+  background-color: var(--green-200);
+}
+
+.imageBackground {
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imageBackground::before {
+  position: absolute;
+  background-color: var(--black);
+  content: '';
+  inset: 0;
+  opacity: 0.3;
 }
 
 .buttonContainer {
