@@ -4,9 +4,12 @@ import { useEffect, useState } from 'react';
 import Button from '../common/Button';
 import { getReaction, postReaction } from '../../apis/rollingPaperAPI';
 
-const HeaderRolling = ({ id }) => {
+const HeaderRolling = ({ rollingInfo }) => {
   const [selectedEmoji, setSelectedEmoji] = useState('');
   const [isClicked, setIsClicked] = useState(false);
+  const recipient = rollingInfo.name;
+  const writer = rollingInfo.messageCount;
+
   const [emoji, setEmoji] = useState([]);
 
   const fetchData = async id => {
@@ -16,7 +19,7 @@ const HeaderRolling = ({ id }) => {
   };
 
   useEffect(() => {
-    fetchData(id);
+    fetchData(rollingInfo);
   }, []);
 
   const handleButtonClick = () => {
@@ -29,11 +32,24 @@ const HeaderRolling = ({ id }) => {
     console.log(selectedEmoji);
     postReaction(selectedEmoji);
   };
+  console.log(selectedEmoji);
+
+  console.log(rollingInfo);
 
   return (
     <div className={styles.headerContainer}>
-      <div>To. Ashely</div>
+      <div className={styles.recipient}>To. {recipient}</div>
       <div className={styles.contentContainer}>
+        <div className={styles.writer}>profile img {writer}명이 작성했어요!</div>
+        <div>emoji</div>
+        <Button onClick={handleButtonClick} size="extraSmall" type="outline">
+          추가
+          {isClicked && (
+            <div className={styles.emojiContainer}>
+              <EmojiPicker onClick={onEmojiClick} />
+            </div>
+          )}
+        </Button>
         <div>profile img 23명이 작성했어요!</div>
         {emoji &&
           emoji.map(emoji => (

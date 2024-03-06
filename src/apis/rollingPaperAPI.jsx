@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { BASE_URL } from '../constants/constants';
+import { DELETE_URL } from '../constants/constants';
 
 const getRequest = async endPoint => {
   try {
@@ -23,7 +24,7 @@ const postRequest = async endPoint => {
 
 const deleteRequest = async endPoint => {
   try {
-    const response = await axios.delete(`${BASE_URL}${endPoint}`);
+    const response = await axios.delete(`${DELETE_URL}${endPoint}`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -41,11 +42,11 @@ export const getMessage = async recipientId => {
 };
 
 export const deleteRollingPaper = async recipientId => {
-  return deleteRequest(`${recipientId}/`);
+  return deleteRequest(`recipients/${recipientId}/`);
 };
 
 export const deleteMessage = async messageId => {
-  return deleteRequest(`${messageId}/`);
+  return deleteRequest(`messages/${messageId}/`);
 };
 
 export const postReaction = async recipientId => {
