@@ -1,5 +1,6 @@
 .rollingBackground {
   position: relative;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
   background-attachment: fixed;
@@ -16,18 +17,22 @@
 }
 
 .purple {
+  position: absolute;
   background-color: var(--purple-200);
 }
 
 .blue {
+  position: absolute;
   background-color: var(--blue-200);
 }
 
 .beige {
+  position: absolute;
   background-color: var(--orange-200);
 }
 
 .green {
+  position: absolute;
   background-color: var(--green-200);
 }
 
