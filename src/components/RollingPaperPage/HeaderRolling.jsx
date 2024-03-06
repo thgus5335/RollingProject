@@ -2,66 +2,83 @@ import styles from './HeaderRolling.module.css';
 import EmojiPicker from 'emoji-picker-react';
 import { useEffect, useState } from 'react';
 import Button from '../common/Button';
-import { getReaction, postReaction } from '../../apis/rollingPaperAPI';
+import { getReaction, postReaction, getTopReaction } from '../../apis/rollingPaperAPI';
+import dropDown from '../../assets/icons/dropDown.svg';
+import emojiIcon from '../../assets/icons/emojiIcon.svg';
 
 const HeaderRolling = ({ rollingInfo }) => {
-  const [selectedEmoji, setSelectedEmoji] = useState('');
-  const [isClicked, setIsClicked] = useState(false);
+  const [isEmojiClicked, setIsEmojiClicked] = useState(false);
+  const [emojiDropDown, setEmojiDropDown] = useState(false);
   const recipient = rollingInfo.name;
   const writer = rollingInfo.messageCount;
+  const id = rollingInfo.id;
+  // const topEmojis = rollingInfo.topReactions;
 
-  const [emoji, setEmoji] = useState([]);
+  const [emojiList, setEmojiList] = useState([]);
+  const [topEmojis, setTopEmojis] = useState([]);
 
-  const fetchData = async id => {
+  const fetchEmoji = async id => {
     const response = await getReaction(id);
-    setEmoji(response.results);
-    console.log(response.results);
+    setEmojiList(response);
   };
 
-  useEffect(() => {
-    fetchData(rollingInfo);
-  }, []);
+  const fetchTopEmoji = async id => {
+    const response = await getTopReaction(id);
+    setTopEmojis(response);
+  };
 
   const handleButtonClick = () => {
-    setIsClicked(prev => !prev);
+    setIsEmojiClicked(prev => !prev);
+  };
+
+  const handleEmojiDropDownClick = () => {
+    setEmojiDropDown(prev => !prev);
+    fetchEmoji(id);
   };
 
   const onEmojiClick = emoji => {
-    setSelectedEmoji(emoji);
-
-    console.log(selectedEmoji);
-    postReaction(selectedEmoji);
+    postReaction(id, emoji.emoji);
+    fetchEmoji(id);
+    fetchTopEmoji(id);
   };
-  console.log(selectedEmoji);
 
-  console.log(rollingInfo);
+  useEffect(() => {
+    if (id) fetchTopEmoji(id);
+  }, []);
 
   return (
     <div className={styles.headerContainer}>
       <div className={styles.recipient}>To. {recipient}</div>
       <div className={styles.contentContainer}>
         <div className={styles.writer}>profile img {writer}명이 작성했어요!</div>
-        <div>emoji</div>
-        <Button onClick={handleButtonClick} size="extraSmall" type="outline">
-          추가
-          {isClicked && (
-            <div className={styles.emojiContainer}>
-              <EmojiPicker onClick={onEmojiClick} />
-            </div>
-          )}
-        </Button>
-        <div>profile img 23명이 작성했어요!</div>
-        {emoji &&
-          emoji.map(emoji => (
-            <div key={emoji.id}>
-              {emoji.emoji}
-              {emoji.count}
-            </div>
-          ))}
+        <div className={styles.topEmojis}>
+          {topEmojis &&
+            topEmojis.map(emoji => (
+              <div key={emoji.id} className={styles.emojiBox}>
+                <p>
+                  {emoji.emoji} {emoji.count}
+                </p>
+              </div>
+            ))}
+          <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
+        </div>
+        {emojiDropDown && (
+          <div className={styles.emojiDropDown}>
+            {emojiList &&
+              emojiList.map(emoji => (
+                <div key={emoji.id} className={styles.emojiBox}>
+                  <p>
+                    {emoji.emoji} {emoji.count}
+                  </p>
+                </div>
+              ))}
+          </div>
+        )}
         <div>
-          <Button onClick={handleButtonClick} size="extraSmall" type="outline">
+          <Button onClick={handleButtonClick} size="small" type="outline">
+            <img src={emojiIcon} alt="emoji icon" />
             추가
-            {isClicked && (
+            {isEmojiClicked && (
               <div className={styles.emojiContainer}>
                 <EmojiPicker onEmojiClick={onEmojiClick} />
               </div>

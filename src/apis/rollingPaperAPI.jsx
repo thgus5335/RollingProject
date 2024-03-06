@@ -12,16 +12,6 @@ const getRequest = async endPoint => {
   }
 };
 
-const postRequest = async endPoint => {
-  try {
-    const response = await axios.post(`${BASE_URL}${endPoint}`);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
 const deleteRequest = async endPoint => {
   try {
     const response = await axios.delete(`${DELETE_URL}${endPoint}`);
@@ -49,10 +39,21 @@ export const deleteMessage = async messageId => {
   return deleteRequest(`messages/${messageId}/`);
 };
 
-export const postReaction = async recipientId => {
-  return postRequest(`${recipientId}/reactions/`);
+export const getReaction = async recipientId => {
+  const response = await getRequest(`${recipientId}/reactions/?limit=100`);
+  return response.results;
 };
 
-export const getReaction = async recipientId => {
-  return getRequest(`${recipientId}/reactions/`);
+export const getTopReaction = async recipientId => {
+  const response = await getRequest(`${recipientId}/reactions/?limit=3`);
+  return response.results;
+};
+
+export const postReaction = async (recipientId, emoji) => {
+  const postData = {
+    emoji: emoji,
+    type: 'increase',
+  };
+  const response = await axios.post(`${BASE_URL}${recipientId}/reactions/`, postData);
+  return response.emoji;
 };
