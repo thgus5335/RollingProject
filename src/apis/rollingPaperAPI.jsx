@@ -38,3 +38,22 @@ export const deleteRollingPaper = async recipientId => {
 export const deleteMessage = async messageId => {
   return deleteRequest(`messages/${messageId}/`);
 };
+
+export const getReaction = async recipientId => {
+  const response = await getRequest(`${recipientId}/reactions/?limit=20`);
+  return response.results;
+};
+
+export const getTopReaction = async recipientId => {
+  const response = await getRequest(`${recipientId}/`);
+  return response.topReactions;
+};
+
+export const postReaction = async (recipientId, emoji) => {
+  const postData = {
+    emoji: emoji,
+    type: 'increase',
+  };
+  const response = await axios.post(`${BASE_URL}${recipientId}/reactions/`, postData);
+  return response.emoji;
+};
