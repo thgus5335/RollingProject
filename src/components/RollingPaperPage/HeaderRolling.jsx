@@ -5,7 +5,6 @@ import Button from '../common/Button';
 import { getReaction, postReaction, getTopReaction } from '../../apis/rollingPaperAPI';
 import dropDown from '../../assets/icons/dropDown.svg';
 import emojiIcon from '../../assets/icons/emojiIcon.svg';
-import Button from '../common/Button';
 import toast from '../../Toast/Toast';
 import useClickOutside from '../../hooks/useClickOutside';
 import ImageButton from '../common/ImageButton';
@@ -111,7 +110,6 @@ const HeaderRolling = ({ rollingInfo }) => {
             )}
           </Button>
         </div>
-        <div>공유</div>
       </div>
         <div ref={shareRef} className={styles.dropDownWrapper}>
             <ImageButton
@@ -122,7 +120,7 @@ const HeaderRolling = ({ rollingInfo }) => {
           {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
         </div>
       </div>    
-    </div>
+    
   );
 };
 export default HeaderRolling;

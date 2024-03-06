@@ -1,7 +1,7 @@
 // Dropdown.jsx
 import React, { useEffect } from 'react';
 import styles from './Dropdown.module.css'; // Import your CSS file
-import ShareKaKao from '../../utils/ShareKakao.jsx';
+import ShareKaKao from '../../utils/ShareKakao';
 
 export default function Dropdown({ onClick, name }) {
   useEffect(() => {
