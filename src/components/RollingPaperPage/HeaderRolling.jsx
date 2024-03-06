@@ -12,8 +12,8 @@ const HeaderRolling = () => {
 
   const onEmojiClick = emoji => {
     setSelectedEmoji(emoji);
+    console.log(selectedEmoji);
   };
-  console.log(selectedEmoji);
 
   return (
     <div className={styles.headerContainer}>
@@ -21,14 +21,16 @@ const HeaderRolling = () => {
       <div className={styles.contentContainer}>
         <div>profile img 23명이 작성했어요!</div>
         <div>emoji</div>
-        <Button onClick={handleButtonClick} size="extraSmall" type="outline">
-          추가
-          {isClicked && (
-            <div className={styles.emojiContainer}>
-              <EmojiPicker onClick={onEmojiClick} />
-            </div>
-          )}
-        </Button>
+        <div>
+          <Button onClick={handleButtonClick} size="extraSmall" type="outline">
+            추가
+            {isClicked && (
+              <div className={styles.emojiContainer}>
+                <EmojiPicker onEmojiClick={onEmojiClick} />
+              </div>
+            )}
+          </Button>
+        </div>
         <div>공유</div>
       </div>
     </div>
