@@ -1,8 +1,5 @@
-.errorInput {
-  border-color: var(--error);
-}
-
 .errorText {
+  margin-top: 1rem;
   color: var(--error);
 }
 
@@ -19,4 +16,8 @@
   border: 1px solid var(--gray-300);
   border-radius: 8px;
   outline: none;
+}
+
+.errorInput {
+  border-color: var(--error);
 }
