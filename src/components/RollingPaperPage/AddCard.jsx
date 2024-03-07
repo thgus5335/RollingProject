@@ -2,7 +2,6 @@ import styles from './AddCard.module.css';
 import iconPlus from '../../assets/icons/plus.svg';
 
 const AddCard = ({ mode = { mode } }) => {
-  // const editMode = mode === 'edit' ? 'editCard' : '';
   return (
     <div className={`${styles.card}`}>
       <div className={styles.add}>

@@ -26,8 +26,8 @@ export const getRollingPaper = async recipientId => {
   return getRequest(`${recipientId}/`);
 };
 
-export const getMessage = async (recipientId, offset) => {
-  const response = await getRequest(`${recipientId}/messages/?limit=6&offset=${offset}`);
+export const getMessage = async (recipientId, limit, offset) => {
+  const response = await getRequest(`${recipientId}/messages/?limit=${limit}&offset=${offset}`);
   return response.results;
 };
 
