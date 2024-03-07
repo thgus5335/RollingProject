@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import plusIcon from '../../assets/icons/plus.svg';
 import styles from './Profile.module.css';
-// import uploadImage from '../../apis/uploadImage';
+import uploadImage from '../../apis/uploadImage';
 const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
   const [isHovered, setIsHovered] = useState(false);
-  console.log(isHovered);
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -13,28 +13,23 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
     setIsHovered(false);
   };
 
-  //   const [imgURL, setImgURL] = useState('');
-
   const handleImageUpload = async e => {
     setIsHovered(false);
     const uploadedFile = e.target.files[0];
-    console.log(uploadedFile);
 
     try {
-      //   const uploadedImageURL = await uploadImage({ file: uploadedFile });
-      const uploadedImageURL = URL.createObjectURL(uploadedFile);
-      console.log(uploadedImageURL);
+      const uploadedImageURL = await uploadImage({ file: uploadedFile });
+      // const uploadedImageURL = URL.createObjectURL(uploadedFile);
       onProfileUrlChange(uploadedImageURL);
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   };
+
   const handleRemoveUrl = () => {
     onProfileUrlChange(customImgUrl);
   };
-  console.log(customImgUrl);
-  console.log(profileUrl);
-  console.log(profileUrl === customImgUrl);
+
   return (
     <>
       <input
@@ -45,6 +40,7 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
         className={styles.input}
         style={{ display: 'none' }}
       />
+      {/* 프로필 선택이 아무 것도 안 됐을 때 */}
       {profileUrl === customImgUrl ? (
         <>
           {isHovered ? (
@@ -70,6 +66,7 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
               </div>
             </label>
           ) : (
+            //hover 안 됐을 때 기본 이미지
             <div className={styles.customImgContainer} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <img width="80px" height="80px" className={styles.customImg} src={customImgUrl} />
             </div>
@@ -77,8 +74,10 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
         </>
       ) : (
         <>
+          {/* 프로필 이미지가 기본 이미지 아닐 때  */}
           <div className={styles.customImgContainer} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <img width="80px" height="80px" className={styles.customImg} src={profileUrl} />
+            {/* 호버 했을 때 */}
             {isHovered && (
               <div onClick={handleRemoveUrl} className={styles.delete}>
                 삭제하기

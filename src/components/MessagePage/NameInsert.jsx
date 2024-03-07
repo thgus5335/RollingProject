@@ -3,6 +3,7 @@ import styles from './NameInsert.module.css';
 
 const NameInsert = ({ name, onNameChange }) => {
   const [blur, setBlur] = useState(false);
+
   const handleChangeName = e => {
     const newName = e.target.value;
     onNameChange(newName);
@@ -11,14 +12,15 @@ const NameInsert = ({ name, onNameChange }) => {
   const handleBlurFromInput = () => {
     setBlur(name.trim().length === 0);
   };
+
   const handleKeyDown = e => {
-    console.log(e.key);
     if (e.key === 'Enter' && name === '') {
       setBlur(true);
     } else {
       setBlur(false);
     }
   };
+
   return (
     <div className={styles.nameContainer}>
       <h1 className={styles.title}>From.</h1>

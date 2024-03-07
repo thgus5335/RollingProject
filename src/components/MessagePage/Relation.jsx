@@ -1,7 +1,7 @@
 import styles from './Relation.module.css';
 import { useState } from 'react';
 
-const RelationShip = ({ onRelationChange, relation }) => {
+const Relation = ({ onRelationChange, relation }) => {
   const [showOptions, setShowOptions] = useState(false);
 
   const handleOnChangeSelectValue = e => {
@@ -35,4 +35,4 @@ const RelationShip = ({ onRelationChange, relation }) => {
   );
 };
 
-export default RelationShip;
+export default Relation;
