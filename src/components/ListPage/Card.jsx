@@ -17,7 +17,6 @@ const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMess
   const backgroundImageStyle = {
     backgroundImage: backgroundImage ? `url(${backgroundImage})` : `url(${backgroundImagePattern[background]})`,
     zIndex: -2,
-    backgroundPosition: 'right bottom',
     backgroundRepeat: 'no-repeat',
   };
 

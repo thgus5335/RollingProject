@@ -23,7 +23,6 @@
 .backgroundImage {
   position: relative;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
 }
@@ -41,21 +40,25 @@
 /* color */
 .purple {
   background: var(--purple-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
 .blue {
   background-color: var(--blue-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
 .beige {
   background-color: var(--orange-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
 .green {
   background-color: var(--green-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
