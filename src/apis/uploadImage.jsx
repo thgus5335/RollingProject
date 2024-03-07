@@ -3,19 +3,22 @@ import axios from 'axios';
 const API_URL = 'https://api.imgur.com/3/image';
 
 const uploadImage = async ({ file }) => {
-  const clientId = 'fd2e1e3d3d12ce1';
-  const auth = 'Client-ID ' + clientId;
+  // const clientId = 'fd2e1e3d3d12ce1';
+  // const auth = 'Client-ID ' + clientId;
 
   const formData = new FormData();
   formData.append('image', file);
 
+  // try {
+  //   const response = await axios.post(API_URL, formData, {
+  //     headers: {
+  //       Authorization: auth,
+  //       'Content-Type': 'multipart/form-data',
+  //     },
+  //   });
+
   try {
-    const response = await axios.post(API_URL, formData, {
-      headers: {
-        Authorization: auth,
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    const response = await axios.post(API_URL, formData);
 
     console.log('Success:', response.data);
 
