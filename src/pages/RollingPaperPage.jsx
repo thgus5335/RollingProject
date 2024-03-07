@@ -19,7 +19,6 @@ const RollingPage = () => {
     const response = await getRollingPaper(id);
     setRollingInfo(response);
   };
-  console.log('rollingInfo', rollingInfo);
 
   const handleDelete = async id => {
     const error = await deleteRollingPaper(id);
