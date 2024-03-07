@@ -4,7 +4,7 @@
 
 .container {
   position: relative;
-  width: 116rem;
+  max-width: 116rem;
   margin-top: 4rem;
   overflow-x: hidden;
 }
