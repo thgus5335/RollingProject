@@ -26,7 +26,7 @@ const CommonSection = ({ title, data }) => {
   return (
     <section className={styles.commonSection}>
       <h3 className={styles.title}>{title}</h3>
-      {Array.isArray(data) && data.length && (
+      {!!data.length && (
         <div className={styles.cardFlex} style={{ transform: `translateX(-${currentIndex * 29.5}rem)` }}>
           {data.map(card => (
             <Link to={`/post/${card.id}`} key={card.id}>
