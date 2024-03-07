@@ -13,8 +13,6 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
     setIsHovered(false);
   };
 
-  //   const [imgURL, setImgURL] = useState('');
-
   const handleImageUpload = async e => {
     setIsHovered(false);
     const uploadedFile = e.target.files[0];
@@ -22,7 +20,6 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
 
     try {
       const uploadedImageURL = await uploadImage({ file: uploadedFile });
-      // const uploadedImageURL = URL.createObjectURL(uploadedFile);
       console.log(uploadedImageURL);
       onProfileUrlChange(uploadedImageURL);
     } catch (error) {
