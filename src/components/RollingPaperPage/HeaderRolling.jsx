@@ -55,8 +55,11 @@ const HeaderRolling = ({ rollingInfo }) => {
   };
 
   const onEmojiClick = emoji => {
-    postReaction(id, emoji.emoji);
-    fetchEmoji(id);
+    postReaction(id, emoji.emoji).then(() => {
+      fetchEmoji(id);
+      fetchTopEmojis(id);
+    });
+    setIsEmojiClicked(prev => !prev);
     fetchTopEmojis(id);
   };
 
@@ -112,12 +115,12 @@ const HeaderRolling = ({ rollingInfo }) => {
           <Button onClick={handleButtonClick} size="small" type="outline">
             <img src={emojiIcon} alt="emoji icon" />
             추가
-            {isEmojiClicked && (
-              <div className={styles.emojiContainer}>
-                <EmojiPicker onEmojiClick={onEmojiClick} />
-              </div>
-            )}
           </Button>
+          {isEmojiClicked && (
+            <div className={styles.emojiContainer}>
+              <EmojiPicker onEmojiClick={onEmojiClick} />
+            </div>
+          )}
         </div>
         <div ref={shareRef} className={styles.dropDownWrapper}>
           <ImageButton imageURL={shareIcon} imageAlt="share-icon" handleClick={handleDropdown} />

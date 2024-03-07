@@ -45,8 +45,8 @@ export const getReaction = async recipientId => {
 };
 
 export const getTopReaction = async recipientId => {
-  const response = await getRequest(`${recipientId}/`);
-  return response.topReactions;
+  const response = await getRequest(`${recipientId}/reactions/?limit=3`);
+  return response.results;
 };
 
 export const postReaction = async (recipientId, emoji) => {
