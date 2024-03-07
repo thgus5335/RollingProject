@@ -17,7 +17,6 @@ const HeaderRolling = ({ rollingInfo }) => {
   const recipient = rollingInfo.name;
   const writer = rollingInfo.messageCount;
   const recentMessages = rollingInfo.recentMessages;
-
   const id = rollingInfo.id;
 
   const [topEmojis, setTopEmojis] = useState([]);

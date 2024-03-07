@@ -40,7 +40,7 @@ export const deleteMessage = async messageId => {
 };
 
 export const getReaction = async recipientId => {
-  const response = await getRequest(`${recipientId}/reactions/?limit=20`);
+  const response = await getRequest(`${recipientId}/reactions/?limit=8`);
   return response.results;
 };
 
