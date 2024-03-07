@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import plusIcon from '../../assets/icons/plus.svg';
 import styles from './Profile.module.css';
-// import uploadImage from '../../apis/uploadImage';
+import uploadImage from '../../apis/uploadImage';
 const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
   const [isHovered, setIsHovered] = useState(false);
   console.log(isHovered);
@@ -13,16 +13,13 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
     setIsHovered(false);
   };
 
-  //   const [imgURL, setImgURL] = useState('');
-
   const handleImageUpload = async e => {
     setIsHovered(false);
     const uploadedFile = e.target.files[0];
     console.log(uploadedFile);
 
     try {
-      //   const uploadedImageURL = await uploadImage({ file: uploadedFile });
-      const uploadedImageURL = URL.createObjectURL(uploadedFile);
+      const uploadedImageURL = await uploadImage({ file: uploadedFile });
       console.log(uploadedImageURL);
       onProfileUrlChange(uploadedImageURL);
     } catch (error) {

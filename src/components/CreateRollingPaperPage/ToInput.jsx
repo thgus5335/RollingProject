@@ -13,6 +13,7 @@ const ToInput = () => {
         <input
           type="text"
           id="to-input"
+          maxLength="15"
           placeholder={placeholder}
           value={inputValue}
           onChange={handleInputChange}
