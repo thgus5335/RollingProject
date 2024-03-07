@@ -3,6 +3,7 @@ import beigePattern from '../../assets/images/pattern-beige.png';
 import bluePattern from '../../assets/images/pattern-blue.png';
 import purplePattern from '../../assets/images/pattern-purple.png';
 import greenPattern from '../../assets/images/pattern-green.png';
+import Emoji from '../common/Emoji';
 
 const backgroundImagePattern = {
   beige: beigePattern,
@@ -43,14 +44,9 @@ const Card = ({ name, messageCount, backgroundImage, backgroundColor, recentMess
           <span className={styles.strongSpan}>{messageCount}</span>명이 작성했어요!
         </p>
       </div>
-
       {emoticon.length !== 0 && (
-        <div className={styles.emojiArea}>
-          {emoticon.map(emoji => (
-            <div key={emoji.id} className={styles.emoji}>
-              {emoji.emoji} {emoji.count}
-            </div>
-          ))}
+        <div className={styles.cardBorderLine}>
+          <Emoji emoticon={emoticon} />
         </div>
       )}
     </div>

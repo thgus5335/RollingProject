@@ -62,20 +62,12 @@
   color: var(--black);
 }
 
-/* emoji */
-.emojiArea {
+.cardBorderLine {
   bottom: 1rem;
   display: flex;
   padding-top: 1.5rem;
   border-top: 0.1rem solid rgb(0 0 0 / 12%);
   gap: 1rem;
-}
-
-.emoji {
-  padding: 0.8rem 1.2rem;
-  border-radius: 9.9rem;
-  background-color: var(--gray-400);
-  color: var(--white);
 }
 
 .imageStyle {

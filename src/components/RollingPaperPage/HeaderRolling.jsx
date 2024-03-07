@@ -10,6 +10,7 @@ import useClickOutside from '../../hooks/useClickOutside';
 import ImageButton from '../common/ImageButton';
 import shareIcon from '../../assets/icons/share-icon.svg';
 import Dropdown from './Dropdown';
+import Emoji from '../common/Emoji';
 
 const HeaderRolling = ({ rollingInfo }) => {
   const [isEmojiClicked, setIsEmojiClicked] = useState(false);
@@ -86,27 +87,21 @@ const HeaderRolling = ({ rollingInfo }) => {
           <span className={styles.strongSpan}>{writer}</span>명이 작성했어요!
         </div>
         <div className={styles.emojiArea}>
-          {topEmojis && (
-            <div className={styles.topEmojis}>
-              {topEmojis.map(emoji => (
-                <div key={emoji.id} className={styles.emojiBox}>
-                  {emoji.emoji} {emoji.count}
-                </div>
-              ))}
-            </div>
-          )}
+          {topEmojis && <Emoji emoticon={topEmojis} />}
           <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
         </div>
         {emojiDropDown && (
           <div className={styles.emojiDropDown}>
-            {emojiList &&
-              emojiList.map(emoji => (
-                <div key={emoji.id} className={styles.emojiBox}>
-                  <p>
-                    {emoji.emoji} {emoji.count}
-                  </p>
-                </div>
-              ))}
+            {emojiList && (
+              // emojiList.map(emoji => (
+              //   <div key={emoji.id} className={styles.emojiBox}>
+              //     <p>
+              //       {emoji.emoji} {emoji.count}
+              //     </p>
+              //   </div>
+              // ))
+              <Emoji emoticon={emojiList} />
+            )}
           </div>
         )}
         <div>
