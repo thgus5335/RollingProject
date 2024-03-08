@@ -96,6 +96,12 @@
   gap: 1rem;
 }
 
+.addEmojiButton {
+  @media (width<=768px) {
+    display: none;
+  }
+}
+
 .emojiArea {
   display: flex;
   gap: 0.5rem;
