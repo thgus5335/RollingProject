@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getHotApi, getRecentApi } from '../apis/getRecentApi';
+import { getHotApi, getRecentApi } from '../apis/getRecentHotApi';
 
 const useFetchListData = () => {
   const [hotData, setHotData] = useState([]);

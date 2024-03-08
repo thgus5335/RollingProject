@@ -40,13 +40,13 @@ export const deleteMessage = async messageId => {
 };
 
 export const getReaction = async recipientId => {
-  const response = await getRequest(`${recipientId}/reactions/?limit=20`);
+  const response = await getRequest(`${recipientId}/reactions/?limit=8`);
   return response.results;
 };
 
 export const getTopReaction = async recipientId => {
-  const response = await getRequest(`${recipientId}/`);
-  return response.topReactions;
+  const response = await getRequest(`${recipientId}/reactions/?limit=3`);
+  return response.results;
 };
 
 export const postReaction = async (recipientId, emoji) => {
