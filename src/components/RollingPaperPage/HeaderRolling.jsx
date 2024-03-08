@@ -5,12 +5,12 @@ import Button from '../common/Button';
 import { getReaction, postReaction, getTopReaction } from '../../apis/rollingPaperAPI';
 import dropDown from '../../assets/icons/dropDown.svg';
 import emojiIcon from '../../assets/icons/emojiIcon.svg';
-import toast from '../../Toast/Toast';
 import useClickOutside from '../../hooks/useClickOutside';
 import shareIcon from '../../assets/icons/share-icon.svg';
 import Dropdown from './Dropdown';
 import Emoji from '../common/Emoji';
 import Profile from '../common/Profile';
+
 
 const HeaderRolling = ({ rollingInfo }) => {
   const [isEmojiClicked, setIsEmojiClicked] = useState(false);
@@ -42,7 +42,6 @@ const HeaderRolling = ({ rollingInfo }) => {
   const handleClickShareURL = async () => {
     const url = window.location.href;
     await navigator.clipboard.writeText(url);
-    toast.addSuccess('URL이 복사되었습니다.');
   };
   const shareRef = useRef(null);
   useClickOutside(shareRef, setDropdown);
@@ -90,7 +89,7 @@ const HeaderRolling = ({ rollingInfo }) => {
               <div>
                 <Button className={styles.emojiButton} onClick={handleButtonClick} size="small" type="outline">
                   <img src={emojiIcon} alt="emoji icon" />
-                  추가
+                  <span className={styles.addEmojiButton}>추가</span>
                   {isEmojiClicked && (
                     <div className={styles.emojiContainer}>
                       <EmojiPicker onEmojiClick={onEmojiClick} />

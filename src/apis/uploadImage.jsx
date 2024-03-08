@@ -17,11 +17,6 @@ const uploadImage = async ({ file }) => {
       },
     });
 
-    // try {
-    //   const response = await axios.post(API_URL, formData);
-
-    //   console.log('Success:', response.data);
-
     const imageUrl = response.data.data.link;
 
     return imageUrl;

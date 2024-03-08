@@ -1,16 +1,8 @@
 import React from 'react';
 
-// QuillToolbar 컴포넌트 정의
 const CustomToolbar = () => (
   <div id="toolbar">
     <span className="ql-formats">
-      <select className="ql-font" defaultValue="notoSans">
-        <option value="notoSans">Noto Sans</option>
-        <option value="pretendard">Pretendard</option>
-        <option value="nanumMyeongjo">나눔명조</option>
-        <option value="nanumPenScript">나눔손글씨</option>
-      </select>
-
       <select className="ql-header">
         <option value="1">Header 1</option>
         <option value="2">Header 2</option>

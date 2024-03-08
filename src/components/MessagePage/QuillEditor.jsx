@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import './QuillEditor.module.css';
 import CustomToolbar from './CustomToolbar';
-// 사용하고 싶은 옵션, 나열 되었으면 하는 순서대로 나열
 
 const Font = Quill.import('attributors/class/font');
 Font.whitelist = ['notoSans', 'pretendard', 'nanumMyeongjo', 'nanumPenScript'];
@@ -13,9 +11,7 @@ const QuillEditor = ({ onMessageChange }) => {
   const [editorValue, setEditorValue] = useState('');
 
   useEffect(() => {
-    // 글꼴 적용을 위한 CSS 설정
     const style = document.createElement('style');
-    // style.type = 'text/css';
     style.innerHTML = `
       .ql-snow .ql-editor {
         font-family: 'notoSans', sans-serif; !important
@@ -39,17 +35,15 @@ const QuillEditor = ({ onMessageChange }) => {
 
     `;
     document.head.appendChild(style);
-    console.log(style);
+
     return () => {
-      // 컴포넌트 언마운트 시 스타일 요소 제거
       document.head.removeChild(style);
     };
   }, []);
 
-  console.log(editorValue);
   const modules = {
     toolbar: {
-      container: '#toolbar', // QuillToolbar 컴포넌트에서 정의한 id 사용
+      container: '#toolbar',
       handlers: {},
     },
     history: {

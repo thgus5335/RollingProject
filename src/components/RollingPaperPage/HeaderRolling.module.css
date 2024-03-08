@@ -87,13 +87,19 @@
   top: 5rem;
   right: 19rem;
   display: flex;
-  width: 34rem;
+  width: 38rem;
   flex-wrap: wrap;
   padding: 2rem;
   border: 1px solid var(--gray-300);
   border-radius: 8px;
   background-color: var(--white);
   gap: 1rem;
+}
+
+.addEmojiButton {
+  @media (width<=768px) {
+    display: none;
+  }
 }
 
 .emojiArea {
