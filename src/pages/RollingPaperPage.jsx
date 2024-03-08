@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { deleteRollingPaper, getRollingPaper } from '../apis/rollingPaperAPI';
 import HeaderRolling from '../components/RollingPaperPage/HeaderRolling';
+import Header from '../components/common/Header';
 
 const RollingPage = () => {
   const id = useParams();
@@ -36,6 +37,7 @@ const RollingPage = () => {
 
   return (
     <>
+      <Header />
       <HeaderRolling rollingInfo={rollingInfo} />
       <main>
         <div
