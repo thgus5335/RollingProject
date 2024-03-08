@@ -7,6 +7,10 @@
   max-width: 116rem;
   margin-top: 4rem;
   overflow-x: hidden;
+
+  @media (width<=1024px) {
+    overflow-x: scroll;
+  }
 }
 
 .cardFlex {
@@ -18,7 +22,6 @@
 
   @media (width<=1024px) {
     width: 100vw;
-    overflow-x: scroll;
     scroll-behavior: smooth;
   }
 }
