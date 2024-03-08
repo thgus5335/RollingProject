@@ -1,5 +1,4 @@
 import styles from './MessagePage.module.css';
-
 import MessageForm from '../components/MessagePage/MessageForm';
 
 const MessagePage = () => {
