@@ -11,7 +11,7 @@ const RollingPage = ({ id, mode = 'normal' }) => {
   const [messageList, setMessageList] = useState([]);
   const [ref, inView] = useInView();
   const editMode = mode === 'edit' ? 'editCard' : '';
-  const LIMIT = 12;
+  const LIMIT = 9;
 
   const handleMessageList = async (id, limit, offset) => {
     if (offset === 0) {
@@ -37,7 +37,7 @@ const RollingPage = ({ id, mode = 'normal' }) => {
           <AddCard mode={mode} />
         </Link>
         {messageList && messageList.map(message => <Card key={message.id} mode={mode} messageInfo={message} />)}
-        <p ref={ref}></p>
+        <p className={styles.target} ref={ref}></p>
       </div>
     </>
   );
