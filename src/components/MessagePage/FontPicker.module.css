@@ -50,7 +50,7 @@
   left: 0;
   overflow: hidden;
   width: 100%;
-  height: 13rem;
+  height: 12.7rem;
   max-height: 'none';
   padding: 0;
   border-radius: 8px;
@@ -66,11 +66,27 @@
 }
 
 .list {
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.4rem;
   font-size: 1.6rem;
   transition: background-color 0.2s ease-in;
 
   &:hover {
     background-color: var(--purple-300);
   }
+}
+
+.fontFamily1 {
+  font-family: notoSans, sans-serif !important;
+}
+
+.fontFamily2 {
+  font-family: Pretendard, sans-serif !important;
+}
+
+.fontFamily3 {
+  font-family: nanumMyeongjo, sans-serif !important;
+}
+
+.fontFamily4 {
+  font-family: nanumPenScript, sans-serif !important;
 }
