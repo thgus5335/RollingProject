@@ -9,6 +9,7 @@ import { useInView } from 'react-intersection-observer';
 const RollingPage = ({ id, mode = 'normal' }) => {
   const [offset, setOffset] = useState(0);
   const [messageList, setMessageList] = useState([]);
+  const [ref, inView] = useInView();
   const editMode = mode === 'edit' ? 'editCard' : '';
   const LIMIT = 12;
 
@@ -22,7 +23,6 @@ const RollingPage = ({ id, mode = 'normal' }) => {
     }
   };
 
-  const [ref, inView] = useInView();
   useEffect(() => {
     if (inView) {
       setOffset(preOffset => preOffset + LIMIT);
