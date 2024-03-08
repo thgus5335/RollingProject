@@ -1,0 +1,47 @@
+@font-face {
+  font-family: pretendard;
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: notoSans;
+  src: url('../../font/NotoSansKR-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: nanumMyeongjo;
+  src: url('../../font/NanumMyeongjo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: nanumPenScript;
+  src: url('../../font/NanumPenScript-Regular.ttf') format('truetype');
+}
+
+/* QuillEditorStyles.css */
+
+/* .ql-snow .ql-editor {
+  font-family: notoSans, sans-serif !important;
+}
+
+.ql-snow .ql-font-pretendard {
+  font-family: pretendard, sans-serif !important;
+}
+
+.ql-snow .ql-font-nanumMyeongjo {
+  font-family: nanumMyeongjo, sans-serif !important;
+}
+
+.ql-snow .ql-font-nanumPenScript {
+  font-family: nanumPenScript, sans-serif !important;
+}
+
+.ql-snow .ql-editor em {
+  font-style: italic !important;
+}
+
+.ql-snow .ql-editor strong {
+  font-weight: bold !important;
+} */

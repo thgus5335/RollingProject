@@ -33,18 +33,8 @@ const MessageForm = () => {
     profileImageURL: profileUrl,
   };
 
-  const handleDataSubmit = async e => {
-    e.preventDefault();
-    try {
-      await createMessageApi(submitInfo, recipientId);
-      navigate(`/post/${recipientId}`);
-    } catch (e) {
-      console.error('ERROR:', e);
-    }
-  };
   const handleNameChange = name => {
     setNameValue(name);
-    console.log(name);
   };
 
   const handleMessageChange = text => {
@@ -62,6 +52,17 @@ const MessageForm = () => {
   const handleFontChange = font => {
     setFont(font);
   };
+
+  const handleDataSubmit = async e => {
+    e.preventDefault();
+    try {
+      await createMessageApi(submitInfo, recipientId);
+      navigate(`/post/${recipientId}`);
+    } catch (e) {
+      console.error('ERROR:', e);
+    }
+  };
+
   useEffect(() => {
     if (nameValue && messageValue) {
       setIsButtonValid(true);
