@@ -89,7 +89,7 @@ const HeaderRolling = ({ rollingInfo }) => {
               <div>
                 <Button className={styles.emojiButton} onClick={handleButtonClick} size="small" type="outline">
                   <img src={emojiIcon} alt="emoji icon" />
-                  추가
+                  <span className={styles.addEmojiButton}>추가</span>
                   {isEmojiClicked && (
                     <div className={styles.emojiContainer}>
                       <EmojiPicker onEmojiClick={onEmojiClick} />
