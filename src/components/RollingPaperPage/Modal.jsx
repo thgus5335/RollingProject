@@ -20,13 +20,11 @@ const Modal = ({ onClose, messageInfo, date }) => {
             <p className={styles.date}>{date}</p>
           </div>
         </div>
-
         <div className={styles.content}>
           <p className={styles.message} dangerouslySetInnerHTML={{ __html: content }} />
-        </div>
-
-        <div className={styles.buttonOk} onClick={onClose}>
-          <Button size="medium">확인</Button>
+          <div className={styles.buttonOk} onClick={onClose}>
+            <Button size="medium">확인</Button>
+          </div>
         </div>
       </div>
     </>

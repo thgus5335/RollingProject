@@ -3,18 +3,22 @@ import CreateRollingButton from '../components/CreateRollingPaperPage/CreateRoll
 import PickBackground from '../components/CreateRollingPaperPage/PickBackground';
 import { AppProvider } from '../hooks/useCreateRollingContext';
 import styles from './CreateRollingPaperPage.module.css';
+import Header from '../components/common/Header';
 
 const CreateRollingPaperPage = () => {
   return (
-    <AppProvider>
-      <main>
-        <div className={styles.container}>
-          <ToInput />
-          <PickBackground />
-          <CreateRollingButton />
-        </div>
-      </main>
-    </AppProvider>
+    <>
+      <Header />
+      <AppProvider>
+        <main>
+          <div className={styles.container}>
+            <ToInput />
+            <PickBackground />
+            <CreateRollingButton />
+          </div>
+        </main>
+      </AppProvider>
+    </>
   );
 };
 
