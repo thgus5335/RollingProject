@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { deleteRollingPaper, getRollingPaper } from '../apis/rollingPaperAPI';
 import HeaderRolling from '../components/RollingPaperPage/HeaderRolling';
+import Header from '../components/common/Header';
 
 const RollingPage = () => {
   const id = useParams();
@@ -19,7 +20,6 @@ const RollingPage = () => {
     const response = await getRollingPaper(id);
     setRollingInfo(response);
   };
-  console.log('rollingInfo', rollingInfo);
 
   const handleDelete = async id => {
     const error = await deleteRollingPaper(id);
@@ -37,6 +37,7 @@ const RollingPage = () => {
 
   return (
     <>
+      <Header />
       <HeaderRolling rollingInfo={rollingInfo} />
       <main>
         <div

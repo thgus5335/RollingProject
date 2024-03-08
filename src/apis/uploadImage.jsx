@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = 'https://api.imgur.com/3/image';
 
 const uploadImage = async ({ file }) => {
-  const clientId = 'fd2e1e3d3d12ce1';
+  const clientId = 'c9b5d63d83ab398';
   const auth = 'Client-ID ' + clientId;
 
   const formData = new FormData();
@@ -17,7 +17,10 @@ const uploadImage = async ({ file }) => {
       },
     });
 
-    console.log('Success:', response.data);
+    // try {
+    //   const response = await axios.post(API_URL, formData);
+
+    //   console.log('Success:', response.data);
 
     const imageUrl = response.data.data.link;
 

@@ -19,7 +19,9 @@ const MainProfile = ({ customImgUrl, profileUrl, onProfileUrlChange }) => {
 
     try {
       const uploadedImageURL = await uploadImage({ file: uploadedFile });
+
       // const uploadedImageURL = URL.createObjectURL(uploadedFile);
+
       onProfileUrlChange(uploadedImageURL);
     } catch (error) {
       console.error('Error uploading image:', error);

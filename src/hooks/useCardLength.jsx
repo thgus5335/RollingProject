@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getDataLength } from '../apis/getRecentApi';
+import { getRecentApi } from '../apis/getRecentHotApi';
 
 const useCardLength = () => {
   const [cardLength, setCardLength] = useState(0);
 
   const fetchCardLength = async () => {
-    const response = await getDataLength();
+    const response = await getRecentApi();
     setCardLength(response.count);
   };
 
