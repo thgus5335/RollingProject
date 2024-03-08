@@ -18,6 +18,17 @@
   gap: 3rem;
 }
 
+.button{
+  width: 27rem;
+}
+
+@media (width <= 768px) {
+  .button {
+    width: 60rem;
+    height: auto;
+  }
+}
+
 @media (width <= 1248px) {
   .mainContainer {
     width: 100%;

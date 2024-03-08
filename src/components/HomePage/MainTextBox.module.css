@@ -43,3 +43,33 @@
   letter-spacing: -0.02rem;
   line-height: 2.8rem;
 }
+
+@media (width <=1248px) {
+  .textBox {
+    width: 100%;
+  }
+}
+
+@media (width <= 768px) {
+  .textBox {
+    width: 57.2rem;
+  }
+}
+
+@media (width <= 768px) {
+  .text {
+    width: 100%;
+  }
+}
+
+@media (width <= 768px) {
+  .text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (width <= 768px) {
+  .subText {
+    font-size: 1.5rem;
+  }
+}
