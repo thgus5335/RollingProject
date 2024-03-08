@@ -13,10 +13,10 @@ export default function Main() {
         <div className={styles.mainContainer}>
           <MainBox type="first" />
           <MainBox type="second" />
-        </div>
           <Link to="/list" className={styles.button}>
-              <Button size="large">구경해보기</Button>
+            <Button size="large">구경해보기</Button>
           </Link>
+        </div>
       </div>
     </>
   );

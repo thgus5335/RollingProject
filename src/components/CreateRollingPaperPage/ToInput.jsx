@@ -18,7 +18,7 @@ const ToInput = () => {
           value={inputValue}
           onChange={handleInputChange}
           onBlur={handleInputBlur}
-          className={` ${error && styles.errorInput} ${styles.toInput}`}
+          className={` ${error && styles.errorInput} ${styles.input}`}
         />
       </form>
       {error && <p className={` ${error && styles.errorText}`}>값을 입력해 주세요.</p>}
