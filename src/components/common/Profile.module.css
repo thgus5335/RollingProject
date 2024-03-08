@@ -30,6 +30,7 @@
 .countDescription {
   margin-right: 3rem;
   line-height: 4rem;
+  white-space: nowrap;
 }
 
 .strongSpan {

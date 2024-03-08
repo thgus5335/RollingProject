@@ -78,31 +78,33 @@ const HeaderRolling = ({ rollingInfo }) => {
         <div className={styles.headerContainer}>
           <div className={styles.recipient}>To. {recipient}</div>
           <div className={styles.contentContainer}>
-            <Profile recentMessages={recentMessages} messageCount={writer} />
-            <div className={styles.writer}>
-              <span className={styles.strongSpan}>{writer}</span>명이 작성했어요!
+            <div className={styles.headerProfile}>
+              <Profile recentMessages={recentMessages} messageCount={writer} />
             </div>
             <div className={styles.emojiArea}>
               {topEmojis && <Emoji emoticon={topEmojis} />}
               <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
             </div>
-             {emojiDropDown && <div className={styles.emojiDropDown}>{emojiList && <Emoji emoticon={emojiList} />}</div>}
-            <div>
-              <Button onClick={handleButtonClick} size="small" type="outline">
-                <img src={emojiIcon} alt="emoji icon" />
-                추가
-                {isEmojiClicked && (
-                  <div className={styles.emojiContainer}>
-                    <EmojiPicker onEmojiClick={onEmojiClick} />
-                  </div>
-                )}
-              </Button>
-            </div>
-            <div ref={shareRef} className={styles.dropDownWrapper}>
-              <Button size="small" type="outline" onClick={handleDropdown}>
-                <img src={shareIcon} alt="share-icon" />
-              </Button>
-              {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+            {emojiDropDown && <div className={styles.emojiDropDown}>{emojiList && <Emoji emoticon={emojiList} />}</div>}
+            <div className={styles.buttonContainer}>
+              <div>
+                <Button className={styles.emojiButton} onClick={handleButtonClick} size="small" type="outline">
+                  <img src={emojiIcon} alt="emoji icon" />
+                  추가
+                  {isEmojiClicked && (
+                    <div className={styles.emojiContainer}>
+                      <EmojiPicker onEmojiClick={onEmojiClick} />
+                    </div>
+                  )}
+                </Button>
+              </div>
+              <div className={styles.line}></div>
+              <div className={styles.dropDownWrapper} ref={shareRef}>
+                <Button size="small" type="outline" onClick={handleDropdown}>
+                  <img src={shareIcon} alt="share-icon" />
+                </Button>
+                {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+              </div>
             </div>
           </div>
         </div>
