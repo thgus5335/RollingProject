@@ -12,3 +12,17 @@
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
 }
 
+@font-face {
+  font-family: notoSans;
+  src: url('../font/NotoSansKR-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: nanumMyeongjo;
+  src: url('../font/NanumMyeongjo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: nanumPenScript;
+  src: url('../font/NanumPenScript-Regular.ttf') format('truetype');
+}
