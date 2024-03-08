@@ -7,7 +7,6 @@ import dropDown from '../../assets/icons/dropDown.svg';
 import emojiIcon from '../../assets/icons/emojiIcon.svg';
 import toast from '../../Toast/Toast';
 import useClickOutside from '../../hooks/useClickOutside';
-import ImageButton from '../common/ImageButton';
 import shareIcon from '../../assets/icons/share-icon.svg';
 import Dropdown from './Dropdown';
 
@@ -66,66 +65,75 @@ const HeaderRolling = ({ rollingInfo }) => {
   }, [id]);
 
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.recipient}>To. {recipient}</div>
-      <div className={styles.contentContainer}>
-        {recentMessages && (
-          <div className={styles.imageStyle}>
-            {recentMessages.map((recentMessage, index) => (
-              <img
-                key={recentMessage.id}
-                src={recentMessage.profileImageURL}
-                className={styles.profileImage}
-                style={{ left: `${index * -1.3}rem` }}
-              />
-            ))}
-            {writer > 3 && <div className={styles.plusProfile}>+{writer - 3}</div>}
-          </div>
-        )}
-        <div className={styles.writer}>
-          <span className={styles.strongSpan}>{writer}</span>명이 작성했어요!
-        </div>
-        <div className={styles.emojiArea}>
-          {topEmojis && (
-            <div className={styles.topEmojis}>
-              {topEmojis.map(emoji => (
-                <div key={emoji.id} className={styles.emojiBox}>
-                  {emoji.emoji} {emoji.count}
-                </div>
-              ))}
-            </div>
-          )}
-          <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
-        </div>
-        {emojiDropDown && (
-          <div className={styles.emojiDropDown}>
-            {emojiList &&
-              emojiList.map(emoji => (
-                <div key={emoji.id} className={styles.emojiBox}>
-                  <p>
-                    {emoji.emoji} {emoji.count}
-                  </p>
-                </div>
-              ))}
-          </div>
-        )}
-        <div>
-          <Button onClick={handleButtonClick} size="small" type="outline">
-            <img src={emojiIcon} alt="emoji icon" />
-            추가
-            {isEmojiClicked && (
-              <div className={styles.emojiContainer}>
-                <EmojiPicker onEmojiClick={onEmojiClick} />
+    <>
+      <div className={styles.rollingMobileHeader}>
+        <div className={styles.recipientMobile}>To. {recipient}</div>
+      </div>
+      <div className={styles.rollingHeader}>
+        <div className={styles.headerContainer}>
+          <div className={styles.recipient}>To. {recipient}</div>
+          <div className={styles.contentContainer}>
+            {recentMessages && (
+              <div className={styles.imageStyle}>
+                {recentMessages.map((recentMessage, index) => (
+                  <img
+                    key={recentMessage.id}
+                    src={recentMessage.profileImageURL}
+                    className={styles.profileImage}
+                    style={{ left: `${index * -1.3}rem` }}
+                  />
+                ))}
+                {writer > 3 && <div className={styles.plusProfile}>+{writer - 3}</div>}
               </div>
             )}
-          </Button>
-        </div>
-        <div ref={shareRef} className={styles.dropDownWrapper}>
-          <ImageButton imageURL={shareIcon} imageAlt="share-icon" handleClick={handleDropdown} />
-          {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+            <div className={styles.writer}>
+              <span className={styles.strongSpan}>{writer}</span>명이 작성했어요!
+            </div>
+            <div className={styles.emojiArea}>
+              {topEmojis && (
+                <div className={styles.topEmojis}>
+                  {topEmojis.map(emoji => (
+                    <div key={emoji.id} className={styles.emojiBox}>
+                      {emoji.emoji} {emoji.count}
+                    </div>
+                  ))}
+                </div>
+              )}
+              <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
+            </div>
+            {emojiDropDown && (
+              <div className={styles.emojiDropDown}>
+                {emojiList &&
+                  emojiList.map(emoji => (
+                    <div key={emoji.id} className={styles.emojiBox}>
+                      <p>
+                        {emoji.emoji} {emoji.count}
+                      </p>
+                    </div>
+                  ))}
+              </div>
+            )}
+            <div>
+              <Button onClick={handleButtonClick} size="small" type="outline">
+                <img src={emojiIcon} alt="emoji icon" />
+                추가
+                {isEmojiClicked && (
+                  <div className={styles.emojiContainer}>
+                    <EmojiPicker onEmojiClick={onEmojiClick} />
+                  </div>
+                )}
+              </Button>
+            </div>
+            <div ref={shareRef} className={styles.dropDownWrapper}>
+              <Button size="small" type="outline" onClick={handleDropdown}>
+                <img src={shareIcon} alt="share-icon" />
+              </Button>
+              {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default HeaderRolling;
