@@ -4,6 +4,7 @@
   overflow: scroll;
   width: 120rem;
   flex-wrap: wrap;
+  padding: 0.2rem;
   gap: 2.8rem 2.4rem;
   grid-template-columns: 1fr 1fr 1fr;
   scrollbar-width: none;

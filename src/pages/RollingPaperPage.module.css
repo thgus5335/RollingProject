@@ -5,6 +5,10 @@
   width: 100vw;
   height: calc(100vh - 12.8rem);
   background-color: var(--gray-200);
+
+  @media (width <= 1248px) {
+    padding: 8rem 2.4rem;
+  }
 }
 
 .rollingContainer {
@@ -54,16 +58,32 @@
   display: flex;
   width: 100%;
   max-width: 120rem;
-  justify-content: right;
+  justify-content: space-between;
   padding-bottom: 1.6rem;
+}
+
+.backward {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--black);
+}
+
+.white {
+  filter: invert(100%) brightness(200%);
+}
+
+.backwardIcon {
+  display: flex;
+  width: 3rem;
+}
+
+.backwardConetent {
+  display: flex;
+  height: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .buttonEdit {
   width: 12rem;
-}
-
-@media (width <= 1248px) {
-  .rollingBackground {
-    padding: 8rem 2.4rem;
-  }
 }

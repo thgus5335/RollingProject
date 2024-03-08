@@ -2,10 +2,11 @@ import styles from './RollingPaperPage.module.css';
 import CardList from '../components/RollingPaperPage/CardList';
 import Button from '../components/common/Button';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { deleteRollingPaper, getRollingPaper } from '../apis/rollingPaperAPI';
 import HeaderRolling from '../components/RollingPaperPage/HeaderRolling';
 import Header from '../components/common/Header';
+import iconArrowLeft from '../assets/icons/arrow-left.svg';
 
 const RollingPage = () => {
   const id = useParams();
@@ -15,6 +16,7 @@ const RollingPage = () => {
 
   const { backgroundColor, backgroundImageURL } = rollingInfo;
   const background = backgroundImageURL ? 'imageBackground' : backgroundColor;
+  const backwardColor = backgroundImageURL ? 'white' : '';
 
   const fetchData = async id => {
     const response = await getRollingPaper(id);
@@ -45,6 +47,12 @@ const RollingPage = () => {
           style={{ backgroundImage: `url(${backgroundImageURL})` }}></div>
         <div className={styles.rollingContainer}>
           <div className={styles.buttonContainer}>
+            <Link to="/list/">
+              <div className={`${styles.backward} ${styles[backwardColor]}`}>
+                <img className={styles.backwardIcon} src={iconArrowLeft} />
+                <p className={styles.backwardConetent}>뒤로 가기</p>
+              </div>
+            </Link>
             <div className={styles.buttonEdit}>
               {mode === 'normal' ? (
                 <Button size={'medium'} type="outline" onClick={() => setMode('edit')}>
