@@ -20,6 +20,27 @@
   cursor: pointer;
 }
 
+.checkOverlay {
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+  visibility: hidden;
+}
+
+.pickerBox:hover .checkOverlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.imgOverlay {
+  transition: opacity 0.5s ease;
+}
+
+.pickerBox:hover .imgOverlay {
+  opacity: 0.3;
+}
+
 .beige {
   background-color: var(--orange-200);
 }
@@ -64,4 +85,9 @@
   padding: 10px 15px;
   border: 1px solid var(--gray-300);
   cursor: pointer;
+
+  &:hover {
+    border-color: var(--purple-600);
+    transition: 0.5s ease;
+  }
 }

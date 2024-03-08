@@ -1,9 +1,9 @@
 import postRolling from '../../apis/createRollingAPI';
-import styles from './CreateRollingButton.module.css';
 import { useCreateRollingContext } from '../../hooks/useCreateRollingContext';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../common/Button';
 
 const CreateRollingButton = () => {
   const { inputValue, selectedColor, selectedImageURL } = useCreateRollingContext();
@@ -25,12 +25,9 @@ const CreateRollingButton = () => {
     setId(createdId);
   };
   return (
-    <button
-      onClick={handleCreateButtonClick}
-      disabled={inputValue.length === 0}
-      className={`${styles.createButton} ${inputValue.length > 0 && styles.activateButton}`}>
+    <Button size="large" onClick={handleCreateButtonClick} isDisabled={inputValue.length === 0}>
       생성하기
-    </button>
+    </Button>
   );
 };
 

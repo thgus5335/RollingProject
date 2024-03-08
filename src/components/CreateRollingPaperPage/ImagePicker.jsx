@@ -31,12 +31,13 @@ const ImagePicker = () => {
           className={` ${styles.input} `}
         />
         {IMAGES.map(images => (
-          <div key={images.alt} className={`${styles.pickerBox} `} onClick={() => handleClickImage(images)}>
+          <div key={images.alt} className={styles.pickerBox} onClick={() => handleClickImage(images)}>
             <img
               src={images.source}
               alt={images.alt}
-              className={`${selectedImageURL === images.source && styles.imagesOpacity} ${styles.pickerImage}`}
+              className={`${selectedImageURL === images.source && styles.imagesOpacity} ${styles.pickerImage} ${styles.imgOverlay}`}
             />
+            <img src={checkIcon} alt="check" className={`${styles.checkOverlay} ${styles.check}`} />
             {selectedImageURL === images.source && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         ))}
@@ -45,8 +46,9 @@ const ImagePicker = () => {
             <img
               src={imgURL}
               alt="userImage"
-              className={`${selectedImageURL === imgURL && styles.imagesOpacity} ${styles.pickerImage}`}
+              className={`${selectedImageURL === imgURL && styles.imagesOpacity} ${styles.pickerImage} ${styles.imgOverlay}`}
             />
+            <img src={checkIcon} alt="check" className={`${styles.checkOverlay} ${styles.check}`} />
             {selectedImageURL === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
           </div>
         )}
