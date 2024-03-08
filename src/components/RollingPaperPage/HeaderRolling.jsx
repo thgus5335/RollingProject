@@ -7,7 +7,6 @@ import dropDown from '../../assets/icons/dropDown.svg';
 import emojiIcon from '../../assets/icons/emojiIcon.svg';
 import toast from '../../Toast/Toast';
 import useClickOutside from '../../hooks/useClickOutside';
-import ImageButton from '../common/ImageButton';
 import shareIcon from '../../assets/icons/share-icon.svg';
 import Dropdown from './Dropdown';
 import Emoji from '../common/Emoji';
@@ -71,32 +70,46 @@ const HeaderRolling = ({ rollingInfo }) => {
   }, [id]);
 
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.recipient}>To. {recipient}</div>
-      <div className={styles.contentContainer}>
-        <Profile recentMessages={recentMessages} messageCount={writer} />
-        <div className={styles.emojiArea}>
-          {topEmojis && <Emoji emoticon={topEmojis} />}
-          <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
-        </div>
-        {emojiDropDown && <div className={styles.emojiDropDown}>{emojiList && <Emoji emoticon={emojiList} />}</div>}
-        <div>
-          <Button onClick={handleButtonClick} size="small" type="outline">
-            <img src={emojiIcon} alt="emoji icon" />
-            추가
-          </Button>
-          {isEmojiClicked && (
-            <div className={styles.emojiContainer}>
-              <EmojiPicker onEmojiClick={onEmojiClick} />
+    <>
+      <div className={styles.rollingMobileHeader}>
+        <div className={styles.recipientMobile}>To. {recipient}</div>
+      </div>
+      <div className={styles.rollingHeader}>
+        <div className={styles.headerContainer}>
+          <div className={styles.recipient}>To. {recipient}</div>
+          <div className={styles.contentContainer}>
+            <div className={styles.headerProfile}>
+              <Profile recentMessages={recentMessages} messageCount={writer} />
             </div>
-          )}
-        </div>
-        <div ref={shareRef} className={styles.dropDownWrapper}>
-          <ImageButton imageURL={shareIcon} imageAlt="share-icon" handleClick={handleDropdown} />
-          {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+            <div className={styles.emojiArea}>
+              {topEmojis && <Emoji emoticon={topEmojis} />}
+              <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
+            </div>
+            {emojiDropDown && <div className={styles.emojiDropDown}>{emojiList && <Emoji emoticon={emojiList} />}</div>}
+            <div className={styles.buttonContainer}>
+              <div>
+                <Button className={styles.emojiButton} onClick={handleButtonClick} size="small" type="outline">
+                  <img src={emojiIcon} alt="emoji icon" />
+                  추가
+                  {isEmojiClicked && (
+                    <div className={styles.emojiContainer}>
+                      <EmojiPicker onEmojiClick={onEmojiClick} />
+                    </div>
+                  )}
+                </Button>
+              </div>
+              <div className={styles.line}></div>
+              <div className={styles.dropDownWrapper} ref={shareRef}>
+                <Button size="small" type="outline" onClick={handleDropdown}>
+                  <img src={shareIcon} alt="share-icon" />
+                </Button>
+                {dropdown && <Dropdown name={recipient} onClick={handleClickShareURL} />}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default HeaderRolling;
