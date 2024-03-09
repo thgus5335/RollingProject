@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './NameInsert.module.css';
+import Input from '../common/Input';
 
 const NameInsert = ({ name, onNameChange }) => {
   const [noValueInput, setNoValueInput] = useState(false);
@@ -22,18 +22,14 @@ const NameInsert = ({ name, onNameChange }) => {
   };
 
   return (
-    <div className={styles.nameContainer}>
-      <h1 className={styles.title}>From.</h1>
-      <input
-        value={name}
-        className={!noValueInput ? styles.nameInput : styles.noValueNameInput}
-        placeholder="이름을 입력해 주세요."
-        onChange={handleChangeName}
-        onBlur={handleBlurFromInput}
-        onKeyDown={handleKeyDown}
-      />
-      {noValueInput === true ? <div className={styles.error}>값을 입력해 주세요.</div> : null}
-    </div>
+    <Input
+      name={name}
+      onChange={handleChangeName}
+      onBlur={handleBlurFromInput}
+      who="From"
+      onKeyDown={handleKeyDown}
+      error={noValueInput}
+    />
   );
 };
 export default NameInsert;
