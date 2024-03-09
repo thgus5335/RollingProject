@@ -1,7 +1,7 @@
 import styles from './Picker.module.css';
-import checkIcon from '../../assets/icons/check.svg';
 import useImagePick from '../../hooks/useImagePick';
 import plusIcon from '../../assets/icons/plus.svg';
+import ImageBox from './ImageBox';
 
 const ImagePicker = () => {
   const IMAGES = [
@@ -23,34 +23,24 @@ const ImagePicker = () => {
         <label htmlFor="imageInput" className={`${styles.inputStyle} ${styles.pickerBox}`}>
           <img src={plusIcon} alt="plus icon" />
         </label>
-        <input
-          type="file"
-          id="imageInput"
-          accept="image/*"
-          onChange={handleImageUpload}
-          className={` ${styles.input} `}
-        />
+        <input type="file" id="imageInput" accept="image/*" onChange={handleImageUpload} className={styles.input} />
         {IMAGES.map(images => (
-          <div key={images.alt} className={styles.pickerBox} onClick={() => handleClickImage(images)}>
-            <img
-              src={images.source}
-              alt={images.alt}
-              className={`${selectedImageURL === images.source && styles.imagesOpacity} ${styles.pickerImage} ${styles.imgOverlay}`}
-            />
-            <img src={checkIcon} alt="check" className={`${styles.checkOverlay} ${styles.check}`} />
-            {selectedImageURL === images.source && <img src={checkIcon} alt="check" className={styles.check} />}
-          </div>
+          <ImageBox
+            onClick={() => handleClickImage(images)}
+            key={images.alt}
+            src={images.source}
+            alt={images.alt}
+            selectedImageURL={selectedImageURL}
+          />
         ))}
         {imgURL.length > 0 && (
-          <div className={`${styles.pickerBox} `} onClick={() => handleClickUploadedImage()}>
-            <img
-              src={imgURL}
-              alt="userImage"
-              className={`${selectedImageURL === imgURL && styles.imagesOpacity} ${styles.pickerImage} ${styles.imgOverlay}`}
-            />
-            <img src={checkIcon} alt="check" className={`${styles.checkOverlay} ${styles.check}`} />
-            {selectedImageURL === imgURL && <img src={checkIcon} alt="check" className={styles.check} />}
-          </div>
+          <ImageBox
+            onClick={() => handleClickUploadedImage()}
+            key={imgURL}
+            src={imgURL}
+            alt="custom img"
+            selectedImageURL={selectedImageURL}
+          />
         )}
       </div>
     </div>
