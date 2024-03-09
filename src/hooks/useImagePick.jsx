@@ -9,17 +9,14 @@ const useImagePick = () => {
     const uploadedFile = e.target.files[0];
 
     try {
-      // const uploadedImageURL = URL.createObjectURL(uploadedFile);
       const uploadedImageURL = await uploadImage({ file: uploadedFile });
       setImgURL(uploadedImageURL);
       setContextValues(inputValue, selectedColor, uploadedImageURL);
-      console.log(imgURL);
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   };
   const handleClickImage = images => {
-    console.log(images);
     setContextValues(inputValue, selectedColor, images.source);
   };
 
