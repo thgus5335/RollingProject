@@ -5,19 +5,11 @@ import Modal from './Modal';
 import ModalPortal from './Portal';
 import { useState } from 'react';
 import { deleteMessage } from '../../apis/rollingPaperAPI';
+import ManageMessage from '../../utils/ManageMessage';
 
 const Card = ({ mode = 'normal', messageInfo }) => {
-  const { profileImageURL, sender, relationship, content, font } = messageInfo;
+  const { profileImageURL, sender, relationship, content, fontStyle, badge, date } = ManageMessage(messageInfo);
   const [openModal, setOpenModal] = useState(false);
-
-  const badge = { 친구: 'friend', 지인: 'acquaintance', 동료: 'colleague', 가족: 'family' };
-  const fontStyle = {
-    'Noto Sans': 'notoSans',
-    Pretendard: 'pretendard',
-    나눔명조: 'nanumMyeongjo',
-    '나눔손글씨 손편지체': 'nanumPenScript',
-  };
-  const date = messageInfo.createdAt.substr(0, 10).replaceAll('-', '.');
 
   const handleOpenModal = () => {
     setOpenModal(true);
@@ -41,7 +33,7 @@ const Card = ({ mode = 'normal', messageInfo }) => {
     <>
       {openModal && (
         <ModalPortal>
-          <Modal onClose={handleCloseModal} messageInfo={messageInfo} date={date} />
+          <Modal onClose={handleCloseModal} messageInfo={messageInfo} />
         </ModalPortal>
       )}
       <div className={`${styles.card}`} onClick={() => handleOpenModal()}>
@@ -50,7 +42,7 @@ const Card = ({ mode = 'normal', messageInfo }) => {
             <img className={styles.profileImage} src={profileImageURL} alt="보낸 사람의 프로필." />
             <div>
               <p className={styles.profileTitle}>From. {sender}</p>
-              <p className={`${styles.profileBadge} ${styles[badge[relationship]]}`}>{relationship}</p>
+              <p className={`${styles.profileBadge} ${styles[badge]}`}>{relationship}</p>
             </div>
           </div>
           {mode === 'edit' && (
@@ -70,7 +62,7 @@ const Card = ({ mode = 'normal', messageInfo }) => {
         </div>
 
         <div className={styles.content}>
-          <p className={`${styles.message} ${styles[fontStyle[font]]}`} dangerouslySetInnerHTML={{ __html: content }} />
+          <p className={`${styles.message} ${styles[fontStyle]}`} dangerouslySetInnerHTML={{ __html: content }} />
           <p className={styles.date}>{date}</p>
         </div>
       </div>

@@ -1,15 +1,9 @@
 import Button from '../common/Button';
 import styles from './Modal.module.css';
+import ManageMessage from '../../utils/ManageMessage';
 
-const Modal = ({ onClose, messageInfo, date }) => {
-  const badge = { 친구: 'freind', 지인: 'acquaintance', 동료: 'colleague', 가족: 'family' };
-  const fontStyle = {
-    'Noto Sans': 'notoSans',
-    Pretendard: 'pretendard',
-    나눔명조: 'nanumMyeongjo',
-    '나눔손글씨 손편지체': 'nanumPenScript',
-  };
-  const { profileImageURL, sender, relationship, content, font } = messageInfo;
+const Modal = ({ onClose, messageInfo }) => {
+  const { profileImageURL, sender, relationship, content, fontStyle, badge, date } = ManageMessage(messageInfo);
   return (
     <>
       <div className={styles.modalMask} onClick={onClose}></div>
@@ -27,7 +21,7 @@ const Modal = ({ onClose, messageInfo, date }) => {
           </div>
         </div>
         <div className={styles.content}>
-          <p className={`${styles.message} ${styles[fontStyle[font]]}`} dangerouslySetInnerHTML={{ __html: content }} />
+          <p className={`${styles.message} ${styles[fontStyle]}`} dangerouslySetInnerHTML={{ __html: content }} />
           <div className={styles.buttonOk} onClick={onClose}>
             <Button size="medium">확인</Button>
           </div>
