@@ -18,14 +18,14 @@
   gap: 3rem;
 }
 
-.button{
+.button {
   width: 27rem;
 }
 
-@media (width <= 768px) {
+@media (width <= 1248px) {
   .button {
-    width: 60rem;
-    height: auto;
+    width: 100%;
+    margin: 0 2.4rem;
   }
 }
 
@@ -36,10 +36,8 @@
   }
 }
 
-
 @media (width <= 768px) {
-  .mainContainer{
-    width: 100%;
+  .mainContainer {
     padding: 4.2rem 2rem 0;
   }
 }

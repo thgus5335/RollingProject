@@ -15,7 +15,6 @@ const Profile = ({ onProfileUrlChange, profileUrl, customImgUrl }) => {
 
   const handleGetUrl = e => {
     const newImgUrl = e.target.src;
-    //프로필 선택될 때 url이 변경되도록
     if (profileUrl !== newImgUrl) {
       onProfileUrlChange(newImgUrl);
     }
