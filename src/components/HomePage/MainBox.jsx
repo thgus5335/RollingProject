@@ -22,7 +22,7 @@ export default function MainBox({ type }) {
         
             {type === 'second' && (
                 <>
-                <img src={EmojiMainImage} alt="이모지" className={styles.image} />
+                <img src={EmojiMainImage} alt="이모지" className={styles.simage} />
                 <MainTextBox
                     number="02"
                     text="서로에게 이모지로 감정을 표현해보세요"

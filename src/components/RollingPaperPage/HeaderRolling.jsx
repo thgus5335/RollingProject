@@ -10,6 +10,8 @@ import shareIcon from '../../assets/icons/share-icon.svg';
 import Dropdown from './Dropdown';
 import Emoji from '../common/Emoji';
 import Profile from '../common/Profile';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 const HeaderRolling = ({ rollingInfo }) => {
@@ -97,6 +99,12 @@ const HeaderRolling = ({ rollingInfo }) => {
                   )}
                 </Button>
               </div>
+              <ToastContainer 
+                toastStyle={{
+                  backgroundColor: 'black',
+                  color: 'white'
+                }}
+              />
               <div className={styles.line}></div>
               <div className={styles.dropDownWrapper} ref={shareRef}>
                 <Button size="small" type="outline" onClick={handleDropdown}>

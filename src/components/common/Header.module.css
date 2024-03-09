@@ -48,3 +48,12 @@
     transition: max-width 0.5s ease;
   }
 }
+
+
+.logoStyle {
+  display: flex;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-direction: row;
+  align-items: center;
+}
