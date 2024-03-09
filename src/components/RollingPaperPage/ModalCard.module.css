@@ -1,3 +1,10 @@
+.modalCard {
+  display: flex;
+  width: 52rem;
+  height: 39.6rem;
+  flex-direction: column;
+}
+
 .profile {
   display: flex;
   width: 100%;

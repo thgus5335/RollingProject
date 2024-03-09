@@ -84,6 +84,12 @@
   font-size: 1.8rem;
 }
 
-.buttonEdit {
+.buttonNormal {
   width: 12rem;
+}
+
+.buttonEdit {
+  display: flex;
+  width: 25rem;
+  gap: 1rem;
 }

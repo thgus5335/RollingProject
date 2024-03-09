@@ -5,7 +5,7 @@ import ManageMessage from '../../utils/ManageMessage';
 const ModalCard = ({ onClose, messageInfo }) => {
   const { profileImageURL, sender, relationship, content, fontStyle, badge, date } = ManageMessage(messageInfo);
   return (
-    <>
+    <div className={styles.modalCard}>
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
           <div className={styles.profileLeft}>
@@ -24,7 +24,7 @@ const ModalCard = ({ onClose, messageInfo }) => {
           <Button size="medium">확인</Button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

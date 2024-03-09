@@ -3,21 +3,13 @@ import Button from '../common/Button';
 import iconDelete from '../../assets/icons/delete.svg';
 import Modal from './Modal';
 import ModalPortal from './Portal';
-import { useState } from 'react';
 import { deleteMessage } from '../../apis/rollingPaperAPI';
 import ManageMessage from '../../utils/ManageMessage';
+import useModal from '../../hooks/useModal';
 
 const Card = ({ mode = 'normal', messageInfo }) => {
   const { profileImageURL, sender, relationship, content, fontStyle, badge, date } = ManageMessage(messageInfo);
-  const [openModal, setOpenModal] = useState(false);
-
-  const handleOpenModal = () => {
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
+  const { openModal, handleOpenModal, handleCloseModal } = useModal();
 
   const onDelete = async () => {
     const error = await deleteMessage(messageInfo.id);
@@ -33,7 +25,7 @@ const Card = ({ mode = 'normal', messageInfo }) => {
     <>
       {openModal && (
         <ModalPortal>
-          <Modal onClose={handleCloseModal} messageInfo={messageInfo} />
+          <Modal onClose={handleCloseModal} messageInfo={messageInfo} isCard={true} />
         </ModalPortal>
       )}
       <div className={`${styles.card}`} onClick={() => handleOpenModal()}>
