@@ -102,6 +102,7 @@
 .message {
   display: -webkit-box;
   overflow: hidden;
+  padding: 0.3rem;
   -webkit-box-orient: vertical;
   color: var(--gray-600);
   font-size: 1.8rem;
@@ -110,6 +111,22 @@
   -webkit-line-clamp: 3;
   line-height: 2.8rem;
   text-overflow: ellipsis;
+}
+
+.notoSans {
+  font-family: notoSans, sans-serif;
+}
+
+.pretendard {
+  font-family: pretendard, sans-serif;
+}
+
+.nanumMyeongjo {
+  font-family: nanumMyeongjo, sans-serif;
+}
+
+.nanumPenScript {
+  font-family: nanumPenScript, sans-serif;
 }
 
 .date {

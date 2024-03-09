@@ -7,10 +7,16 @@ import { useState } from 'react';
 import { deleteMessage } from '../../apis/rollingPaperAPI';
 
 const Card = ({ mode = 'normal', messageInfo }) => {
-  const { profileImageURL, sender, relationship, content } = messageInfo;
+  const { profileImageURL, sender, relationship, content, font } = messageInfo;
   const [openModal, setOpenModal] = useState(false);
 
   const badge = { 친구: 'friend', 지인: 'acquaintance', 동료: 'colleague', 가족: 'family' };
+  const fontStyle = {
+    'Noto Sans': 'notoSans',
+    Pretendard: 'pretendard',
+    나눔명조: 'nanumMyeongjo',
+    '나눔손글씨 손편지체': 'nanumPenScript',
+  };
   const date = messageInfo.createdAt.substr(0, 10).replaceAll('-', '.');
 
   const handleOpenModal = () => {
@@ -64,7 +70,7 @@ const Card = ({ mode = 'normal', messageInfo }) => {
         </div>
 
         <div className={styles.content}>
-          <p className={styles.message} dangerouslySetInnerHTML={{ __html: content }} />
+          <p className={`${styles.message} ${styles[fontStyle[font]]}`} dangerouslySetInnerHTML={{ __html: content }} />
           <p className={styles.date}>{date}</p>
         </div>
       </div>
