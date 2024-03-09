@@ -9,6 +9,7 @@ const useImagePick = () => {
     const uploadedFile = e.target.files[0];
 
     try {
+      // const uploadedImageURL = URL.createObjectURL(uploadedFile);
       const uploadedImageURL = await uploadImage({ file: uploadedFile });
       setImgURL(uploadedImageURL);
       setContextValues(inputValue, selectedColor, uploadedImageURL);
@@ -18,6 +19,7 @@ const useImagePick = () => {
     }
   };
   const handleClickImage = images => {
+    console.log(images);
     setContextValues(inputValue, selectedColor, images.source);
   };
 
