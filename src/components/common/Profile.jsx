@@ -9,7 +9,7 @@ const Profile = ({ recentMessages, messageCount }) => {
     4: -1.5,
   };
   const overProfileCount = messageCount >= 102 ? 102 : messageCount;
-  const writerCount = messageCount > 3 && messageCount < 100 ? messageCount : '99+';
+  const writerCount = messageCount < 100 ? messageCount : '99+';
 
   return (
     <>
