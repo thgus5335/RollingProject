@@ -3,25 +3,37 @@
   display: grid;
   overflow: scroll;
   width: 120rem;
-  height: 100%;
   flex-wrap: wrap;
+  padding: 0.2rem;
   gap: 2.8rem 2.4rem;
   grid-template-columns: 1fr 1fr 1fr;
+  scrollbar-width: none;
 
   @media (width <= 1248px) {
     width: 100%;
   }
 
   @media (width <= 1024px) {
+    width: 72rem;
     grid-template-columns: 1fr 1fr;
   }
 
   @media (width <= 768px) {
+    width: 32rem;
     grid-template-columns: 1fr;
   }
+}
+
+.cardList::-webkit-scrollbar {
+  display: none;
 }
 
 .editCard {
   position: absolute;
   display: none;
+}
+
+.target {
+  width: 10rem;
+  height: 28rem;
 }
