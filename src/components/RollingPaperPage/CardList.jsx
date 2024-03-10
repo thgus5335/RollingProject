@@ -9,9 +9,9 @@ import { useInView } from 'react-intersection-observer';
 const RollingPage = ({ id, mode = 'normal' }) => {
   const [offset, setOffset] = useState(0);
   const [messageList, setMessageList] = useState([]);
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 1.0 });
   const editMode = mode === 'edit' ? 'editCard' : '';
-  const LIMIT = 9;
+  const LIMIT = 12;
 
   const handleMessageList = async (id, limit, offset) => {
     if (offset === 0) {

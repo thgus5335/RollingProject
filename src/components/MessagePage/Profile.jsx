@@ -4,13 +4,11 @@ import MainProfile from './MainProfile';
 
 const Profile = ({ onProfileUrlChange, profileUrl, customImgUrl }) => {
   const PROFILE_IMAGES = [
-    'https://i.imgur.com/v9GSBUB.png',
-    'https://i.imgur.com/rr1x5VQ.png',
-    'https://i.imgur.com/wpGcjHh.png',
-    'https://i.imgur.com/IereXDn.png',
-    'https://i.imgur.com/TOZC5zi.png',
-    'https://i.imgur.com/aIdZMSf.png',
-    'https://i.imgur.com/ztVqUdO.png',
+    'https://i.imgur.com/IFoifrl.png',
+    'https://i.imgur.com/tUWbT1A.png',
+    'https://i.imgur.com/VWh9alP.png',
+    'https://i.imgur.com/ZFEDDMM.png',
+    'https://i.imgur.com/kd0gpLi.png',
   ];
 
   const handleGetUrl = e => {
