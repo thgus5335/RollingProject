@@ -1,8 +1,8 @@
 import CommonSection from './CommonSection';
-import useFetchListData from '../../hooks/useFetchListData';
+import useFetchRecentData from '../../hooks/useFetchRecentData';
 
 const RecentList = () => {
-  const { recentData } = useFetchListData();
+  const { recentData } = useFetchRecentData();
 
   return (
     <>
