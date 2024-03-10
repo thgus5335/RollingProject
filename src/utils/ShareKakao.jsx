@@ -1,9 +1,9 @@
 const ShareKakao = (route, title) => {
   if (window.Kakao) {
     const kakao = window.Kakao;
-    if (!kakao.isInitialized()) {
-      kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-    }
+    // if (!kakao.isInitialized()) {
+    //   kakao.init('825f443840ba6d7a4c894e4f08c0f1ec');
+    // }
 
     kakao.Link.sendDefault({
       objectType: 'feed', // 카카오 링크 공유 여러 type들 중 feed라는 타입
