@@ -4,15 +4,32 @@ import forward from '../../assets/icons/forward.svg';
 import backward from '../../assets/icons/backward.svg';
 import useCardLength from '../../hooks/useCardLength';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const CommonSection = ({ title, data }) => {
   const { cardLength } = useCardLength();
-
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  // const containerRef = useRef(null);
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const newPosition = containerRef.current.scrollLeft;
+      setScrollPosition(newPosition);
+    }
+  };
+
+  useEffect(() => {
+    if (!containerRef.current) {
+      return;
+    }
+
+    if (containerRef.current) {
+      containerRef.current.addEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  const containerRef = useRef(null);
 
   const handleNextCard = () => {
     if (currentIndex < cardLength - 4) {
@@ -27,35 +44,38 @@ const CommonSection = ({ title, data }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWidth(window.innerWidth);
-  //   };
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  // const isMobile = width < 1200;
-  // const style = isMobile ? {} : { transform: `translateX(-${currentIndex * 29.5}rem)` };
+  const isMobile = width < 1200;
+  const style = isMobile ? {} : { transform: `translateX(-${currentIndex * 29.5}rem)` };
 
-  // useEffect(() => {
-  //   if (!containerRef.current) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!containerRef.current) {
+      return;
+    }
 
-  //   if (isMobile) {
-  //     containerRef.current.scrollLeft = currentIndex === 0 ? 0 : currentIndex * 295;
-  //   } else {
-  //     containerRef.current.scrollLeft = 0;
-  //   }
-  // }, [currentIndex, isMobile]);
+    if (isMobile) {
+      containerRef.current.scrollLeft = currentIndex === 0 ? 0 : currentIndex * 295;
+    } else {
+      containerRef.current.scrollLeft = 0;
+      if (scrollPosition > 0) {
+        setCurrentIndex(Math.round(scrollPosition / 295));
+      }
+    }
+  }, [currentIndex, isMobile]);
 
   return (
     <section className={styles.commonSection}>
       <h3 className={styles.title}>{title}</h3>
-      <div className={styles.container}>
+      <div className={styles.container} ref={containerRef}>
         {!!data.length && (
-          <div className={styles.cardFlex} style={{ transform: `translateX(-${currentIndex * 29.5}rem)` }}>
+          <div className={styles.cardFlex} style={style}>
             {data.map(card => (
               <Link to={`/post/${card.id}`} key={card.id}>
                 <Card
