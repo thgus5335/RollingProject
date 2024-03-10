@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
-import Logo from './Logo';
 import Button from './Button';
+import logo from '../../assets/icons/logo.png';
 
 export default function Header() {
   const location = useLocation();
@@ -11,7 +11,9 @@ export default function Header() {
     <div className={styles.headerWrapper}>
       <div className={styles.headerNavigation}>
         <Link to="/">
-          <Logo />
+          <div className={styles.logoStyle}>
+              <img src={logo} alt='logo'/>
+          </div>
         </Link>
         {isButtonPage && (
           <Link to="/post">

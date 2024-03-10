@@ -15,7 +15,6 @@ const CreateRollingButton = () => {
     }
   }, [id, navigate]);
   const handleCreateButtonClick = async () => {
-    console.log(inputValue, selectedColor, selectedImageURL);
     const postData = {
       name: inputValue,
       backgroundColor: selectedColor,

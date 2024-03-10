@@ -52,7 +52,13 @@
 
 @media (width <= 768px) {
   .textBox {
-    width: 57.2rem;
+    width: 45.2rem;
+  }
+}
+
+@media (width <= 500px) {
+  .textBox {
+    width: 26.2rem;
   }
 }
 

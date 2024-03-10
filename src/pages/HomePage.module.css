@@ -8,6 +8,7 @@
   gap: 2.4rem;
 }
 
+
 .mainContainer {
   display: flex;
   width: 120rem;
@@ -16,6 +17,21 @@
   justify-content: center;
   padding: 6rem 0 0;
   gap: 3rem;
+}
+
+@media (width <= 1248px) {
+  .mainContainer {
+    width: 100%;
+    padding: 4.9rem 2.4rem 0;
+  }
+}
+
+@media (width <= 768px) {
+  .mainContainer {
+    width: 100%;
+    min-width: 32rem;
+    padding :4.2rem 2rem 0;
+  }
 }
 
 .button {
@@ -29,15 +45,4 @@
   }
 }
 
-@media (width <= 1248px) {
-  .mainContainer {
-    width: 100%;
-    padding: 4.9rem 2.4rem 0;
-  }
-}
 
-@media (width <= 768px) {
-  .mainContainer {
-    padding: 4.2rem 2rem 0;
-  }
-}
