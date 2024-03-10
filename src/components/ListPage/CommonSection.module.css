@@ -1,11 +1,11 @@
 .commonSection {
   position: relative;
+  margin-top: 4rem;
 }
 
 .container {
   position: relative;
   max-width: 116rem;
-  margin-top: 4rem;
   overflow-x: hidden;
   scrollbar-width: none;
 
@@ -43,7 +43,7 @@
 
 .backward {
   position: absolute;
-  top: 19rem;
+  top: 16rem;
   left: -3rem;
 
   @media (width<=1200px) {
@@ -53,7 +53,7 @@
 
 .forward {
   position: absolute;
-  top: 19rem;
+  top: 16rem;
   left: 113rem;
 
   @media (width<=1200px) {

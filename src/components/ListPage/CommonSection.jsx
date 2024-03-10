@@ -25,8 +25,8 @@ const CommonSection = ({ title, data }) => {
   };
   return (
     <section className={styles.commonSection}>
+      <h3 className={styles.title}>{title}</h3>
       <div className={styles.container}>
-        <h3 className={styles.title}>{title}</h3>
         {!!data.length && (
           <div className={styles.cardFlex} style={{ transform: `translateX(-${currentIndex * 29.5}rem)` }}>
             {data.map(card => (
