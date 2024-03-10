@@ -59,12 +59,16 @@ const RollingPage = () => {
               </div>
             ) : (
               <div className={styles.buttonEdit}>
-                <Button size={'medium'} type="outline" onClick={() => setMode('normal')}>
-                  편집 취소
-                </Button>
-                <Button size={'medium'} type="primary" onClick={() => handleOpenModal()}>
-                  삭제하기
-                </Button>
+                <div className={styles.buttonNormal}>
+                  <Button size={'medium'} type="outline" onClick={() => setMode('normal')}>
+                    편집 취소
+                  </Button>
+                </div>
+                <div className={styles.buttonDelete}>
+                  <Button size={'medium'} type="primary" onClick={() => handleOpenModal()}>
+                    삭제하기
+                  </Button>
+                </div>
               </div>
             )}
           </div>
