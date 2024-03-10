@@ -10,6 +10,9 @@ const CommonSection = ({ title, data }) => {
   const { cardLength } = useCardLength();
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  // const [width, setWidth] = useState(window.innerWidth);
+
+  // const containerRef = useRef(null);
 
   const handleNextCard = () => {
     if (currentIndex < cardLength - 4) {
@@ -23,10 +26,34 @@ const CommonSection = ({ title, data }) => {
       setCurrentIndex(prevState => prevState - 1);
     }
   };
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
+
+  // const isMobile = width < 1200;
+  // const style = isMobile ? {} : { transform: `translateX(-${currentIndex * 29.5}rem)` };
+
+  // useEffect(() => {
+  //   if (!containerRef.current) {
+  //     return;
+  //   }
+
+  //   if (isMobile) {
+  //     containerRef.current.scrollLeft = currentIndex === 0 ? 0 : currentIndex * 295;
+  //   } else {
+  //     containerRef.current.scrollLeft = 0;
+  //   }
+  // }, [currentIndex, isMobile]);
+
   return (
     <section className={styles.commonSection}>
+      <h3 className={styles.title}>{title}</h3>
       <div className={styles.container}>
-        <h3 className={styles.title}>{title}</h3>
         {!!data.length && (
           <div className={styles.cardFlex} style={{ transform: `translateX(-${currentIndex * 29.5}rem)` }}>
             {data.map(card => (
