@@ -20,6 +20,27 @@
   cursor: pointer;
 }
 
+.colorOverlay:hover {
+  &::before {
+    position: absolute;
+    background-color: var(--white);
+    content: '';
+    inset: 0;
+    opacity: 0.3;
+    transition: 0.5s ease;
+  }
+}
+
+.colorOpacity {
+  &::before {
+    position: absolute;
+    background-color: var(--white);
+    content: '';
+    inset: 0;
+    opacity: 0.3;
+  }
+}
+
 .checkOverlay {
   opacity: 0;
   transition:
@@ -29,7 +50,7 @@
 }
 
 .pickerBox:hover .checkOverlay {
-  opacity: 1;
+  opacity: 0.3;
   visibility: visible;
 }
 

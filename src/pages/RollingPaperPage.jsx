@@ -56,7 +56,7 @@ const RollingPage = () => {
           style={{ backgroundImage: `url(${backgroundImageURL})` }}></div>
         <div className={styles.rollingContainer}>
           <div className={styles.buttonContainer}>
-            <Link to="/list/">
+            <Link to="/list">
               <div className={`${styles.backward} ${styles[backwardColor]}`}>
                 <img className={styles.backwardIcon} src={iconArrowLeft} />
                 <p className={styles.backwardConetent}>뒤로 가기</p>
