@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = 'https://api.imgur.com/3/image';
 
 const uploadImage = async ({ file }) => {
-  const clientId = 'c9b5d63d83ab398';
+  const clientId = process.env.REACT_APP_IMGUR_CLIENT_ID;
   const auth = 'Client-ID ' + clientId;
 
   const formData = new FormData();
