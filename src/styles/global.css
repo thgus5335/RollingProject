@@ -20,3 +20,12 @@ button {
 a {
   text-decoration: none;
 }
+
+.ql-container.ql-snow {
+  border-radius: 0 0 12px 12px;
+}
+
+.ql-toolbar.ql-snow {
+  border-radius: 12px 12px 0 0;
+  background-color: var(--purple-100);
+}

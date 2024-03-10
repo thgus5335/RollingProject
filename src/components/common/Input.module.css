@@ -16,6 +16,7 @@
   border: 1px solid var(--gray-300);
   border-radius: 8px;
   animation: border 1s linear infinite alternate;
+  font-size: 1.6rem;
   outline: none;
 }
 
