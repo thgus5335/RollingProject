@@ -13,7 +13,6 @@ import Profile from '../common/Profile';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-
 const HeaderRolling = ({ rollingInfo }) => {
   const [isEmojiClicked, setIsEmojiClicked] = useState(false);
   const [emojiDropDown, setEmojiDropDown] = useState(false);
@@ -82,9 +81,16 @@ const HeaderRolling = ({ rollingInfo }) => {
             <div className={styles.headerProfile}>
               <Profile recentMessages={recentMessages} messageCount={writer} />
             </div>
-            <div className={styles.emojiArea}>
-              {topEmojis && <Emoji emoticon={topEmojis} />}
-              <img src={dropDown} alt="drop down icon" className={styles.dropDown} onClick={handleEmojiDropDownClick} />
+            <div className={styles.emojiDropDownContainer}>
+              <div className={styles.emojiArea}>{topEmojis && <Emoji emoticon={topEmojis} />}</div>
+              {topEmojis.length > 0 && (
+                <img
+                  src={dropDown}
+                  alt="drop down icon"
+                  className={styles.dropDown}
+                  onClick={handleEmojiDropDownClick}
+                />
+              )}
             </div>
             {emojiDropDown && <div className={styles.emojiDropDown}>{emojiList && <Emoji emoticon={emojiList} />}</div>}
             <div className={styles.buttonContainer}>
@@ -99,10 +105,10 @@ const HeaderRolling = ({ rollingInfo }) => {
                   )}
                 </Button>
               </div>
-              <ToastContainer 
+              <ToastContainer
                 toastStyle={{
                   backgroundColor: 'black',
-                  color: 'white'
+                  color: 'white',
                 }}
               />
               <div className={styles.line}></div>
