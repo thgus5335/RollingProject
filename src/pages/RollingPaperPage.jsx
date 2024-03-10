@@ -2,7 +2,7 @@ import styles from './RollingPaperPage.module.css';
 import CardList from '../components/RollingPaperPage/CardList';
 import Button from '../components/common/Button';
 import Modal from '../components/RollingPaperPage/Modal';
-import ModalPortal from '../components/RollingPaperPage/Portal';
+import ModalPortal from '../utils/Portal';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getRollingPaper } from '../apis/rollingPaperAPI';

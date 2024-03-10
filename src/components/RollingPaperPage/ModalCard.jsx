@@ -12,7 +12,7 @@ const ModalCard = ({ onClose, messageInfo }) => {
             <img className={styles.profileImage} src={profileImageURL} alt="보낸 사람의 프로필." />
             <div>
               <p className={styles.profileTitle}>From. {sender}</p>
-              <p className={`${styles.profileBadge} ${styles[badge[relationship]]}`}>{relationship}</p>
+              <p className={`${styles.profileBadge} ${styles[badge]}`}>{relationship}</p>
             </div>
           </div>
           <p className={styles.date}>{date}</p>
