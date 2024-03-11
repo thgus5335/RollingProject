@@ -2,7 +2,7 @@ import styles from './Card.module.css';
 import Button from '../common/Button';
 import iconDelete from '../../assets/icons/delete.svg';
 import Modal from './Modal';
-import ModalPortal from './Portal';
+import ModalPortal from '../../utils/Portal';
 import { deleteMessage } from '../../apis/rollingPaperAPI';
 import ManageMessage from '../../utils/ManageMessage';
 import useModal from '../../hooks/useModal';
