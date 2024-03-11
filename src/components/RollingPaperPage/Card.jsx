@@ -29,33 +29,35 @@ const Card = ({ mode = 'normal', messageInfo }) => {
         </ModalPortal>
       )}
       <div className={`${styles.card}`} onClick={() => handleOpenModal()}>
-        <div className={styles.profile}>
-          <div className={styles.profileInfo}>
-            <img className={styles.profileImage} src={profileImageURL} alt="보낸 사람의 프로필." />
-            <div>
-              <p className={styles.profileTitle}>From. {sender}</p>
-              <p className={`${styles.profileBadge} ${styles[badge]}`}>{relationship}</p>
+        <div className={styles.cardContainer}>
+          <div className={styles.profile}>
+            <div className={styles.profileInfo}>
+              <img className={styles.profileImage} src={profileImageURL} alt="보낸 사람의 프로필." />
+              <div>
+                <p className={styles.profileTitle}>From. {sender}</p>
+                <p className={`${styles.profileBadge} ${styles[badge]}`}>{relationship}</p>
+              </div>
             </div>
+            {mode === 'edit' && (
+              <div className={styles.deleteCard}>
+                <Button size="medium" type="outline">
+                  <img
+                    src={iconDelete}
+                    alt="롤링 페이퍼 카드 삭제하기."
+                    onClick={event => {
+                      event.stopPropagation();
+                      onDelete();
+                    }}
+                  />
+                </Button>
+              </div>
+            )}
           </div>
-          {mode === 'edit' && (
-            <div className={styles.deleteCard}>
-              <Button size="medium" type="outline">
-                <img
-                  src={iconDelete}
-                  alt="롤링 페이퍼 카드 삭제하기."
-                  onClick={event => {
-                    event.stopPropagation();
-                    onDelete();
-                  }}
-                />
-              </Button>
-            </div>
-          )}
-        </div>
 
-        <div className={styles.content}>
-          <p className={`${styles.message} ${styles[fontStyle]}`} dangerouslySetInnerHTML={{ __html: content }} />
-          <p className={styles.date}>{date}</p>
+          <div className={styles.content}>
+            <p className={`${styles.message} ${styles[fontStyle]}`} dangerouslySetInnerHTML={{ __html: content }} />
+            <p className={styles.date}>{date}</p>
+          </div>
         </div>
       </div>
     </>

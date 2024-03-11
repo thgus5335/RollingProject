@@ -19,7 +19,7 @@
   }
 
   @media (width <= 768px) {
-    width: 32rem;
+    max-width: 32rem;
     grid-template-columns: 1fr;
   }
 }
