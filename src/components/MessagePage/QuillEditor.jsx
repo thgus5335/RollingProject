@@ -40,7 +40,7 @@ const QuillEditor = ({ onMessageChange }) => {
     'background',
   ];
 
-  const handleEditorChange = (content, editor) => {
+  const handleEditorChange = (content, delta, source, editor) => {
     onMessageChange(editor.getHTML());
     setEditorValue(content);
   };
