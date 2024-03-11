@@ -34,8 +34,10 @@
   font-weight: 700;
   line-height: 4.2rem;
   white-space: nowrap;
+}
 
-  @media (width <= 768px) {
+@media (width <= 768px) {
+  .recipient {
     display: none;
   }
 }
