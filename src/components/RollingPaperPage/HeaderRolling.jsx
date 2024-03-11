@@ -79,8 +79,9 @@ const HeaderRolling = ({ rollingInfo }) => {
     <>
       <ToastContainer
         toastStyle={{
-          backgroundColor: 'black',
-          color: 'white',
+          backgroundColor: 'white',
+          border: '1px solid #ccc',
+          color: 'black',
         }}
       />
       <div className={styles.rollingMobileHeader}>

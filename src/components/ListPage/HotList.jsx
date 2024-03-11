@@ -1,8 +1,8 @@
 import CommonSection from './CommonSection';
-import useFetchListData from '../../hooks/useFetchListData';
+import useFetchHotData from '../../hooks/useFetchHotData';
 
 const HotList = () => {
-  const { hotData } = useFetchListData();
+  const { hotData } = useFetchHotData();
 
   return (
     <>

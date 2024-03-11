@@ -2,10 +2,10 @@ import styles from './RollingPaperPage.module.css';
 import CardList from '../components/RollingPaperPage/CardList';
 import Button from '../components/common/Button';
 import Modal from '../components/RollingPaperPage/Modal';
-import ModalPortal from '../components/RollingPaperPage/Portal';
+import ModalPortal from '../utils/Portal';
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; //useNavigate,
-import { getRollingPaper } from '../apis/rollingPaperAPI'; //deleteRollingPaper,
+import { useParams, Link } from 'react-router-dom';
+import { getRollingPaper } from '../apis/rollingPaperAPI';
 import HeaderRolling from '../components/RollingPaperPage/HeaderRolling';
 import Header from '../components/common/Header';
 import iconArrowLeft from '../assets/icons/arrow-left.svg';
@@ -13,7 +13,6 @@ import useModal from '../hooks/useModal';
 
 const RollingPage = () => {
   const id = useParams();
-  // const navigate = useNavigate();
   const [rollingInfo, setRollingInfo] = useState([]);
   const [mode, setMode] = useState('normal');
   const { openModal, handleOpenModal, handleCloseModal } = useModal();
@@ -26,16 +25,6 @@ const RollingPage = () => {
     const response = await getRollingPaper(id);
     setRollingInfo(response);
   };
-
-  // const handleDelete = async id => {
-  //   const error = await deleteRollingPaper(id);
-  //   if (error) {
-  //     alert('롤링페이퍼 삭제가 실패했습니다.');
-  //     return;
-  //   }
-  //   alert('롤링페이퍼를 삭제했습니다.');
-  //   navigate('/list/');
-  // };
 
   useEffect(() => {
     fetchData(id.id);
@@ -70,13 +59,16 @@ const RollingPage = () => {
               </div>
             ) : (
               <div className={styles.buttonEdit}>
-                <Button size={'medium'} type="outline" onClick={() => setMode('normal')}>
-                  편집 취소
-                </Button>
-                {/* handleDelete(id.id); */}
-                <Button size={'medium'} type="primary" onClick={() => handleOpenModal()}>
-                  삭제하기
-                </Button>
+                <div className={styles.buttonNormal}>
+                  <Button size={'medium'} type="outline" onClick={() => setMode('normal')}>
+                    편집 취소
+                  </Button>
+                </div>
+                <div className={styles.buttonDelete}>
+                  <Button size={'medium'} type="primary" onClick={() => handleOpenModal()}>
+                    삭제하기
+                  </Button>
+                </div>
               </div>
             )}
           </div>
