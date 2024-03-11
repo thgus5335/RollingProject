@@ -35,7 +35,14 @@
   line-height: 4.2rem;
   white-space: nowrap;
 
+  /* 
   @media (width <= 768px) {
+    display: none;
+  } */
+}
+
+@media (width <= 768px) {
+  .recipient {
     display: none;
   }
 }
