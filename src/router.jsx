@@ -4,6 +4,7 @@ import ListPage from './pages/ListPage';
 import MessagePage from './pages/MessagePage';
 import RollingPaperPage from './pages/RollingPaperPage';
 import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         path: 'post/:id/message',
         element: <MessagePage />,
       },
-      // { path: '*', element: <NotFound /> },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ]);
