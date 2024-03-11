@@ -8,6 +8,7 @@ const getRequest = async endPoint => {
     return response.data;
   } catch (error) {
     console.error(error);
+    location.href = '../pages/NotFoundPage';
     throw error;
   }
 };
