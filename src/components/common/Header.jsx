@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 import Button from './Button';
-import logo from '../../assets/icons/logo.png';
+import logo from '../../assets/icons/logo.svg';
 
 export default function Header() {
   const location = useLocation();
@@ -12,7 +12,8 @@ export default function Header() {
       <div className={styles.headerNavigation}>
         <Link to="/">
           <div className={styles.logoStyle}>
-              <img src={logo} alt='logo'/>
+            <img src={logo} alt="logo" />
+            <h2 className={styles.logoTitle}>Rolling</h2>
           </div>
         </Link>
         {isButtonPage && (
