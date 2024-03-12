@@ -16,6 +16,6 @@
 
 | <img src="https://avatars.githubusercontent.com/u/8645321?v=4" title="정기환"> | <img src="https://avatars.githubusercontent.com/u/63449836?v=4" title="박소현"> | <img src="https://avatars.githubusercontent.com/u/118147033?v=4" title="김도현"> | <img src="https://avatars.githubusercontent.com/u/144013048?v=4" title="이유진"> | <img src="https://avatars.githubusercontent.com/u/121845820?v=4" title="남현준"> |
 | :--------------------------------: | :----------------------------------: | :--------------------------------: | :-------------------------------------------------------: | :-------------------------------: |
-|[정기환](https://github.com/KiHwanChong)|[박소현](https://github.com/thgus5335)|[김도현](https://github.com/jd105)|[이유진](https://github.com/eugene9851)|[남현준](https://github.com/hyunjun9788)|
+|[정기환](https://github.com/KiHwanChong)|[박소현](https://github.com/thgus5335)|[김도현](https://github.com/DoDOhyeon)|[이유진](https://github.com/eugene9851)|[남현준](https://github.com/hyunjun9788)|
 
 </br>
