@@ -1,0 +1,147 @@
+.rollingHeader {
+  display: flex;
+  height: 6.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.rollingMobileHeader {
+  display: none;
+
+  @media (width <= 768px) {
+    display: flex;
+    height: 6.4rem;
+    align-items: center;
+    padding: 0 2.4rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+}
+
+.headerContainer {
+  display: flex;
+  width: 120rem;
+  justify-content: space-between;
+
+  @media (width <= 1248px) {
+    width: 100%;
+    padding: 0 2.4rem;
+  }
+}
+
+.recipient {
+  color: var(--gray-800);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 4.2rem;
+  white-space: nowrap;
+}
+
+@media (width <= 768px) {
+  .recipient {
+    display: none;
+  }
+}
+
+.recipientMobile {
+  color: var(--gray-800);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 4.2rem;
+  white-space: nowrap;
+}
+
+.contentContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (width <= 768px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.headerProfile {
+  display: flex;
+  align-items: center;
+
+  @media (width <= 1024px) {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.emojiContainer {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  display: flex;
+
+  @media (width <= 768px) {
+    top: 0.5rem;
+    right: -2rem;
+    scale: 0.8;
+  }
+}
+
+.emojiDropDown {
+  position: absolute;
+  top: 5rem;
+  right: 19rem;
+  display: flex;
+  width: 38rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  background-color: var(--white);
+  gap: 1rem;
+
+  @media (width <= 768px) {
+    z-index: 1;
+    top: 4.6rem;
+    left: -3.4rem;
+    scale: 0.95;
+  }
+}
+
+.addEmojiButton {
+  @media (width<=768px) {
+    display: none;
+  }
+}
+
+.emojiArea {
+  display: flex;
+  gap: 0.5rem;
+
+  @media (width<=472px) {
+    display: none;
+  }
+}
+
+.emojiDropDownContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.line {
+  display: flex;
+  height: 3.5rem;
+  border-left: 1px solid var(--gray-200);
+}
+
+.dropDown {
+  cursor: pointer;
+}
+
+.dropDownWrapper {
+  position: relative;
+  display: flex;
+}

@@ -1,0 +1,129 @@
+.modalCard {
+  display: flex;
+  width: 52rem;
+  height: 39.6rem;
+  flex-direction: column;
+}
+
+.profile {
+  display: flex;
+  width: 100%;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.profileInfo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.profileLeft {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.date {
+  display: flex;
+  color: var(--gray-400);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.profileImage {
+  display: flex;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+.profileBadge {
+  display: flex;
+  width: 4rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.8rem;
+  border-radius: 4px;
+  margin-top: 0.6rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.friend {
+  background-color: var(--blue-100);
+  color: var(--blue-500);
+}
+
+.acquaintance {
+  background-color: var(--orange-100);
+  color: var(--orange-500);
+}
+
+.colleague {
+  background-color: var(--purple-100);
+  color: var(--purple-500);
+}
+
+.family {
+  background-color: var(--green-100);
+  color: var(--green-500);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.6rem;
+  gap: 1.6rem;
+}
+
+.message {
+  overflow: scroll;
+  width: 100%;
+  height: 25rem;
+  padding: 0.3rem;
+  color: var(--gray-600);
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.8rem;
+  scrollbar-width: none;
+}
+
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+.notoSans {
+  font-family: notoSans, sans-serif;
+}
+
+.pretendard {
+  font-family: pretendard, sans-serif;
+}
+
+.nanumMyeongjo {
+  font-family: nanumMyeongjo, sans-serif;
+}
+
+.nanumPenScript {
+  font-family: nanumPenScript, sans-serif;
+}
+
+.buttonOk {
+  display: flex;
+  width: 12rem;
+  justify-self: center;
+}

@@ -1,28 +1,115 @@
 .rollingBackground {
-  display: flex;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 12.8rem);
+  background-color: var(--gray-200);
+
+  @media (width <= 1248px) {
+    padding: 8rem 2.4rem;
+  }
+}
+
+.rollingContainer {
+  display: flex;
+  height: calc(100vh - 12.8rem);
   flex-direction: column;
   align-items: center;
-  padding: 8rem 0;
-  background-attachment: fixed;
+  padding: 6rem 2.4rem;
+}
+
+.purple {
+  position: absolute;
+  background-color: var(--purple-200);
+}
+
+.blue {
+  position: absolute;
+  background-color: var(--blue-200);
+}
+
+.beige {
+  position: absolute;
   background-color: var(--orange-200);
+}
+
+.green {
+  position: absolute;
+  background-color: var(--green-200);
+}
+
+.imageBackground {
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imageBackground::before {
+  position: absolute;
+  background-color: var(--black);
+  content: '';
+  inset: 0;
+  opacity: 0.4;
 }
 
 .buttonContainer {
   display: flex;
   width: 100%;
   max-width: 120rem;
-  justify-content: right;
+  justify-content: space-between;
   padding-bottom: 1.6rem;
 }
 
-.buttonEdit {
+.backward {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--black);
+}
+
+.white {
+  filter: invert(100%) brightness(200%);
+}
+
+.backwardIcon {
+  display: flex;
+  width: 3rem;
+}
+
+.backwardConetent {
+  display: flex;
+  height: 1.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.buttonNormal {
   width: 12rem;
 }
 
-@media (width <= 1248px) {
-  .rollingBackground {
-    padding: 8rem 2.4rem;
+.buttonEdit {
+  display: flex;
+  width: 25rem;
+  gap: 1rem;
+
+  @media (width <= 1024px) {
+    width: 12rem;
+  }
+}
+
+.buttonDelete {
+  width: 12rem;
+
+  @media (width <= 1024px) {
+    position: fixed;
+    right: 0;
+    bottom: 2.4rem;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    margin: 0 auto;
   }
 }

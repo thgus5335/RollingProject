@@ -11,16 +11,18 @@
 }
 
 .name {
+  overflow: hidden;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
   line-height: 3rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .backgroundImage {
   position: relative;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
 }
@@ -32,79 +34,38 @@
   background-color: var(--black);
   content: '';
   inset: 0;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 /* color */
 .purple {
   background: var(--purple-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
-/* .purple::before {
-  background-image: url('../../assets/images/pattern-purple.png') !important;
-} */
-
 .blue {
   background-color: var(--blue-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
 .beige {
   background-color: var(--orange-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
 .green {
   background-color: var(--green-200);
+  background-position: right bottom;
   color: var(--black);
 }
 
-/* emoji */
-.emojiArea {
+.cardBorderLine {
   bottom: 1rem;
   display: flex;
   padding-top: 1.5rem;
   border-top: 0.1rem solid rgb(0 0 0 / 12%);
   gap: 1rem;
-}
-
-.emoji {
-  padding: 0.8rem 1.2rem;
-  border-radius: 9.9rem;
-  background-color: var(--gray-400);
-  color: var(--white);
-}
-
-.imageStyle {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.profileImage {
-  position: relative;
-  width: 2.8rem;
-  height: 2.8rem;
-  border: 0.15rem solid var(--white);
-  border-radius: 99px;
-}
-
-.plusProfile {
-  position: relative;
-  left: -3rem;
-  display: flex;
-  width: 3.3rem;
-  height: 2.8rem;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0.6rem;
-  border-radius: 99px;
-  background-color: var(--white);
-  color: var(--black);
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.strongSpan {
-  font-weight: 800;
 }

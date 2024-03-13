@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = 'https://api.imgur.com/3/image';
 
 const uploadImage = async ({ file }) => {
-  const clientId = 'fd2e1e3d3d12ce1';
+  const clientId = process.env.REACT_APP_IMGUR_CLIENT_ID;
   const auth = 'Client-ID ' + clientId;
 
   const formData = new FormData();
@@ -16,8 +16,6 @@ const uploadImage = async ({ file }) => {
         'Content-Type': 'multipart/form-data',
       },
     });
-
-    console.log('Success:', response.data);
 
     const imageUrl = response.data.data.link;
 

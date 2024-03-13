@@ -1,15 +1,32 @@
 .card {
   display: flex;
+  max-width: 38.4rem;
   height: 28rem;
-  flex-direction: column;
+
+  /* flex-direction: column; */
   padding: 2.8rem 2.4rem 2.4rem;
   border-radius: 16px;
   background-color: var(--white);
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 8%);
+
+  @media (width <= 1024px) {
+    max-width: 100%;
+  }
+
+  @media (width <= 768px) {
+    max-width: 94%;
+    height: 26rem;
+  }
 }
 
 .card:hover {
   border: 3px solid var(--gray-300);
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
 /* mode : edit */
@@ -40,13 +57,14 @@
   width: 5.6rem;
   height: 5.6rem;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .profileTitle {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.4rem;
-  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .profileBadge {
@@ -93,6 +111,7 @@
 .message {
   display: -webkit-box;
   overflow: hidden;
+  padding: 0.3rem;
   -webkit-box-orient: vertical;
   color: var(--gray-600);
   font-size: 1.8rem;
@@ -101,6 +120,22 @@
   -webkit-line-clamp: 3;
   line-height: 2.8rem;
   text-overflow: ellipsis;
+}
+
+.notoSans {
+  font-family: notoSans, sans-serif;
+}
+
+.pretendard {
+  font-family: pretendard, sans-serif;
+}
+
+.nanumMyeongjo {
+  font-family: nanumMyeongjo, sans-serif;
+}
+
+.nanumPenScript {
+  font-family: nanumPenScript, sans-serif;
 }
 
 .date {

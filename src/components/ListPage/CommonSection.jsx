@@ -4,45 +4,101 @@ import forward from '../../assets/icons/forward.svg';
 import backward from '../../assets/icons/backward.svg';
 import useCardLength from '../../hooks/useCardLength';
 import { Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 
-const CommonSection = ({ title, data, handleForward, handleBackward, offset }) => {
+const CommonSection = ({ title, data }) => {
   const { cardLength } = useCardLength();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const onClickBackward = () => {
-    handleBackward(offset);
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const newPosition = containerRef.current.scrollLeft;
+      setScrollPosition(newPosition);
+    }
   };
 
-  const onClickForward = () => {
-    handleForward(offset);
+  useEffect(() => {
+    if (!containerRef.current) {
+      return;
+    }
+
+    if (containerRef.current) {
+      containerRef.current.addEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  const containerRef = useRef(null);
+
+  const handleNextCard = () => {
+    if (currentIndex < cardLength - 4) {
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+    }
   };
+
+  const handlePrevCard = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(prevState => prevState - 1);
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = width < 1200;
+  const style = isMobile ? {} : { transform: `translateX(-${currentIndex * 29.5}rem)` };
+
+  useEffect(() => {
+    if (!containerRef.current) {
+      return;
+    }
+
+    if (isMobile) {
+      containerRef.current.scrollLeft = currentIndex === 0 ? 0 : currentIndex * 295;
+    } else {
+      containerRef.current.scrollLeft = 0;
+      if (scrollPosition > 0) {
+        setCurrentIndex(Math.round(scrollPosition / 295));
+      }
+    }
+  }, [currentIndex, isMobile]);
 
   return (
     <section className={styles.commonSection}>
       <h3 className={styles.title}>{title}</h3>
-      {Array.isArray(data) && data.length && (
-        <div className={styles.cardFlex}>
-          {data.map(card => (
-            <Link to={`/post/:${card.id}`} key={card.id}>
-              <Card
-                name={card.name}
-                messageCount={card.messageCount}
-                backgroundImage={card.backgroundImageURL}
-                backgroundColor={card.backgroundColor}
-                emoticon={card.topReactions}
-                recentMessages={card.recentMessages}
-              />
-            </Link>
-          ))}
-        </div>
-      )}
+      <div className={styles.container} ref={containerRef}>
+        {!!data.length && (
+          <div className={styles.cardFlex} style={style}>
+            {data.map(card => (
+              <Link to={`/post/${card.id}`} key={card.id}>
+                <Card
+                  name={card.name}
+                  messageCount={card.messageCount}
+                  backgroundImage={card.backgroundImageURL}
+                  backgroundColor={card.backgroundColor}
+                  emoticon={card.topReactions}
+                  recentMessages={card.recentMessages}
+                />
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
 
-      {offset !== 0 && (
-        <button onClick={onClickBackward}>
+      {currentIndex !== 0 && (
+        <button onClick={handlePrevCard}>
           <img src={backward} alt="이전 카드" className={styles.backward} />
         </button>
       )}
-      {cardLength > 4 && offset < cardLength - 4 && (
-        <button onClick={onClickForward}>
+      {cardLength > 4 && currentIndex < cardLength - 4 && (
+        <button onClick={handleNextCard}>
           <img src={forward} alt="다음 카드" className={styles.forward} />
         </button>
       )}

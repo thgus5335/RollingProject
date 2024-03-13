@@ -8,7 +8,11 @@ const ColorPicker = () => {
   return (
     <div className={styles.pickerContainer}>
       {COLORS.map((color, index) => (
-        <div key={index} className={`${styles.pickerBox} ${styles[color]}`} onClick={() => handleClickColor(color)}>
+        <div
+          key={index}
+          className={`${styles.pickerBox} ${styles[color]} ${styles.colorOverlay} ${selectedColor === color && styles.colorOpacity}`}
+          onClick={() => handleClickColor(color)}>
+          <img src={checkIcon} alt="check" className={styles.checkOverlay} />
           {selectedColor === color && <img src={checkIcon} alt="check" className={styles.check} />}
         </div>
       ))}

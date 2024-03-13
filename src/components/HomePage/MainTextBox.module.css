@@ -27,6 +27,18 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
+
+  @media (width <=1248px) {
+      width: 100%;
+  }
+  
+  @media (width <= 768px) {
+      width: 45.2rem;
+  }
+  
+  @media (width <= 500px) {
+      width: 26.2rem;
+  }
 }
 
 .text {
@@ -35,6 +47,14 @@
   font-weight: 700;
   letter-spacing: -0.03rem;
   line-height: 3.6rem;
+
+  @media (width <= 768px) {
+      width: 100%;
+  }
+  
+  @media (width <= 768px) {
+      font-size: 1.8rem;
+  }
 }
 
 .subText {
@@ -42,4 +62,11 @@
   font-size: 1.8rem;
   letter-spacing: -0.02rem;
   line-height: 2.8rem;
+
+  @media (width <= 768px) {
+      font-size: 1.5rem;
+  }
 }
+
+
+

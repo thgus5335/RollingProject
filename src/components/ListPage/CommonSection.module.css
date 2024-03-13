@@ -3,18 +3,32 @@
   margin-top: 4rem;
 }
 
+.container {
+  position: relative;
+  max-width: 116rem;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+  @media (width<=1200px) {
+    overflow-x: scroll;
+  }
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
 .cardFlex {
   display: flex;
-  overflow: hidden;
-  width: 116rem;
+  width: 100%;
   gap: 2rem;
+  transition: 0.3s;
+  white-space: nowrap;
 
-  @media (width<=1024px) {
-    overflow: auto;
+  @media (width<=1200px) {
     width: 100vw;
-    overflow-x: scroll;
     scroll-behavior: smooth;
-    white-space: nowrap;
+    transition: none;
   }
 }
 
@@ -31,7 +45,7 @@
 .backward {
   position: absolute;
   top: 15rem;
-  left: -2.6rem;
+  left: -3rem;
 
   @media (width<=1200px) {
     display: none;
@@ -44,6 +58,6 @@
   left: 113rem;
 
   @media (width<=1200px) {
-    visibility: hidden;
+    display: none;
   }
 }

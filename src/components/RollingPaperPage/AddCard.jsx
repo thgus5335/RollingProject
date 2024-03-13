@@ -1,7 +1,7 @@
 import styles from './AddCard.module.css';
 import iconPlus from '../../assets/icons/plus.svg';
 
-const AddCard = () => {
+const AddCard = ({ mode = { mode } }) => {
   return (
     <div className={`${styles.card}`}>
       <div className={styles.add}>

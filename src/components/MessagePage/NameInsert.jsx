@@ -1,31 +1,35 @@
 import { useState } from 'react';
-import styles from './NameInsert.module.css';
+import Input from '../common/Input';
+
 const NameInsert = ({ name, onNameChange }) => {
-  const [blur, setBlur] = useState(false);
+  const [noValueInput, setNoValueInput] = useState(false);
+
   const handleChangeName = e => {
     const newName = e.target.value;
     onNameChange(newName);
   };
+
   const handleBlurFromInput = () => {
-    if (name.trim().length === 0) {
-      setBlur(true);
+    setNoValueInput(name.trim().length === 0);
+  };
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter' && name === '') {
+      setNoValueInput(true);
     } else {
-      setBlur(false);
+      setNoValueInput(false);
     }
   };
 
   return (
-    <div className={styles.nameContainer}>
-      <h1 className={styles.title}>From.</h1>
-      <input
-        value={name}
-        className={styles.nameInput}
-        placeholder="이름을 입력해 주세요."
-        onChange={handleChangeName}
-        onBlur={handleBlurFromInput}
-      />
-      {blur === true ? <div className={styles.error}>값을 입력해 주세요.</div> : null}
-    </div>
+    <Input
+      name={name}
+      onChange={handleChangeName}
+      onBlur={handleBlurFromInput}
+      who="From"
+      onKeyDown={handleKeyDown}
+      error={noValueInput}
+    />
   );
 };
 export default NameInsert;

@@ -1,0 +1,39 @@
+.imageStyle {
+  display: flex;
+}
+
+.profileImage {
+  position: relative;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0.15rem solid var(--white);
+  border-radius: 99px;
+  object-fit: cover;
+}
+
+.plusProfile {
+  position: relative;
+  left: -3rem;
+  display: flex;
+  width: 3.3rem;
+  height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.6rem;
+  border: 0.1rem solid var(--gray-300);
+  border-radius: 99px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.countDescription {
+  margin-right: 3rem;
+  line-height: 4rem;
+  white-space: nowrap;
+}
+
+.strongSpan {
+  font-weight: 800;
+}
